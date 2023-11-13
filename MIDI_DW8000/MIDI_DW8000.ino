@@ -1,5 +1,5 @@
-// Korg DW-8000 MIDI Enhancer
-// By Steve Baines 2016
+// Korg EX/DW-8000 and DSS-1 MIDI Enhancer
+// By Steve Baines 2016 mode by Vladistone 2023
 // See:
 // https://hackaday.io/
 
@@ -20,7 +20,7 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 const int ledPinOut = 13;
 
 // 0 here is 1 on DW-8000 - need to set Param 83 to 1
-const int dwChannel = 0; 
+const int dwChannel = 0; // mode from 0
 
 // Also need to set Param 84 to 2, otherwise SYSEX messages are ignored.
 
@@ -30,8 +30,8 @@ void sendDw8000Param(byte channel, byte paramOffset, byte paramValue7Bit)
   static byte sysexData[sysexLen] = { 
     0xf0,   // 0 Sysex start
     0x42,   // 1 Manufacturer ID: 42, Korg
-    0x30,   // 2 Channel 1
-    0x03,   // 3 Device ID: 03, DW-8000
+    0x30,   // 2 Channel 1 - mode frome 0x31
+    0x0b,   // 3 Device ID: 03, for EX/DW-8000; 0b - for DSS-1
     0x41,   // 4 Message: 41, Parameter change
     0x00,   // 5 Parameter Offset number (which parameter we want to change)
     0x00,   // 6 Parameter value
@@ -173,7 +173,7 @@ void sendDw8000Param(byte channel, byte paramOffset, byte paramValue7Bit)
     return; // Unknown parameter - ignore
  }
   
-  sysexData[2] = 0x30 | (channel & 0x0f); // Set channel number
+  sysexData[2] = 0x30 | (channel & 0x0f); // Set channel number - mode from 0x30
   sysexData[5] = paramOffset;
   sysexData[6] = paramValueScaled;
   
@@ -390,12 +390,3 @@ void loop()
     // The attached method will be called automatically
     // when the corresponding message has been received.
 }
-
-
-
-
-
-
-
-
-
