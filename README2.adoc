@@ -51,7 +51,8 @@ And for such pleasures as independence from expensive specialized controllers or
 ____
 
 This Simple Arduino project to remap MIDI CC# messages into SysEx messages that Korg DSS-1 Synth expects.
-This is project start from 5th July 2016 by point what I done with Korg EX8000 based on a hack “Korg DW8000 midi enhancer” by Steve Baines
+This is project start from 5th July 2016 and based on a hack https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] by Steve Baines. For full project details and step by step instructions:
+
 The Korg DW-8000 (and other early synthesisers) was created during the early days of MIDI, before things like CC messages were standardised.  As a result, it uses proprietary SYSEX commands to change parameters over MIDI.  Most modern MIDI controllers use CC messages instead, and very few are flexible enough to be able to send the appropriate SYSEX messages.
 
 This project uses an embedded Arduino Nano (or clone) mounted inside the DW-8000, which is used to intercept the MIDI IN data just before it reaches the DW-8000 CPU. It replaces specific CC messages with SYSEX messages that the DW-8000 understands them.
@@ -61,6 +62,4 @@ The practical upshot of this is that the DW-8000 parameters can be controlled by
 MIDI THRU is unaffected by the changes, as the Nano is be spliced in just before the MIDI IN reaches the CPU, AFTER the IN has been echoed back out of the THRU port.
 
 Certain CC messages are replaced with SYSEX parameter control messages, but all other MIDI messages are passed unchanged. This means that the SYSEX messages can still be used.
-
-For full project details and step by step instructions:
-https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer
+The first my project point it whas with Korg EX8000:
