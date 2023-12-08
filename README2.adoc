@@ -50,10 +50,10 @@ ____
 Arduino is an IC board which will allow you to take whatever MIDI controller you have, be it a keyboard or some fader box, plug it in and  tune changing of the parameter of synth…
 regardless of whether your oldschool synthesizer can read CC# commands or not.
 
-image::SSL_Nucleus_Mk2.svg[SSL Nucleus sirface,625,500]
-
 And for such pleasures as independence from expensive specialized controllers or the not need to be chained to a computer for software MIDI translation, you can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DSS-1  using Arduino and with programming skills!!
 ____
+
+image::SSL_Nucleus_Mk2.svg[SSL Nucleus sirface,625,500]
 
 This Simple Arduino project to remap MIDI CC# messages into SysEx messages that Korg DSS-1 Synth expects.
 This is project start from 5th July 2016 and based on a hack https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] by Steve Baines. For full project details and step by step instructions:
