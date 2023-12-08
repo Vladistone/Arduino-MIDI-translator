@@ -40,7 +40,7 @@ kbd:[<<Back-to-Top>>]
 = Introduction
 :imagesdir: IMAGES/Controllers/SSL Nucleus/
 
-=== What is Arduino MIDI CC translator?
+=== What is Arduino MIDI `CC#` translator?
 
 Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram. But what is it exactly? Let me put it this way:
 
@@ -59,16 +59,16 @@ ____
 2+|image:SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
 |===
 
-This Simple Arduino project to remap MIDI `CC#` messages into SysEx messages that Korg DSS-1 Synth expects.
+This Simple Arduino project to remap MIDI `CC#` messages into `SysEx` messages that Korg DSS-1 Synth expects.
 The project start from 5th July 2016 and based on a hack https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] by https://github.com/sjbaines/Korg_DW-8000_Midi_Enhancer[Steve Baines]. 
 The Korg DW-8000; EX800; DSS-1 (and other early synthesisers) was created during the early days of MIDI, before things like `CC#` messages were standardised.  As a result, it uses proprietary `SysEx` commands to change parameters over MIDI.  Most modern MIDI controllers use `CC#` messages instead, and very few are flexible enough to be able to send the appropriate `SysEx` messages.
 
-This project uses an embedded Arduino Nano (or clone) mounted inside the Korg synth, which is used to intercept the MIDI IN data just before it reaches the CPU of synth. It replaces specific `CC#` messages with `Sysex` messages that the Sysnthesizer understands them.
+This project uses an embedded Arduino Nano (or clone) mounted inside the Korg synth, which is used to intercept the MIDI IN data just before it reaches the CPU of synth. It replaces specific `CC#` messages with `SysEx` messages that the Sysnthesizer understands them.
 
 The practical upshot of this is that the DW-8000 parameters can be controlled by standard `CC#` messages, rather than obscure `SysEx` messages.
 
 MIDI THRU is unaffected by the changes, as the Nano is be spliced in just before the MIDI IN reaches the CPU, AFTER the IN has been echoed back out of the THRU port.
 
-Certain CC messages are replaced with `SysEx` parameter control messages, but all other MIDI messages are passed unchanged. This means that the `SysEx` messages can still be used.
+Certain `CC#` messages are replaced with `SysEx` parameter control messages, but all other MIDI messages are passed unchanged. This means that the `SysEx` messages can still be used.
 The first my project point it whas with Korg EX8000: For full project details and step by step instructions:
 
