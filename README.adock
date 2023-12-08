@@ -40,18 +40,23 @@ kbd:[<<Back-to-Top>>]
 
 === What is Arduino MIDI CC translator?
 
-Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram. But what is it exactly? Let me put it this way:
+Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram.
+But what is it exactly? Let me put it this way:
 
 ____
 
 Arduino is an IC board which will allow you to take whatever MIDI controller you have, be it a keyboard or some fader box, plug it in and  tune changing of the parameter of synth…
 regardless of whether your oldschool synthesizer can read CC# commands or not.
-And for such pleasures as independence from expensive specialized controllers or the not need to be chained to a computer for software MIDI translation, you can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DSS-1  using Arduino and with programming skills!!
+And for such pleasures as independence from expensive specialized controllers or the not need to be chained to a computer for software MIDI translation.
+You can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DSS-1  using Arduino and with programming skills!!
 Simple Arduino project to remap MIDI CC# messages into SysEx messages that Korg DSS-1 Synth expects.
 This is project start from 5th July 2016 by point what I done with Korg EX8000 based on a hack “Korg DW8000 midi enhancer” by Steve Baines
-The Korg DW-8000 (and other early synthesisers) was created during the early days of MIDI, before things like CC messages were standardised.  As a result, it uses proprietary SYSEX commands to change parameters over MIDI.  Most modern MIDI controllers use CC messages instead, and very few are flexible enough to be able to send the appropriate SYSEX messages.
+The Korg DW-8000 (and other early synthesisers) was created during the early days of MIDI, before things like CC messages were standardised. 
+As a result, it uses proprietary SYSEX commands to change parameters over MIDI. 
+Most modern MIDI controllers use CC messages instead, and very few are flexible enough to be able to send the appropriate SYSEX messages.
 
-This project uses an embedded Arduino Nano (or clone) mounted inside the DW-8000, which is used to intercept the MIDI IN data just before it reaches the DW-8000 CPU. It replaces specific CC messages with SYSEX messages that the DW-8000 understands them.
+This project uses an embedded Arduino Nano (or clone) mounted inside the DW-8000, which is used to intercept the MIDI IN data just before it reaches the DW-8000 CPU.
+It replaces specific CC messages with SYSEX messages that the DW-8000 understands them.
 
 The practical upshot of this is that the DW-8000 parameters can be controlled by standard CC messages, rather than obscure SYSEX messages.
 
