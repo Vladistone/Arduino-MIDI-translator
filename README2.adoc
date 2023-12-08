@@ -42,7 +42,7 @@ kbd:[<<Back-to-Top>>]
 === What is Arduino MIDI CC translator?
 
 Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram. But what is it exactly? Let me put it this way:
-[link=IMAGES/under controller.jpg]
+imag::under controller.jpg
 ____
 
 Arduino is an IC board which will allow you to take whatever MIDI controller you have, be it a keyboard or some fader box, plug it in and  tune changing of the parameter of synth…
