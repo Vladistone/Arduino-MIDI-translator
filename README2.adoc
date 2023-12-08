@@ -46,6 +46,7 @@ ____
 
 Arduino is an IC board which will allow you to take whatever MIDI controller you have, be it a keyboard or some fader box, plug it in and  tune changing of the parameter of synth…
 regardless of whether your oldschool synthesizer can read CC# commands or not.
+
 And for such pleasures as independence from expensive specialized controllers or the not need to be chained to a computer for software MIDI translation, you can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DSS-1  using Arduino and with programming skills!!
 ____
 
