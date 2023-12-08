@@ -55,8 +55,8 @@ ____
 
 .example: MCU & XT Projections
 |===
-|image:images/projection_MCU.svg[Projection MCU,470,380] |image:images/projection_XT.svg[Projection XT,260,380]
-2+|image:images/SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
+|image:projection_MCU.svg[Projection MCU,470,380] |image:projection_XT.svg[Projection XT,260,380]
+2+|image:SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
 |===
 
 This Simple Arduino project to remap MIDI CC# messages into SysEx messages that Korg DSS-1 Synth expects.
