@@ -7,7 +7,6 @@
 :partnums:
 :sectnumlevels: 3
 :experimental:
-:imagesdir: images
 :tip-caption: pass:[&#128161;]
 :warning-caption: pass:[&#9888;]
 :note-caption: pass:[&#128204;]
@@ -38,7 +37,7 @@ kbd:[<<Back-to-Top>>]
 
 [colophon]
 = Introduction
-
+:imagesdir: .IMAGES/Controllers/SSL Nucleus/
 === What is Arduino MIDI CC translator?
 
 Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram. But what is it exactly? Let me put it this way:
@@ -48,6 +47,7 @@ ____
 Arduino is an IC board which will allow you to take whatever MIDI controller you have, be it a keyboard or some fader box, plug it in and  tune changing of the parameter of synth…
 regardless of whether your oldschool synthesizer can read CC# commands or not.
 
+image::SSL_Nucleus_Mk2.svg
 And for such pleasures as independence from expensive specialized controllers or the not need to be chained to a computer for software MIDI translation, you can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DSS-1  using Arduino and with programming skills!!
 ____
 
