@@ -29,7 +29,7 @@ kbd:[<<Back-to-Top>>]
 Here's a step-by-step guide to help you get started with Arduino and a MIDI controller:
 
 . Download & Start Arduino IDE.
-. If you haven't already done it, https://www.arduino.cc/en/software[install Arduino].
+. If you haven't already done it, https://www.arduino.cc/en/software[install Arduino IDE].
 . Make sure your MIDI_library.h is enabled in _Sketch → Include Library… → Manage Librarys ⇧⌘i →  download the MIDI_library.h if you need...
   * For the Arduino board device, tick _for your name device_ and tick
  your _Port for connection_.
@@ -41,7 +41,7 @@ kbd:[<<Back-to-Top>>]
 === What is Arduino MIDI CC translator?
 
 Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram. But what is it exactly? Let me put it this way:
-
+[img]IMAGES/under controller.jpg[img]
 ____
 
 Arduino is an IC board which will allow you to take whatever MIDI controller you have, be it a keyboard or some fader box, plug it in and  tune changing of the parameter of synth…
