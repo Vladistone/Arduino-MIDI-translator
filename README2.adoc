@@ -33,21 +33,25 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 . Make sure your MIDI_library.h is enabled in _Sketch → Include Library… → Manage Librarys ⇧⌘i →  download the MIDI_library.h if you need...
   * For the Arduino board device, tick _for your name device_ and tick
  your _Port for connection_.
+
 kbd:[<<Back-to-Top>>]
 
 [colophon]
 = Introduction
-:imagesdir: .IMAGES/Controllers/SSL Nucleus/
+:imagesdir: IMAGES/Controllers/SSL Nucleus/
+
 === What is Arduino MIDI CC translator?
 
 Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram. But what is it exactly? Let me put it this way:
+
 imag::under controller.jpg
 ____
 
 Arduino is an IC board which will allow you to take whatever MIDI controller you have, be it a keyboard or some fader box, plug it in and  tune changing of the parameter of synth…
 regardless of whether your oldschool synthesizer can read CC# commands or not.
 
-image::SSL_Nucleus_Mk2.svg
+image::SSL_Nucleus_Mk2.svg[SSL Nucleus sirface,625,500]
+
 And for such pleasures as independence from expensive specialized controllers or the not need to be chained to a computer for software MIDI translation, you can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DSS-1  using Arduino and with programming skills!!
 ____
 
