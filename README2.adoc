@@ -8,7 +8,8 @@ Vladistone <vl2guitar@gmail.com>
 :partnums:
 :sectnumlevels: 3
 :experimental:
-:source-highlighter: rouge
+:source-highlighter: cpp
+:source-language: cpp
 :tip-caption: pass:[&#128161;]
 :warning-caption: pass:[&#9888;]
 :note-caption: pass:[&#128204;]
@@ -181,7 +182,7 @@ or 2nd way:
 My original code version is implemented as 2 (see Unit_3)
 
 [example%collapsible]
-[soursec,cpp,linenums]
+[source,cpp,linenums]
 ----
 // Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
 void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit_3
