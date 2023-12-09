@@ -288,8 +288,10 @@ kbd:[<<Back-to-Top>>]
 
 [#inplementation]
 == MIDI implementation charts
+====
 if You wish remapping CC#2SysEx use the Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf[implementation chart `6`DSS-1 Programm parameter map]
 Parameter number column "2", at pages 7-8:
+====
 
 [WARNING]
 pay attantion: not use the *param.Offset*! parameter misconception is passed down!
