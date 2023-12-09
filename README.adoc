@@ -417,7 +417,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
     0x42, // 1 Manufacturer ID: 42, Korg
     0x30, // 2 Channel 1
     0x0B, // 3 Device ID: 0b, DSS-1
-    0x41, // 4 Message: 41, Parameter change (it not the parameter DUMP)
+    0x41, // 4 Message: 41, Parameter change
     0x00, // 5 Parameter number (1-st param witch we going to change)
     0x00, // 6 Parameter master value
     0x00, // 7 Parameter number (be as slave)
@@ -426,7 +426,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
     };
     paramValue7Bit &= 0x7f;
     int paramValueScaled;
-    switch (paramNumber) { // so here we rescale to fit to rang:
+    switch (paramNumber) { // so here we rescale to fit to range:
         case 0x00: // [F14] paramNumber 0 OSC1 level Mix ratio (master)
 	case 0x01: // [F14] paramNumber 1 OSC2 level Mix ratio (slave)
 	paramValueScaled = paramValue7Bit*203/256; break;
