@@ -295,9 +295,8 @@ Also in the interblock space there is a complete list of parameters of the DSS-1
 [Warring]
 ----
 pay attantion: not use the param.Offset parameter. it wrong this misconception is passed down from generation to generation!
-and the author of the first draft also did not understand the difference, https://gearspace.com/board/showpost.php?p=16795924&postcount=16[at gearspace.com have quote his comments]
 ----
-
+and the author of the first draft also did not understand the difference, https://gearspace.com/board/showpost.php?p=16795924&postcount=16[at gearspace.com have quote his comments]
 .Korg DSS-1 Parameter list
 [,cpp,%linenums]
 ----
