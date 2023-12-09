@@ -231,9 +231,9 @@ case  0x46: // functionID 70 [id46] Program nameList	Tx only		---
 
 ==== [Unit_0]
 ====
-|the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte.
+the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte.
 This was implemented at the very last moment and represents the most interesting section for further development in case of interest from both the code supporter and the performer himself.
-Therefore, any help and cooperation is accepted!|image:IMAGES/Korg DSS-1/MODE_data.jpeg[,400.500]
+Therefore, any help and cooperation is accepted! image:IMAGES/Korg DSS-1/MODE_data.jpeg[,400.500]
 ====
 
 From my little programming experience, I can say that I used Pocket MIDI software to monitor MIDI messages and because of it
@@ -251,8 +251,10 @@ of the synthesizer and was ignored by the developers in previous versions of the
 
 I’ll immediately voice some notes present in the code as an addition:
 
-[#NOTE] within parentheses wouldn't work if use off/on SW
-
+[NOTE]
+----
+within parentheses wouldn't work if use off/on SW
+----
 My Arduino project had limitations when designing the lookup table/template: *Nucleus2 SSL controller*
 I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements
 - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only.
