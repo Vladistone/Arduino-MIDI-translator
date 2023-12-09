@@ -165,6 +165,7 @@ This parameter is also described in the Program Parameter table [3] and has a no
 
 or 2nd way:
 - `Osc 1 level: F0 42  30 0B 41 00 xx 00 yy F7]`
+
 My original code version is implemented as 2.
 ====
 And this may be a controversial decision, since according to the reasoning on the https://glenstegner.com/dss1/home.html[Glen website]:
