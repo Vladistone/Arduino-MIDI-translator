@@ -279,7 +279,7 @@ but not param.Offset
 [,cpp,%linenums]
 ----
 hex[4]	FunID  ParamNumber # range Parameter name
-------//----------------------------------------------
+--------------------------------------------------------
 --    // [F01] paramNumber--  (-) Initialize parameters
 --    // [F02] paramNumber--  (-) Write/Rename
 0x12: //[id12] FunctionID 18  (1) Request Mode condition
