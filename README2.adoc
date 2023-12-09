@@ -173,6 +173,8 @@ or 2nd way:
 `Osc Mix ratio: F0 42 30 0B 41 00 xx 00 yy F7]`
 ====
 My original code version is implemented as 2 (see Unit_3)
+
+[discrete]
 `// Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
 void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit_3
   const int sysexLen = 10;
@@ -204,7 +206,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
     sysexData[8] = (100 - paramValueScaled) & 0x7f; // slave value
     MIDI.sendSysEx(sysexLen, sysexData, true);
 }`
-
+[discrete]
 ====
 And this may be a controversial decision, since according to the reasoning on the https://glenstegner.com/dss1/home.html[Glen website]:
 - he prefers an independent control option for the `OSC 1&2` parameter with the ability to raise the level of both oscillators up to 100%, while training the powerful OUTPUT from the synthesizer.
