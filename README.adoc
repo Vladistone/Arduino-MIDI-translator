@@ -4,7 +4,6 @@ Vladistone <vl2guitar@gmail.com>
 :toc:
 :toclevels: 3
 :doctype: book
-:sectnums:
 :partnums:
 :sectnumlevels: 3
 :experimental:
