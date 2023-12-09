@@ -68,11 +68,6 @@ regardless of whether your oldschool synthesizer can read `CC#` commands or not.
 And for such pleasures as independence from expensive specialized controllers or the not need to be chained to a computer for software MIDI translation, you can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DSS-1  using Arduino and with programming skills!!
 ____
 
-.example: MCU & XT Projections
-|===
-|image:projection_MCU.svg[Projection MCU,470,380] |image:projection_XT.svg[Projection XT,260,380]
-2+|image:SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
-|===
 
 This Simple Arduino project to remap MIDI `CC#` messages into `SysEx` messages that Korg DSS-1 Synth expects.
 
