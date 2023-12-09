@@ -86,7 +86,9 @@ kbd:[<<Back-to-Top>>]
 = Synths review
 This section is dedicated to the internal features and details when implementing Arduino on a synthesizer board (I will try to describe how it worked out for me and give links to the experience of other experimenters with their upgrage...
 Here is my small list of synthesizers that achieved results with the Arduino translator!
-Korg DSS-1 - the flagship for upgrades! The following events were held for it:
+[discrete]
+====
+Korg <<DSS-1>> - the flagship for upgrades! The following events were held for it:
  * Cleared, Adjusted, silent and soft touched keys board;
  * new micro buttons on the front panel;
  * a modern 3-pin AC-Plug with line-filter;
@@ -94,9 +96,9 @@ Korg DSS-1 - the flagship for upgrades! The following events were held for it:
  * a new blue LCD;
  * a built-in arduino nano for MIDI translator CC2SysEx;
 
-Korg DW8000 with Arduino chipping;
-Korg EX8000 with the same upgrade;
-
+Korg <<DW8000>> with Arduino chipping;
+Korg <<EX8000>> with the same upgrade;
+====
 [#EX8000]
 == Korg EX8000
 The first my project point it was with Korg EX8000: For full project details and step by step instructions discribed at https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer
