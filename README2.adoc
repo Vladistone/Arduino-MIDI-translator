@@ -161,17 +161,51 @@ I would say - based on their preferences of each performer at Korg DSS.
 - parameters `OSC 1 Level` and `OSC 2 Level`: which are marked on the operating system of the synthesizer as *[F14]* as `OSC Mix ratio` or *X-fader* with manipulation by one fade from the synth surface.
 This parameter is also described in the Program Parameter table [3] and has a image:IMAGES/LSB_MSB data format.jpeg
 
-[note]: _Must be set for both oscilator so that OSC1 + OSC2 = 100_
+[#NOTE]: _Must be set for both oscilator so that OSC1 + OSC2 = 100_
 
 
 which is not mandatory for the performing musician. because you can manage the parameters separately via Sysex:
-- `Osc 1 level: F0 42  30 0B 41 00 xx F7]`
-- `Osc 2 level: F0 42  30 0B 41 01 xx F7]`
 
-or 2nd way -`Osc Mix ratio:
-- F0 42  30 0B 41 00 xx 00 yy F7]`
+- `Osc 1 level: F0 42 30 0B 41 00 xx F7]`
+- `Osc 2 level: F0 42 30 0B 41 01 xx F7]`
+
+or 2nd way:
+`Osc Mix ratio: F0 42 30 0B 41 00 xx 00 yy F7]`
 ====
-My original code version is implemented as 2.
+My original code version is implemented as 2 (see Unit_3
+`// Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
+void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit_3
+  const int sysexLen = 10;
+  static byte sysexData[sysexLen] = {
+    0xF0, // 0 SOX
+    0x42, // 1 Manufacturer ID: 42, Korg
+    0x30, // 2 Channel 1
+    0x0B, // 3 Device ID: 0b, DSS-1
+    0x41, // 4 Message: 41, Parameter change (it not the parameter DUMP)
+    0x00, // 5 Parameter number (1-st param witch we going to change)
+    0x00, // 6 Parameter master value
+    0x00, // 7 Parameter number (be as slave)
+    0x00, // 8 Parameter slave value
+    0xF7  // 9 EOX
+    };
+
+    paramValue7Bit &= 0x7f;
+    int paramValueScaled;
+    switch (paramNumber) { // so here we rescale to fit to rang:
+    case 0x00: // [F14] paramNumber 0 OSC1 level Mix ratio (master)
+	case 0x01: // [F14] paramNumber 1 OSC2 level Mix ratio (slave)
+	paramValueScaled = paramValue7Bit*203/256; break;
+    default:
+    return;	// unknown parameter - ignore
+   }
+    sysexData[2] = 0x30 | ((channel - 1) & 0x0f);// Set channel number
+    sysexData[5] = paramNumber; // master must be (Mster+Slave) == 100%:
+    sysexData[6] = paramValueScaled & 0x7f; // master value
+    sysexData[7] = (paramNumber +1); // slave
+    sysexData[8] = (100 - paramValueScaled) & 0x7f; // slave value
+    MIDI.sendSysEx(sysexLen, sysexData, true);
+}`
+
 ====
 And this may be a controversial decision, since according to the reasoning on the https://glenstegner.com/dss1/home.html[Glen website]:
 - he prefers an independent control option for the `OSC 1&2` parameter with the ability to raise the level of both oscillators up to 100%, while training the powerful OUTPUT from the synthesizer.
