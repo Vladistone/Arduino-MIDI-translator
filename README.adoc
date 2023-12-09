@@ -41,7 +41,7 @@ kbd:[<<Back-to-Top>>]
 [TIP]
 The great idea is to organize a repository for codes of `Arduino MIDI translator` in one place, which to accumulate projects related to the rare synths from 80-90 y., by Arduino upgrading to facilitate focused share knowledge, and foster collaboration among musicians & coder enthusiasts. May be this dedicated space will serve as a hub for users to exchange code mapping, ideas, troubleshoot, and showcase their projects or branching related to the any synths upgrade by Arduino,.. Time will show...
 
-[WARNING}
+[WARNING]
 :MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
 And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
 Ctlr_2_Synth map layouts are very custom, so I'm no sure yet if it would make much sense to create map presets of code...
