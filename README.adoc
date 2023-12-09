@@ -240,18 +240,23 @@ and because of this limitation, I had to try to at least somehow use the SW butt
 where in brackets are the values that are unattainable when using the button 0-127
 
 kbd:[<<Back-to-Top>>]
+
 === Discribtion [Unit_1]
 
 kbd:[<<Back-to-Top>>]
+
 === Discribtion [Unit_2]
 
 kbd:[<<Back-to-Top>>]
+
 === Discribtion [Unit_3]
 
 kbd:[<<Back-to-Top>>]
+
 === Discribtion [Unit_4]
 
 kbd:[<<Back-to-Top>>]
+
 [#MIDI Table]
 = MIDI implementation charts
 if You wish remapping CC#2SysEx use the program parameter number
