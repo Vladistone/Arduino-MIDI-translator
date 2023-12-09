@@ -12,9 +12,10 @@
 :note-caption: pass:[&#128204;]
 :caution-caption: pass:[&#8252;]
 
+// at the moment I’m just gathering my thoughts and the description of README2 is still in its starting state, as soon as possible I will add blocks and pictures of examples of both synthesizers and analysis of the code and its internal blocks with explanations
 |===
-|Last update of text: |`2023-12-08 (v0.01.0)`
-|Last update of relevant screenshots: |`2023-12-08 (v0.01.0)`
+|Last update of text: |`2023-12-09 (v0.01.0)`
+|Last update of relevant screenshots: |`2023-12-09 (v0.01.0)`
 |===
 
 kbd:[<<Back-to-Top>>]
