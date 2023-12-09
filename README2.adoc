@@ -181,7 +181,7 @@ or 2nd way:
 My original code version is implemented as 2 (see Unit_3)
 
 [example%collapsible]
-[%linenums,cpp]
+[soursec,cpp,linenums]
 ----
 // Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
 void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit_3
