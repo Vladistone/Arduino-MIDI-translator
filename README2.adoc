@@ -100,8 +100,9 @@ There are base difference in the description of the implementation chart for DW8
 - DW8000 parameters range from 0 to 64 (or upto 6b of SysEx length) in 7 categories:
 - DSS-1 parameters vary from 0 to 127 and even upto 500 points; it increase the range categoties up to 12 (it mean SysEx length to 7b and upto 10b and more if you wish manupulating mod request parameter of synth)
 Therefore, it was necessary to analyze and remake the CC Value transformation system to the additional parameters of the DSS1 regulation range that appeared.
+====
 
-.The second:
+.the Second:
 ====
 The parameter correspondence table for DW8000 prepared in code isn't suitable for DSS-1 mapping, so I had to looking for, compeared and refer to the https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html#:~:text=service%20manual%20for%20DSS%2D1[service manual Korg DSS-1] and the https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html#:~:text=DSS%2D1_SysEx%20analytical%20table[DSS-1_SysEx excel table], which is available on the web.
 ====
