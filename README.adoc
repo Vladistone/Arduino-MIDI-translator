@@ -364,6 +364,7 @@ Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1Servic
 
 Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
 Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
+
 kbd:[<<Back-to-Top>>]
 
 [#troubleshooting]
