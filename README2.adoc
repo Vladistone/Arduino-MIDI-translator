@@ -12,6 +12,7 @@
 :note-caption: pass:[&#128204;]
 :caution-caption: pass:[&#8252;]
 
+// Reusable text snippets
 :synth_upgrade_instruction: to be created as soos as possible
 :code_implement_instruction: to be created as soos as possible
 :readme_content: at the moment I’m just gathering my thoughts and the description of README2 is still in its starting state, as soon as possible I will add blocks and pictures of examples of both synthesizers and analysis of the code and its internal blocks with explanations
@@ -41,8 +42,6 @@ kbd:[<<Back-to-Top>>]
 The great idea is to organize a repository for codes of `Arduino MIDI translator` in one place, which to accumulate projects related to the rare synths from 80-90 y., by Arduino upgrading to facilitate focused share knowledge, and foster collaboration among musicians & coder enthusiasts. May be this dedicated space will serve as a hub for users to exchange code mapping, ideas, troubleshoot, and showcase their projects or branching related to the any synths upgrade by Arduino,.. Time will show...
 
 
-// Reusable text snippets
-
 :MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
 And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
 Synth map layouts and using controllers to combine with synths are very custom, so I'm no sure yet if it would make much sense to create map presets of code... but the base approach of the system for developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
@@ -57,6 +56,7 @@ The project start from 5th July 2016 and based on a hack https://hackaday.io/pro
 It turned out to be non-working and required debugging. The pull request were added after fixing, but I did not find any activity from the project's master.
 So therefore, I independently continued the path of adapting the project for Korg DSS-1, thanks to mentoring from experienced Arduino C++ coder. I achieved the first results literally a week after the analysis differences between DW8000 vs DSS-1 of MIDI implementation charts.
 
+kbd:[<<Back-to-Top>>]
 
 === What is Arduino MIDI-translator?
 
@@ -78,7 +78,7 @@ This Simple Arduino project to remap MIDI `CC#` messages into `SysEx` messages t
 The practical upshot of this is that the Synth Program parameters can be controlled by standard `CC#` messages, rather than obscure `SysEx` messages.
 MIDI THRU is unaffected by the changes, as the Nano is be spliced in just before the MIDI IN reaches the CPU, AFTER the IN has been echoed back out of the THRU port.
 Certain `CC#` messages are replaced with `SysEx` parameter control messages, but all other MIDI messages are passed unchanged. This means that the `SysEx` messages can still be used.
-
+kbd:[<<Back-to-Top>>]
 
 [#Synth part]
 = Synth review
@@ -92,6 +92,8 @@ The first my project point it was with Korg EX8000: For full project details and
 
 [#DSS-1]
 == Korg DSS-1
+
+kbd:[<<Back-to-Top>>]
 
 [#Controller part]
 = Controller part review
@@ -107,13 +109,19 @@ The first my project point it was with Korg EX8000: For full project details and
 [#JP800]
 == Roland JP8000
 
+kbd:[<<Back-to-Top>>]
+
 [#code discribe]
 = CODE Discribtion
+
+kbd:[<<Back-to-Top>>]
 
 [#MIDI Table]
 = MIDI implementation charts
 
+kbd:[<<Back-to-Top>>]
 [#Nuances]
 = nuances and troubleshooting
 
+kbd:[<<Back-to-Top>>]
 
