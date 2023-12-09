@@ -175,8 +175,8 @@ or 2nd way:
 My original code version is implemented as 2 (see Unit_3)
 
 [example%collapsible]
-====
-[CODE]c++
+[source,cpp]
+----
 // Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
 void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit_3
   const int sysexLen = 10;
@@ -208,8 +208,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
     sysexData[8] = (100 - paramValueScaled) & 0x7f; // slave value
     MIDI.sendSysEx(sysexLen, sysexData, true);
 }
-[/CODE]
-====
+----
 
 ====
 And this may be a controversial decision, since according to the reasoning on the https://glenstegner.com/dss1/home.html[Glen website]:
