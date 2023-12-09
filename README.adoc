@@ -154,7 +154,7 @@ Therefore, it was necessary to analyze and remake the CC Value transformation sy
  .the Second:
 ====
 The parameter correspondence table in code for DW8000 isn't suitable for DSS-1 mapping, so I had to compeared and refer to the https://glenstegner.com/dss1/home.html[service manual Korg DSS-1] and the https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html#:~:text=DSS%2D1_SysEx%20analytical%20table[DSS-1_SysEx excel table], which is available on the https://glenstegner.com/dss1/home.html[Glen Stegner]and this site author very deeply described all the possibilities in the work of DSS-1. Therefore, I also pay tribute and respect to Glen Stegner in his preparation of the site.
-Including there are certain nuances when implementing Sisex commands, which I left for later and placed them in the last section <<nuances and troubleshooting>>:
+Including there are certain nuances when implementing Sisex commands, which I left for later and placed them in the last section nuances and <<troubleshooting>>:
 
 image:IMAGES/COM_IMG/GlenSiegner.png[GlenStegner]
 
@@ -342,7 +342,7 @@ kbd:[<<Back-to-Top>>]
 
 kbd:[<<Back-to-Top>>]
 
-[#nuances and troubleshooting]
+[#troubleshooting]
 = Nuances and troubleshooting
 on Glen Stegner's website there is a section on https://glenstegner.com/dss1/home.html[Tips and Trics], which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
 I would say - based on their preferences of each performer at Korg DSS.
