@@ -106,7 +106,6 @@ Therefore, it was necessary to analyze and remake the CC Value transformation sy
  .the Second:
 ====
 The parameter correspondence table for DW8000 prepared in code isn't suitable for DSS-1 mapping, so I had to looking for, compeared and refer to the https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html#:~:text=service%20manual%20for%20DSS%2D1[service manual Korg DSS-1] and the https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html#:~:text=DSS%2D1_SysEx%20analytical%20table[DSS-1_SysEx excel table], which is available on the https://glenstegner.com/dss1/home.html[Glen Stegner]
-:imagesdir: IMAGES/COM_IMG/
 
 image:IMAGES/COM_IMG/GlenSiegner.png[GlenStegner]
 
