@@ -132,7 +132,7 @@ kbd:[<<Back-to-Top>>]
 
 [#Nucleus]
 === SSL Nucleus
-:imagesdir: IMAGES/Controllers/SSL Nucleus/
+
 .example: MCU & XT Projections
 |===
 |image:projection_MCU.svg[Projection MCU,470,380] |image:projection_XT.svg[Projection XT,260,380]
@@ -387,7 +387,7 @@ I would say - based on their preferences of each performer at Korg DSS.
 - parameters `OSC 1 Level` and `OSC 2 Level`: which are marked on the operating system of the synthesizer as *[F14]* as `OSC Mix ratio` or *X-fader* with manipulation by one fade from the synth surface.
 This parameter is also described in the Program Parameter table [3] and has a *note2* below:
 
-image:LSB_MSB_data_format.jpeg
+image:IMAGES/Korg DSS-1/LSB_MSB_data_format.jpeg
 
 +
 [NOTE]
@@ -445,8 +445,8 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
 ====
 And this may be a controversial decision, since according to the reasoning on the https://glenstegner.com/dss1/home.html[Glen website]:
 - he prefers an independent control option for the `OSC 1 & 2` parameters separetly with the ability to raise the level of both oscillators up to 100%, while training the powerful OUTPUT from the synthesizer.
-:imagesdir: IMAGES/Korg DSS-1/
-image::Sysex_Mix_ratio.png[,500,600]
+
+image::IMAGES/Korg DSS-1/Sysex_Mix_ratio.png[,500,600]
 ====
 My reason was to create authenticity to
 - the "DSS like" control method and
@@ -454,7 +454,7 @@ My reason was to create authenticity to
 - the argument for *X-fader* control is that it is possible to achieve overload at the DAC output when playing particularly loud waves with distortion.
 ====
 How to avoid this and whether this is considered an artistic decision by the performer is up to everyone to decide for themselves!
-image:IMAGES/LSB_MSB data format.jpeg
+image:IMAGES/Korg DSS-1/Sysex_Mix_ratio.png
 
 kbd:[<<Back-to-Top>>]
 
