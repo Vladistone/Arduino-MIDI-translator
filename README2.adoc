@@ -100,6 +100,7 @@ kbd:[<<Back-to-Top>>]
 
 [#Nucleus]
 == SSL Nucleus
+
 .example: MCU & XT Projections
 |===
 |image:projection_MCU.svg[Projection MCU,470,380] |image:projection_XT.svg[Projection XT,260,380]
@@ -120,6 +121,7 @@ kbd:[<<Back-to-Top>>]
 = MIDI implementation charts
 
 kbd:[<<Back-to-Top>>]
+
 [#Nuances]
 = nuances and troubleshooting
 
