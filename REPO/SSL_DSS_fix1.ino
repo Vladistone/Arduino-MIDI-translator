@@ -70,96 +70,96 @@ if You wish remapping CC#2SysEx use the program parameter number (but not param.
 Refer: implementation chart [6]DSS-1 Programm parameter map, column "2", at pages 7-8:
 https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf)
 
-	Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumb)
-№	FunID ParamNumb hex[5]	# (range)	name			NOTE:  SysEx[5] hex eqiualent to paramNumber[#] inDec.
-1	[F01] paramNumb			--   (-) Inicalize params
-2	[F02] paramNumb			--   (-) Write/Rename
-3	[F11] paramNumb 0x3F	63   (3) Osc 1 Octave		16 (8) 4 within parenthese wouldnt work if use off/on SW
- SysEx [5] hex: param inDec[#] Eqiualent
-  case 0x00: // paramNumber 0 Osc 1 Level (101)
-  case 0x01: // paramNumber 1 Osc 2 Level (101)
-  case 0x02: // paramNumber 2 A.Bend Intesity/ Portameto mix (128)
-  case 0x03: // paramNumber 3 Noise Level (64)
-  case 0x04: // paramNumber 4 VCF Mode/Slope (2)
-  case 0x05: // paramNumber 5 VCF EG Polarity (2)
-  case 0x06: // paramNumber 6 VCF Cutoff (128)
-  case 0x07: // paramNumber 7 VCF EG Intensity (64)
-  case 0x08: // paramNumber 8 VCF Resonance (64)
-  case 0x09: // paramNumber 9 VCF Kbd Track (64)
-  case 0x0A: // paramNumber 10 VCF MG Frequency (64)
-  case 0x0B: // paramNumber 11 VCF MG Delay (64)
-  case 0x0C: // paramNumber 12 VCF MG Intensity (64)
-  case 0x0D: // paramNumber 13 VCF EG Attack (64)
-  case 0x0E: // paramNumber 14 VCF EG Decay (64)
-  case 0x0F: // paramNumber 15 VCF EG Breakpoint (64)
-  case 0x10: // paramNumber 16 VCF EG Slope (64)
-  case 0x11: // paramNumber 17 VCF EG Sustain (64)
-  case 0x12: // paramNumber 18 VCF EG Release (64)
-  case 0x13: // paramNumber 19 VCA Kbd Decay (128)
-  case 0x14: // paramNumber 20 VCA Level (64)
-  case 0x15: // paramNumber 21 VCA EG Attack (64)
-  case 0x16: // paramNumber 22 VCA EG Decay (64)
-  case 0x17: // paramNumber 23 VCA EG Breakpoint (64)
-  case 0x18: // paramNumber 24 VCA EG Slope (64)
-  case 0x19: // paramNumber 25 VCA EG Sustain (64)
-  case 0x1A: // paramNumber 26 VCA EG Release (64)
-  case 0x1B: // paramNumber 27 Veloc ABend Intens (64)
-  case 0x1C: // paramNumber 28 Veloc VCF Cutoff (16)
-  case 0x1D: // paramNumber 29 Veloc VCF EG Attack (64)
-  case 0x1E: // paramNumber 30 Veloc VCF EG Decay (64)
-  case 0x1F: // paramNumber 31 Veloc VCF EG Slope (64)
-  case 0x20: // paramNumber 32 VCA EG Intensity (64)
-  case 0x21: // paramNumber 33 Veloc VCA EG Attack (64)
-  case 0x22: // paramNumber 34 Veloc VCA EG Decay (64)
-  case 0x23: // paramNumber 35 Veloc VCA EG Slope (64)
-  case 0x24: // paramNumber 36 ATch Osc MG Intens (16)
-  case 0x25: // paramNumber 37 ATch VCF Level (16)
-  case 0x26: // paramNumber 38 ATch VCF Mode (2)
-  case 0x27: // paramNumber 39 ATch VCA Level (16)
-  case 0x28: // paramNumber 40 JStck PBend Range (13)
-  case 0x29: // paramNumber 41 JStck VCF Mode (2)
-  case 0x2A: // paramNumber 42 EQ Bass (13)
-  case 0x2B: // paramNumber 43 EQ Treble (13)
-  case 0x2C: // paramNumber 44 DDL MG-A Freq (64)
-  case 0x2D: // paramNumber 45 DDL MG-B Freq (64)
-  case 0x2E: // paramNumber 46 DDL-1 Time (a) (128)
-  case 0x2E: // paramNumber 46 DDL-1 Time (b) (128)
-  case 0x2E: // paramNumber 46 DDL-1 Time (c) (128)
-  case 0x2E: // paramNumber 46 DDL-1 Time (d) (117)
-  case 0x2F: // paramNumber 47 DDL-1 Feedback (16)
-  case 0x30: // paramNumber 48 DDL-1 Effect Level (16)
-  case 0x31: // paramNumber 49 DDL-1 MG-A Intens (64)
-  case 0x32: // paramNumber 50 DDL-1 MG-B Intens (64)
-  case 0x33: // paramNumber 51 DDL-2 Input Select (2)
-  case 0x34: // paramNumber 52 DDL-2 Time (a) (128)
-  case 0x34: // paramNumber 52 DDL-2 Time (b) (128)
-  case 0x34: // paramNumber 52 DDL-2 Time (c) (128)
-  case 0x34: // paramNumber 52 DDL-2 Time (d) (117)
-  case 0x35: // paramNumber 53 DDL-2 Feedback (16)
-  case 0x36: // paramNumber 54 DDL-2 Effect Level (16)
-  case 0x37: // paramNumber 55 DDL-2 MG-A Intens (64)
-  case 0x38: // paramNumber 56 DDL-2 MG-B Intens (64)
-  case 0x39: // paramNumber 57 DDL-2 Mod Invert (2)
-  case 0x3A: // paramNumber 58 Osc 1 Multisound (16)
-  case 0x3B: // paramNumber 59 Osc 2 Multisound (16)
-  case 0x3C: // paramNumber 60 Max OSC Band Range (13)
-  case 0x3D: // paramNumber 61 Sync Mode (2)
-  case 0x3E: // paramNumber 62 Bit D A Resolution (5)
-  case 0x3F: // paramNumber 63 Osc 1 Octave (3)
-  case 0x40: // paramNumber 64 Osc 2 Octave (3)
-  case 0x41: // paramNumber 65 Osc 2 Detune (64)
-  case 0x42: // paramNumber 66 Osc 2 Interval (12)
-  case 0x43: // paramNumber 67 Osc MG Select (4)
-  case 0x44: // paramNumber 68 Osc MG Frequency (32)
-  case 0x45: // paramNumber 69 Osc MG Intensity (64)
-  case 0x46: // paramNumber 70 Osc MG Delay (16)
-  case 0x47: // paramNumber 71 A.Bend Select (4)
-  case 0x48: // paramNumber 72 A.Bend Polarity Mode (2)
-  case 0x49: // paramNumber 73 A.Bend Time/ Portamento time (32)
-  case 0x4A: // paramNumber 74 Unison Detune (8)
-  case 0x4B: // paramNumber 75 Veloc Osc X-Switch (32)
-  case 0x4C: // paramNumber 76 Key Assign mode (3)
-  case 0x4D: // paramNumber 77 Unison Voices (4)
+Korg DSS-1 Parameter list (sorted by paramNumber)
+
+hex[4]	 FunID ParamNumber # range Parameter name
+--------------------------------------------------------
+--	  // [F01] paramNumber--  (-)  Initialize parameters
+--	  // [F02] paramNumber--  (-)  Write/Rename
+0x12: //[id12] FunctionID 18  (1)  Request Mode condition
+0x13: //[id13] FunctionID 19  (1)  Request Play Mod
+0x16: //[id16] FunctionID 22  (1)  Request MSound list
+0x23: //[id17] FunctionID 23  (1)  Request Program name list
+hex[5]
+0x00: // [F14] paramNumber 0 (101) Osc 1 Lev /OSC mix ratio
+0x01: // [F14] paramNumber 1 (101) Osc 2 Level
+0x02: // [F19] paramNumber 2 (128) A.Bend Intesity
+0x03: // [F21] paramNumber 3  (64) Noise Level
+0x04: // [F31] paramNumber 4   (2) VCF Mode/Slope
+0x05: // [F31] paramNumber 5   (2) VCF EG Polarity
+0x06: // [F32] paramNumber 6 (128) VCF Cutoff
+0x07: // [F32] paramNumber 7  (64) VCF EG Intensity
+0x08: // [F33] paramNumber 8  (64) VCF Resonance
+0x09: // [F33] paramNumber 9  (64) VCF Kbd Track
+0x0A: // [F34] paramNumber 10 (64) VCF MG Mod Frequency
+0x0B: // [F34] paramNumber 11 (64) VCF MG Mod Delay
+0x0C: // [F34] paramNumber 12 (64) VCF MG Mod Intensity
+0x0D: // [F35] paramNumber 13 (64) VCF EG Attack
+0x0E: // [F35] paramNumber 14 (64) VCF EG Decay
+0x0F: // [F35] paramNumber 15 (64) VCF EG Breakpoint
+0x10: // [F35] paramNumber 16 (64) VCF EG Slope
+0x11: // [F35] paramNumber 17 (64) VCF EG Sustain
+0x12: // [F35] paramNumber 18 (64) VCF EG Release
+0x13: // [F37] paramNumber 19(128) VCA Kbd Decay
+0x14: // [F36] paramNumber 20 (64) VCA Total Level
+0x15: // [F38] paramNumber 21 (64) VCA EG Attack
+0x16: // [F38] paramNumber 22 (64) VCA EG Decay
+0x17: // [F38] paramNumber 23 (64) VCA EG Breakpoint
+0x18: // [F38] paramNumber 24 (64) VCA EG Slope
+0x19: // [F38] paramNumber 25 (64) VCA EG Sustain
+0x1A: // [F38] paramNumber 26 (64) VCA EG Release
+0x1B: // [F41] paramNumber 27 (64) Veloc ABend Intens
+0x1C: // [F42] paramNumber 28 (16) Veloc VCF Cutoff
+0x1D: // [F43] paramNumber 29 (64) Veloc VCF EG Attack
+0x1E: // [F43] paramNumber 30 (64) Veloc VCF EG Decay
+0x1F: // [F43] paramNumber 31 (64) Veloc VCF EG Slope
+0x20: // [F44] paramNumber 32 (64) VCA EG Intensity
+0x21: // [F45] paramNumber 33 (64) Veloc VCA EG Attack
+0x22: // [F45] paramNumber 34 (64) Veloc VCA EG Decay
+0x23: // [F45] paramNumber 35 (64) Veloc VCA EG Slope
+0x24: // [F51] paramNumber 36 (16) ATch Osc MG Intens
+0x25: // [F52] paramNumber 37 (16) ATch VCF Level
+0x26: // [F52] paramNumber 38  (2) ATch VCF Mode
+0x27: // [F53] paramNumber 39 (16) ATch VCA Level
+0x28: // [F61] paramNumber 40 (13) JStck PBend Range
+0x29: // [F62] paramNumber 41  (2) JStck VCF Mode /Sweep
+0x2A: // [F65] paramNumber 42 (13) EQ Bass
+0x2B: // [F65] paramNumber 43 (13) EQ Treble
+0x2C: // [F71] paramNumber 44 (64) DDL MG-A Freq
+0x2D: // [F71] paramNumber 45 (64) DDL MG-B Freq
+0x2E: // [F81] paramNumber 46(501) DDL-1 Time
+0x2F: // [F82] paramNumber 47 (16) DDL-1 Feedback
+0x30: // [F83] paramNumber 48 (16) DDL-1 Effect Level
+0x31: // [F84] paramNumber 49 (64) DDL-1 MG-A Intens
+0x32: // [F84] paramNumber 50 (64) DDL-1 MG-B Intens
+0x33: // [F91] paramNumber 51  (2) DDL-2 Input Select
+0x34: // [F92] paramNumber 52(501) DDL-2 Time
+0x35: // [F93] paramNumber 53 (16) DDL-2 Feedback
+0x36: // [F94] paramNumber 54 (16) DDL-2 Effect Level
+0x37: // [F95] paramNumber 55 (64) DDL-2 MG-A Intens
+0x38: // [F95] paramNumber 56 (64) DDL-2 MG-B Intens
+0x39: // [F96] paramNumber 57  (2) DDL-2 Mod Invert
+0x3A: // [F12] paramNumber 58 (16) Osc 1 Multisound
+0x3B: // [F13] paramNumber 59 (16) Osc 2 Multisound
+0x3C: // [F--] paramNumber 60 (13) Max OSC Band Range
+0x3D: // [F16] paramNumber 61  (2) Sync Mode
+0x3E: // [F16] paramNumber 62  (5) Bit Resolution
+0x3F: // [F11] paramNumber 63  (3) Osc 1 Octave
+0x40: // [F--] paramNumber 64  (2) Dumper pedal
+0x40: // [F11] paramNumber 64  (3) Osc 2 Octave
+0x41: // [F15] paramNumber 65 (64) Osc 2 Detune
+0x42: // [F15] paramNumber 66 (12) Osc 2 Interval
+0x43: // [F17] paramNumber 67  (4) Osc MG Mod Select
+0x44: // [F17] paramNumber 68 (32) Osc MG Mod Freq
+0x45: // [F17] paramNumber 69 (64) Osc MG Mod Intens
+0x46: // [F17] paramNumber 70 (16) Osc MG Mod Delay
+0x47: // [F18] paramNumber 71  (4) A.Bend Select
+0x48: // [F18] paramNumber 72  (2) A.Bend Polarity Mode
+0x49: // [F19] paramNumber 73 (32) A.Bend Time
+0x4A: // [F64] paramNumber 74  (8) Unison Detune
+0x4B: // [F46] paramNumber 75 (32) Veloc Osc X-Switch
+0x4C: // [F63] paramNumber 76  (3) Key Assign mode
+0x4D: // [F64] paramNumber 77  (4) Unison Voices
 #endif
 
 // Main DSS-1: Scaling SysEx_8 leight for paramNumber of [5]
