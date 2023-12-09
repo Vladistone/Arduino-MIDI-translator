@@ -123,7 +123,8 @@ The design turned out to be more clear when opening the top cover of the synth a
 ability the Arduino unit can be removed for reprogramming of the code.
 
 kbd:[<<Back-to-Top>>]
-[#Controller review]
+
+[#Controller]
 = Controller review
 
 [#Nucleus]
@@ -140,9 +141,10 @@ kbd:[<<Back-to-Top>>]
 
 kbd:[<<Back-to-Top>>]
 
-[#code discribe]
+[#code]
 == CODE Discribtion:
-=== Preparation for renovation of code for DSS-1:
+
+=== Preparation for DSS-1 coding:
 There are base difference in the description of the implementation chart for DW8000 vs DSS-1:
 
  .the First:
@@ -156,23 +158,23 @@ Therefore, it was necessary to analyze and remake the CC Value transformation sy
 ====
 The parameter correspondence table in code for DW8000 isn't suitable for DSS-1 mapping, so I had to compeared and refer to the https://glenstegner.com/dss1/home.html[service manual Korg DSS-1] and the https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html#:~:text=DSS%2D1_SysEx%20analytical%20table[DSS-1_SysEx excel table], which is available on the https://glenstegner.com/dss1/home.html[Glen Stegner]and this site author very deeply described all the possibilities in the work of DSS-1. Therefore, I also pay tribute and respect to Glen Stegner in his preparation of the site.
 Including there are certain nuances when implementing Sisex commands, which I left for later and placed them in the last section nuances and <<troubleshooting>>:
-
+====
 image:IMAGES/COM_IMG/GlenSiegner.png[GlenStegner]
 
-====
 
  .The Third:
 ====
-- the parameters `DDL 1&2 Time` have control range from *0~500*, and it was necessary to create additional processing to transform the CC# range (0-127) into the expected one, implement 9-byte SysEx distribution over MSB LSB nibbles.
+the parameters `DDL 1&2 Time` have control range from *0~500*, and it was necessary to create additional processing to transform the CC# range (0-127) into the expected one, implement 9-byte SysEx distribution over MSB LSB nibbles.
 ====
 
  .The Four:
 ====
-- the parameters `DDL 1&2 Time` have control range from *0~500*, and it was necessary to create additional processing to transform the CC# range (0-127) into the expected one, implement 9-byte SysEx distribution over MSB LSB nibbles.
+the parameters `DDL 1&2 Time` have control range from *0~500*, and it was necessary to create additional processing to transform the CC# range (0-127) into the expected one, implement 9-byte SysEx distribution over MSB LSB nibbles.
 ====
 On this basis, a new table of correspondence between DDS-1 parameters and application of parameters to CC# control messages from the controller.
 
-=== Discribtion of coding text:
+[#Unit]
+=== Discribtion coding unit:
 Unfortunately, I’m not a professional coder and apparently you noticed my lack of professionalism even earlier. Therefore, I describe the process of creating code as a self-taught person. having experience in coding in basic and fortran when computer centers were relevant and a personal computer was like a spaceship - unattainable. And the current Windows wasn't even 3.1
 
 So, code distributed across 5 different units
@@ -188,7 +190,7 @@ SysEx byte preparation blocks:
  - setup & loop..........[Unit_5]
 ----
 
-==== unrealized ideas and in processing part:
+==== Not realized ideas, and parts in processing:
 At the time of publication of the code, there were unrealized ideas for processing the remaining SysEx commands located in the section [Unit_0] as:
 
 [%collapsible]
@@ -197,7 +199,7 @@ At the time of publication of the code, there were unrealized ideas for processi
 Sysex hex[4]:  functionDec## [ ID ] name of param	action		status:
 case  0x10: // functionID 16 [id10] Program Param	Request		in progress:
 case  0x11: // functionID 17 [id11] Write		Request		--
-case  0x12: // functionID 18 [id12] Mode			Request		done
+case  0x12: // functionID 18 [id12] Mode		Request		done
 case  0x13: // functionID 19 [id13] Play mode 		Request		done
 case  0x14: // functionID 20 [id14] PCM data		Request		researching
 case  0x15: // functionID 21 [id15] MSound parameter	Request		--
@@ -213,25 +215,34 @@ case  0x46: // functionID 70 [id46] Program nameList	Tx only		in progress
 ----
 
 ==== [Unit_0]
-the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte. This was implemented at the very last moment and represents the most interesting section for further development in case of interest from both the code supporter and the performer himself . Therefore, any help and cooperation is accepted!
+the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte.
+This was implemented at the very last moment and represents the most interesting section for further development in case of interest from both the code supporter and the performer himself.
+Therefore, any help and cooperation is accepted!
 Also in the interblock space there is a complete list of parameters of the DSS-1 program with hex and decimal data correspondence for ease of programming.
 
 ====
-From my little programming experience, I can say that I used Pocket MIDI software to monitor MIDI messages and because of it I got into trouble when compiling the CC#2SysEx correspondence table due to combining data in decimal and hexadecimal formats in one IN / OUT monitor window, which led to a fatal error at the last stage of the redesign.
-TIP when working with correspondence tables, use Excel tables and convert hex or DEC data into a single, readable format. but taking into account how SysEx and CC# will be presented when debugging with a MIDI monitor
+From my little programming experience, I can say that I used Pocket MIDI software to monitor MIDI messages and because of it
+I got into trouble when compiling the CC#2SysEx correspondence table due to combining data in decimal & hex formats at IN/OUT monitor,
+which led to a fatal error at the last stage of the redesign.
+TIP when working with correspondence tables, use Excel tables and convert hex or DEC data into a single, readable format.
+But taking into account how SysEx and CC# will be presented when debugging with a MIDI monitor.
 ====
 
-Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
+Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD
+of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
 
 I’ll immediately voice some notes present in the code as an addition:
 
 [#NOTE] within parentheses wouldn't work if use off/on SW
 
-My Arduino project had limitations when designing the lookup table/template:
-- *Nucleus2 SSL controller*
-I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only. In a situation where more targes level of change are required (at least 4 or 16 levels)... Moreover, the SSL engineers decision was somehow strange to software exclude the central group of CC# (from 32 to 63) from the control list and continue further from 64 to 95 of CC#?!
+My Arduino project had limitations when designing the lookup table/template: *Nucleus2 SSL controller*
+I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements
+- as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only.
+In a situation where more targes level of change are required (at least 4 or 16 levels)...
+The SSL engineers decision was somehow strange to software exclude the central group of CC# (from 32 to 63) from the control list and continue further from 64 to 95 of CC#?!
 
-and because of this limitation, I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values. Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
+and because of this limitation, I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values.
+Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
 
 `Osc MG ModSel	Off (Osc1, Osc2) Both`
 
@@ -239,30 +250,30 @@ where in brackets are the values that are unattainable when using the button 0-1
 
 kbd:[<<Back-to-Top>>]
 
-==== Discribtion [Unit_1]
+==== [Unit_1]
 
 kbd:[<<Back-to-Top>>]
 
-==== Discribtion [Unit_2]
+==== [Unit_2]
 
 kbd:[<<Back-to-Top>>]
 
-==== Discribtion [Unit_3]
+==== [Unit_3]
 
 kbd:[<<Back-to-Top>>]
 
-==== Discribtion [Unit_4]
+==== [Unit_4]
 
 kbd:[<<Back-to-Top>>]
 
-[#MIDI Table]
+[#inplementation]
 == MIDI implementation charts
 if You wish remapping CC#2SysEx use the program parameter number
 Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf[implementation chart `6`DSS-1 Programm parameter map], column "2", at pages 7-8:
 
-[NOTE]
+[Warring]
 ----
-(but not param.Offset).
+but not param.Offset
 ----
 
 .Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
@@ -361,7 +372,8 @@ Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1Servic
 ----
 
 Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
-Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
+Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1,
+which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from Glen Stegner.
 
 kbd:[<<Back-to-Top>>]
 
