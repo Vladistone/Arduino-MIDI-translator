@@ -182,7 +182,7 @@ or 2nd way:
 My original code version is implemented as 2 (see Unit_3)
 
 [example%collapsible]
-[,cpp,linenums]
+[,cpp,%linenums]
 ----
 // Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
 void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit_3
@@ -209,7 +209,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
     return;	// unknown parameter - ignore
    }
     sysexData[2] = 0x30 | ((channel - 1) & 0x0f);// Set channel number
-    sysexData[5] = paramNumber; // master must be (Mster+Slave) == 100%:
+    sysexData[5] = paramNumber; // master must be (master+slave) == 100%:
     sysexData[6] = paramValueScaled & 0x7f; // master value
     sysexData[7] = (paramNumber +1); // slave
     sysexData[8] = (100 - paramValueScaled) & 0x7f; // slave value
