@@ -454,7 +454,7 @@ My reason was to create authenticity to
 - the argument for *X-fader* control is that it is possible to achieve overload at the DAC output when playing particularly loud waves with distortion.
 ====
 How to avoid this and whether this is considered an artistic decision by the performer is up to everyone to decide for themselves!
-image:IMAGES/Korg DSS-1/Sysex_Mix_ratio.png
+[image]IMAGES/Korg DSS-1/Sysex_Mix_ratio.png
 
 kbd:[<<Back-to-Top>>]
 
