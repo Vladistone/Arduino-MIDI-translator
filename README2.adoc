@@ -170,6 +170,7 @@ which is not mandatory for the performing musician. because you can manage the p
  - `Osc 2 level: [F0 42 30 0B 41 01 xx F7]`
 
 or 2nd way:
+
  - `Osc Mix ratio: [F0 42 30 0B 41 00 xx 00 yy F7]`
 
 My original code version is implemented as 2 (see Unit_3)
