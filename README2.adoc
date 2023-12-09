@@ -176,7 +176,8 @@ My original code version is implemented as 2 (see Unit_3)
 
 [example%collapsible]
 ====
-`// Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
+[CODE]c++
+// Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
 void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit_3
   const int sysexLen = 10;
   static byte sysexData[sysexLen] = {
@@ -194,7 +195,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
     paramValue7Bit &= 0x7f;
     int paramValueScaled;
     switch (paramNumber) { // so here we rescale to fit to rang:
-    case 0x00: // [F14] paramNumber 0 OSC1 level Mix ratio (master)
+        case 0x00: // [F14] paramNumber 0 OSC1 level Mix ratio (master)
 	case 0x01: // [F14] paramNumber 1 OSC2 level Mix ratio (slave)
 	paramValueScaled = paramValue7Bit*203/256; break;
     default:
@@ -206,7 +207,8 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
     sysexData[7] = (paramNumber +1); // slave
     sysexData[8] = (100 - paramValueScaled) & 0x7f; // slave value
     MIDI.sendSysEx(sysexLen, sysexData, true);
-}`
+}
+[/CODE]
 ====
 
 ====
