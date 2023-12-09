@@ -78,7 +78,8 @@ Certain `CC#` messages are replaced with `SysEx` parameter control messages, but
 
 
 [#Synth part]
-= Korg EX8000
+= Synth review
+
 [#EX8000]
 == Korg EX8000
 The first my project point it was with Korg EX8000: For full project details and step by step instructions discribed at https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer
@@ -90,7 +91,7 @@ The first my project point it was with Korg EX8000: For full project details and
 == Korg DSS-1
 
 [#Controller part]
-= Korg EX8000
+= Controller part review
 
 [#Nucleus]
 == SSL Nucleus
@@ -107,8 +108,9 @@ The first my project point it was with Korg EX8000: For full project details and
 = CODE Discribtion
 
 [#MIDI Table]
-== MIDI implementation charts
+= MIDI implementation charts
 
 [#Nuances]
-== nuances and troubleshooting
+= nuances and troubleshooting
+
 
