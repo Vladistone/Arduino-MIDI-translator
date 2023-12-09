@@ -39,7 +39,10 @@ kbd:[<<Back-to-Top>>]
 == Introduction and a bit history
 
 [TIP]
-The great idea is to organize a repository for codes of `Arduino MIDI translator` in one place, which to accumulate projects related to the rare synths from 80-90 y., by Arduino upgrading to facilitate focused share knowledge, and foster collaboration among musicians & coder enthusiasts. May be this dedicated space will serve as a hub for users to exchange code mapping, ideas, troubleshoot, and showcase their projects or branching related to the any synths upgrade by Arduino,.. Time will show...
+The great idea is to organize a repository for codes of `Arduino MIDI translator` in one place, which to accumulate projects related to the rare synths from 80-90 y.,
+by Arduino upgrading to facilitate focused share knowledge, and foster collaboration among musicians & coder enthusiasts.
+May be this dedicated space will serve as a hub for users to exchange code mapping, ideas, troubleshoot,
+and showcase their projects or branching related to the any synths upgrade by Arduino,.. Time will show...
 
 [WARNING]
 :MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
