@@ -64,16 +64,13 @@ Probably you know already that Arduino is a sort ofimprovement or upgrade over S
 
 imag::under_controller.jpg
 ____
-
 Arduino is an IC board which will allow you to take whatever MIDI controller you have, be it a keyboard or some fader box, plug it in and  tune changing of the parameter of synth…
 regardless of whether your oldschool synthesizer can read `CC#` commands or not.
 
 And for such pleasures as independence from expensive specialized controllers or the not need to be chained to a computer for software MIDI translation, you can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DSS-1  using Arduino and with programming skills!!
 ____
 
-
 This Simple Arduino project to remap MIDI `CC#` messages into `SysEx` messages that Korg DSS-1 Synth expects.
-
 
 The practical upshot of this is that the Synth Program parameters can be controlled by standard `CC#` messages, rather than obscure `SysEx` messages.
 MIDI THRU is unaffected by the changes, as the Nano is be spliced in just before the MIDI IN reaches the CPU, AFTER the IN has been echoed back out of the THRU port.
@@ -81,7 +78,7 @@ Certain `CC#` messages are replaced with `SysEx` parameter control messages, but
 
 kbd:[<<Back-to-Top>>]
 
-[#Synths preview art]
+[#Synths review]
 == Synths review
 This section is dedicated to the internal features and details when implementing Arduino on a synthesizer board (I will try to describe how it worked out for me and give links to the experience of other experimenters with their upgrage...
 Here is my small list of synthesizers that achieved results with the Arduino translator!
@@ -123,8 +120,8 @@ The design turned out to be more clear when opening the top cover of the synth a
 ability the Arduino unit can be removed for reprogramming of the code.
 
 kbd:[<<Back-to-Top>>]
-[#Controller part]
-= Controller part review
+[#Controller review]
+= Controller review
 
 [#Nucleus]
 === SSL Nucleus
