@@ -36,7 +36,6 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 
 kbd:[<<Back-to-Top>>]
 
-[colophon]
 == Introduction and a bit history
 
 [TIP]
