@@ -200,22 +200,22 @@ At the time of publication of the code, there were unrealized ideas for processi
 [%collapsible]
 [,cpp,%linenums]
 ----
- Sysex hex[4]:    funcID inDec# [id Eqiualent] name		action		status:
-	case 0x10: // functionID 16 [id10] Program Param	Request		in progress:
-	case 0x11: // functionID 17 [id11] Write		Request		--
-	case 0x12: // functionID 18 [id12] Mode			Request		done
-	case 0x13: // functionID 19 [id13] Play mode 		Request		done
-	case 0x14: // functionID 20 [id14] PCM data		Request		researching
-	case 0x15: // functionID 21 [id15] MSound parameter	Request		--
-	case 0x16: // functionID 22 [id16] MSound list		Request		in progress
-	case 0x17: // functionID 23 [id17] Program nameList	Request		in progress
-	case 0x40: // functionID 64 [id40] Program paramDump 	Tx/Rx		in progress
-	case 0x41: // functionID 65 [id41] Program *parameter Change*		done
-	case 0x42: // functionID 66 [id43] Mode data		Tx only		---
-	case 0x43: // functionID 67 [id43] PCM data Dump	Tx/Rx		researching
-	case 0x44: // functionID 68 [id44] MSound param Dump	Tx/Rx		researching
-	case 0x45: // functionID 69 [id45] MSound list		Tx/Rx		in progress
-	case 0x46: // functionID 70 [id46] Program nameList	Tx only		in progress
+Sysex hex[4]:  functionDec## [ ID ] name of param	action		status:
+case  0x10: // functionID 16 [id10] Program Param	Request		in progress:
+case  0x11: // functionID 17 [id11] Write		Request		--
+case  0x12: // functionID 18 [id12] Mode			Request		done
+case  0x13: // functionID 19 [id13] Play mode 		Request		done
+case  0x14: // functionID 20 [id14] PCM data		Request		researching
+case  0x15: // functionID 21 [id15] MSound parameter	Request		--
+case  0x16: // functionID 22 [id16] MSound list		Request		in progress
+case  0x17: // functionID 23 [id17] Program nameList	Request		in progress
+case  0x40: // functionID 64 [id40] Program paramDump 	Tx/Rx		in progress
+case  0x41: // functionID 65 [id41] Program *parameter Change*		done
+case  0x42: // functionID 66 [id43] Mode data		Tx only		---
+case  0x43: // functionID 67 [id43] PCM data Dump	Tx/Rx		researching
+case  0x44: // functionID 68 [id44] MSound param Dump	Tx/Rx		researching
+case  0x45: // functionID 69 [id45] MSound list		Tx/Rx		in progress
+case  0x46: // functionID 70 [id46] Program nameList	Tx only		in progress
 ----
 
 === Discribtion [Unit_0]
