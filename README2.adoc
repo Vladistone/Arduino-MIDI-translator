@@ -42,7 +42,7 @@ The great idea is to organize a repository for `Arduino MIDI translator` codes i
 
 :MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
 And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
-Synth map layouts and using controllers to combine with synths are very custom, so I'm no sure yet if it would make much sense to create map presets of code... but the base approach of the system for developing code for Arduino MIDI translator and consistency in adapting MIDI implementation has already been launched and this requires publicity...
+Synth map layouts and using controllers to combine with synths are very custom, so I'm no sure yet if it would make much sense to create map presets of code... but the base approach of the system for developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
 *show must go on*!
 
 .MIDI implementaion developing
