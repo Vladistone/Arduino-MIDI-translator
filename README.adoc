@@ -217,12 +217,14 @@ case  0x46: // functionID 70 [id46] Program nameList	Tx only		---
 ----
 
 ==== [Unit_0]
-image:IMAGES/COM_IMG/LSB_MSB_data_format.jpeg
+image::IMAGES/COM_IMG/LSB_MSB_data_format.jpeg[,400.500]
+
 the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte.
 This was implemented at the very last moment and represents the most interesting section for further development in case of interest from both the code supporter and the performer himself.
 Therefore, any help and cooperation is accepted!
 Also in the interblock space there is a complete list of parameters of the DSS-1 program with hex and decimal data correspondence for ease of programming.
-image:IMAGES/Korg DSS-1/MODE_data.jpeg
+
+image::IMAGES/Korg DSS-1/MODE_data.jpeg[,400.500]
 ====
 From my little programming experience, I can say that I used Pocket MIDI software to monitor MIDI messages and because of it
 I got into trouble when compiling the CC#2SysEx correspondence table due to combining data in decimal & hex formats at IN/OUT monitor,
