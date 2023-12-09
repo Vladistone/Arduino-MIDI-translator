@@ -37,9 +37,13 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 kbd:[<<Back-to-Top>>]
 
 [colophon]
-= Introduction
+= Introduction and a bit history
 :imagesdir: IMAGES/Controllers/SSL Nucleus/
-The great idea is to organize a repository for Arduino MIDI translator codes in one place to accumulate projects related to the rare synths from 80-90 y., by Arduino upgrade to facilitate focused share knowledge, and foster collaboration among musicians & coder enthusiasts. May be this dedicated space will serve as a hub for users to exchange ideas, troubleshoot, and showcase their projects related to the any synths Arduino upgrade:
+The great idea is to organize a repository for Arduino MIDI translator codes in one place to accumulate projects related to the rare synths from 80-90 y., by Arduino upgrade to facilitate focused share knowledge, and foster collaboration among musicians & coder enthusiasts. May be this dedicated space will serve as a hub for users to exchange code ideas, troubleshoot, and showcase their projects related to the any synths Arduino upgrade.
+
+The project start from 5th July 2016 and based on a hack https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] by https://github.com/sjbaines/Korg_DW-8000_Midi_Enhancer[Steve Baines]. 
+The Korg DW-8000; EX800; DSS-1 (and other early synthesisers) was created during the early days of MIDI, before things like `CC#` messages were standardised.  As a result, it uses proprietary `SysEx` commands to change parameters over MIDI.  Most modern MIDI controllers use `CC#` messages instead, and very few are flexible enough to be able to send the appropriate `SysEx` messages.
+
 === What is Arduino MIDI `CC#` translator?
 
 Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram. But what is it exactly? Let me put it this way:
@@ -60,8 +64,6 @@ ____
 |===
 
 This Simple Arduino project to remap MIDI `CC#` messages into `SysEx` messages that Korg DSS-1 Synth expects.
-The project start from 5th July 2016 and based on a hack https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] by https://github.com/sjbaines/Korg_DW-8000_Midi_Enhancer[Steve Baines]. 
-The Korg DW-8000; EX800; DSS-1 (and other early synthesisers) was created during the early days of MIDI, before things like `CC#` messages were standardised.  As a result, it uses proprietary `SysEx` commands to change parameters over MIDI.  Most modern MIDI controllers use `CC#` messages instead, and very few are flexible enough to be able to send the appropriate `SysEx` messages.
 
 This project uses an embedded Arduino Nano (or clone) mounted inside the Korg synth, which is used to intercept the MIDI IN data just before it reaches the CPU of synth. It replaces specific `CC#` messages with `SysEx` messages that the Sysnthesizer understands them.
 
