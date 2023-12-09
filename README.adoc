@@ -146,7 +146,7 @@ kbd:[<<Back-to-Top>>]
 
 [#code]
 == Coding review:
-:imagesdir: IMAGES/COM_IMG/
+
 === Preparation for DSS-1 coding:
 There are base difference in the description of the implementation chart for DW8000 vs DSS-1:
 
@@ -379,7 +379,7 @@ kbd:[<<Back-to-Top>>]
 
 [#troubleshooting]
 == Nuances and troubleshooting
-:imagesdir: IMAGES/COM_IMG/
+
 on Glen Stegner's website there is a section on https://glenstegner.com/dss1/home.html[Tips and Trics], which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
 I would say - based on their preferences of each performer at Korg DSS.
   .here is one of them:
