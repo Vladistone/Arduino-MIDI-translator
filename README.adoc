@@ -100,6 +100,7 @@ Korg <<DSS-1>> - the flagship for upgrades! The following events were held for i
 ====
 
 Korg <<DW8000>> with Arduino chipping;
+
 Korg <<EX8000>> with the same upgrade;
 ====
 
