@@ -290,14 +290,14 @@ kbd:[<<Back-to-Top>>]
 == MIDI implementation charts
 if You wish remapping CC#2SysEx use the program parameter number
 Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf[implementation chart `6`DSS-1 Programm parameter map], column "2", at pages 7-8:
-Also in the interblock space there is a complete list of parameters of the DSS-1 program with hex and decimal data correspondence for ease of programming:
-
 [WARRING]
-----
 pay attantion: not use the param.Offset parameter. it wrong this misconception is passed down!
-----
+
 the author of the first DW8000 hack didn't understand the difference also
 https://gearspace.com/board/showpost.php?p=16795924&postcount=16[at gearspace.com have quote his comments]
+
+Also in the interblock space of code there is a complete list of program parameters
+with hex and decimal data correspondence for ease of programming:
 
 .Korg DSS-1 Parameter list
 [,cpp,%linenums]
