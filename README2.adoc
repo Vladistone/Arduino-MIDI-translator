@@ -12,11 +12,6 @@
 :note-caption: pass:[&#128204;]
 :caution-caption: pass:[&#8252;]
 
-// Reusable text snippets
-:MIDI_preset_content: There are many Arduino chipping controllers projects for synth manipulation.
-And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
-Arduino map layouts are very custom, so I'm no sure if it would make much sense to create presets of map. Time will show...
-
 |===
 |Last update of text: |`2023-12-08 (v0.01.0)`
 |Last update of relevant screenshots: |`2023-12-08 (v0.01.0)`
@@ -43,6 +38,11 @@ The great idea is to organize a repository for Arduino MIDI translator codes in 
 
 The project start from 5th July 2016 and based on a hack https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] by https://github.com/sjbaines/Korg_DW-8000_Midi_Enhancer[Steve Baines]. 
 The Korg DW-8000; EX800 and DSS-1 (and other early synthesisers) was created during the early days of MIDI, before things like `CC#` messages were standardised.  As a result, it uses proprietary `SysEx` commands to change parameters over MIDI.  Most modern MIDI controllers use `CC#` messages instead, and very few are flexible enough to be able to send the appropriate `SysEx` messages. Those similar project uses an embedded Arduino Nano (or clone) mounted inside the synth body, which is used to intercept the MIDI IN data just before it reaches the CPU of synth. It replaces specific `CC#` messages with `SysEx` messages that the sysnthesizer understands them.
+
+// Reusable text snippets
+:MIDI_preset_content: There are many Arduino chipping controllers projects for synth manipulation.
+And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
+Arduino map layouts are very custom, so I'm no sure if it would make much sense to create presets of map. Time will show...
 
 === What is Arduino MIDI `CC#` translator?
 
