@@ -196,23 +196,24 @@ SysEx byte preparation blocks:
 
 === unrealized ideas for processing
 At the time of publication of the code, there were unrealized ideas for processing the remaining SysEx commands located in the section [Unit_0] as:
-[example%collapsible]
+
+[%collapsible]
 [,cpp,%linenums]
 ----
  Sysex hex[4]:    funcID inDec# [id Eqiualent] name		action		status:
 	case 0x10: // functionID 16 [id10] Program Param	Request		in progress:
-	case 0x11: // functionID 17 [id11] Write			Request		--
-	case 0x12: // functionID 18 [id12] Mode				Request		done
+	case 0x11: // functionID 17 [id11] Write		Request		--
+	case 0x12: // functionID 18 [id12] Mode			Request		done
 	case 0x13: // functionID 19 [id13] Play mode 		Request		done
-	case 0x14: // functionID 20 [id14] PCM data			Request		researching
+	case 0x14: // functionID 20 [id14] PCM data		Request		researching
 	case 0x15: // functionID 21 [id15] MSound parameter	Request		--
 	case 0x16: // functionID 22 [id16] MSound list		Request		in progress
 	case 0x17: // functionID 23 [id17] Program nameList	Request		in progress
-	case 0x40: // functionID 64 [id40] Program paramDump Tx/Rx		in progress
-	case 0x41: // functionID 65 [id41] Program parameter Change		done
+	case 0x40: // functionID 64 [id40] Program paramDump 	Tx/Rx		in progress
+	case 0x41: // functionID 65 [id41] Program *parameter Change*		done
 	case 0x42: // functionID 66 [id43] Mode data		Tx only		---
 	case 0x43: // functionID 67 [id43] PCM data Dump	Tx/Rx		researching
-	case 0x44: // functionID 68 [id44] MSound param Dump Tx/Rx		researching
+	case 0x44: // functionID 68 [id44] MSound param Dump	Tx/Rx		researching
 	case 0x45: // functionID 69 [id45] MSound list		Tx/Rx		in progress
 	case 0x46: // functionID 70 [id46] Program nameList	Tx only		in progress
 ----
@@ -240,19 +241,6 @@ and because of this limitation, I had to try to at least somehow use the SW butt
 `Osc MG ModSel	Off (Osc1, Osc2) Both`
 
 where in brackets are the values that are unattainable when using the button 0-127
-
-if You wish remapping CC#2SysEx use the program parameter number (but not param.Offset).
-Refer: implementation chart [6]DSS-1 Programm parameter map, column "2", at pages 7-8:
-https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf)
-
-.Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
-[example%collapsible]
-[,cpp,%linenums]
-----
-№	FunID ParamNumb hex[5]	# (range)	name			NOTE:  SysEx[5] hex eqiualent to paramNumber[#] inDec.
-1	[F01] paramNumb			--   (-) Inicalize params
-2	[F02] paramNumb			--   (-) Write/Rename
-Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
 
 I’ll immediately voice some notes present in the code as an addition:
 
@@ -553,7 +541,8 @@ At the time of publication of the code, there were unrealized ideas for processi
 ----
 
 === Discribtion [Unit_0]
-the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte. This was implemented at the very last moment and represents the most interesting section for further development in case of interest from both the code supporter and the performer himself . Therefore, any help and cooperation is accepted!
+
+The first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte. This was implemented at the very last moment and represents the most interesting section for further development in case of interest from both the code supporter and the performer himself . Therefore, any help and cooperation is accepted!
 Also in the interblock space there is a complete list of parameters of the DSS-1 program with hex and decimal data correspondence for ease of programming.
 ====
 From my little programming experience, I can say that I used Pocket MIDI software to monitor MIDI messages and because of it I got into trouble when compiling the CC#2SysEx correspondence table due to combining data in decimal and hexadecimal formats in one IN / OUT monitor window, which led to a fatal error at the last stage of the redesign.
@@ -568,115 +557,9 @@ I’ll immediately voice some notes present in the code as an addition:
 
 My Arduino project had limitations when designing the lookup table/template:
 - *Nucleus2 SSL controller*
+====
 I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only. In a situation where more targes level of change are required (at least 4 or 16 levels)... Moreover, the SSL engineers decision was somehow strange to software exclude the central group of CC# (from 32 to 63) from the control list and continue further from 64 to 95 of CC#?!
-
-and because of this limitation, I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values. Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
-
-`Osc MG ModSel	Off (Osc1, Osc2) Both`
-
-where in brackets are the values that are unattainable when using the button 0-127
-
-if You wish remapping CC#2SysEx use the program parameter number (but not param.Offset).
-Refer: implementation chart [6]DSS-1 Programm parameter map, column "2", at pages 7-8:
-https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf)
-
-.Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
-[example%collapsible]
-[,cpp,%linenums]
-----
-№	FunID ParamNumb hex[5]	# (range)	name			NOTE:  SysEx[5] hex eqiualent to paramNumber[#] inDec.
-1	[F01] paramNumb			--   (-) Inicalize params
-2	[F02] paramNumb			--   (-) Write/Rename
-Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
-
-I’ll immediately voice some notes present in the code as an addition:
-
-[#NOTE] within parentheses wouldn't work if use off/on SW
-
-My Arduino project had limitations when designing the lookup table/template:
-- *Nucleus2 SSL controller*
-I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only. In a situation where more targes level of change are required (at least 4 or 16 levels)... Moreover, the SSL engineers decision was somehow strange to software exclude the central group of CC# (from 32 to 63) from the control list and continue further from 64 to 95 of CC#?!
-
-and because of this limitation, I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values. Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
-
-`Osc MG ModSel	Off (Osc1, Osc2) Both`
-
-where in brackets are the values that are unattainable when using the button 0-127
-
-if You wish remapping CC#2SysEx use the program parameter number (but not param.Offset).
-Refer: implementation chart [6]DSS-1 Programm parameter map, column "2", at pages 7-8:
-https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf)
-
-.Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
-[example%collapsible]
-[,cpp,%linenums]
-----
-№	FunID ParamNumb hex[5]	# (range)	name			NOTE:  SysEx[5] hex eqiualent to paramNumber[#] inDec.
-1	[F01] paramNumb			--   (-) Inicalize params
-2	[F02] paramNumb			--   (-) Write/Rename
-Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
-
-I’ll immediately voice some notes present in the code as an addition:
-
-[#NOTE] within parentheses wouldn't work if use off/on SW
-
-My Arduino project had limitations when designing the lookup table/template:
-- *Nucleus2 SSL controller*
-I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only. In a situation where more targes level of change are required (at least 4 or 16 levels)... Moreover, the SSL engineers decision was somehow strange to software exclude the central group of CC# (from 32 to 63) from the control list and continue further from 64 to 95 of CC#?!
-
-and because of this limitation, I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values. Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
-
-`Osc MG ModSel	Off (Osc1, Osc2) Both`
-
-where in brackets are the values that are unattainable when using the button 0-127
-
-if You wish remapping CC#2SysEx use the program parameter number (but not param.Offset).
-Refer: implementation chart [6]DSS-1 Programm parameter map, column "2", at pages 7-8:
-https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf)
-
-.Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
-[example%collapsible]
-[,cpp,%linenums]
-----
-№	FunID ParamNumb hex[5]	# (range)	name			NOTE:  SysEx[5] hex eqiualent to paramNumber[#] inDec.
-1	[F01] paramNumb			--   (-) Inicalize params
-2	[F02] paramNumb			--   (-) Write/Rename
-Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
-
-I’ll immediately voice some notes present in the code as an addition:
-
-[#NOTE] within parentheses wouldn't work if use off/on SW
-
-My Arduino project had limitations when designing the lookup table/template:
-- *Nucleus2 SSL controller*
-I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only. In a situation where more targes level of change are required (at least 4 or 16 levels)... Moreover, the SSL engineers decision was somehow strange to software exclude the central group of CC# (from 32 to 63) from the control list and continue further from 64 to 95 of CC#?!
-
-and because of this limitation, I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values. Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
-
-`Osc MG ModSel	Off (Osc1, Osc2) Both`
-
-where in brackets are the values that are unattainable when using the button 0-127
-
-if You wish remapping CC#2SysEx use the program parameter number (but not param.Offset).
-Refer: implementation chart [6]DSS-1 Programm parameter map, column "2", at pages 7-8:
-https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf)
-
-.Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
-[example%collapsible]
-[,cpp,%linenums]
-----
-№	FunID ParamNumb hex[5]	# (range)	name			NOTE:  SysEx[5] hex eqiualent to paramNumber[#] inDec.
-1	[F01] paramNumb			--   (-) Inicalize params
-2	[F02] paramNumb			--   (-) Write/Rename
-Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
-
-I’ll immediately voice some notes present in the code as an addition:
-
-[#NOTE] within parentheses wouldn't work if use off/on SW
-
-My Arduino project had limitations when designing the lookup table/template:
-- *Nucleus2 SSL controller*
-I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only. In a situation where more targes level of change are required (at least 4 or 16 levels)... Moreover, the SSL engineers decision was somehow strange to software exclude the central group of CC# (from 32 to 63) from the control list and continue further from 64 to 95 of CC#?!
+====
 
 and because of this limitation, I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values. Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
 
@@ -803,6 +686,8 @@ Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1Servic
   case 0x4D: // paramNumber 77 Unison Voices (4)
 ----
 
+Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
+Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
 kbd:[<<Back-to-Top>>]
 
 [#troubleshooting]
