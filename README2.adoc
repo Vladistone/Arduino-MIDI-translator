@@ -39,7 +39,7 @@ kbd:[<<Back-to-Top>>]
 [colophon]
 = Introduction
 :imagesdir: IMAGES/Controllers/SSL Nucleus/
-
+The great idea is to organize a repository for Arduino MIDI translator codes in one place to accumulate projects related to the rare synths from 80-90 y., by Arduino upgrade to facilitate focused share knowledge, and foster collaboration among musicians & coder enthusiasts. May be this dedicated space will serve as a hub for users to exchange ideas, troubleshoot, and showcase their projects related to the any synths Arduino upgrade:
 === What is Arduino MIDI `CC#` translator?
 
 Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram. But what is it exactly? Let me put it this way:
