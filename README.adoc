@@ -339,10 +339,20 @@ https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual
   case 0x4C: // paramNumber 76 Key Assign mode (3)
   case 0x4D: // paramNumber 77 Unison Voices (4)
 ----
+
 === Discribtion [Unit_1]
 
 kbd:[<<Back-to-Top>>]
 
+=== Discribtion [Unit_2]
+
+kbd:[<<Back-to-Top>>]
+=== Discribtion [Unit_3]
+
+kbd:[<<Back-to-Top>>]
+=== Discribtion [Unit_4]
+
+kbd:[<<Back-to-Top>>]
 
 [#MIDI Table]
 = MIDI implementation charts
