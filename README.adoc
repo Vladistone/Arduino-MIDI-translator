@@ -146,7 +146,7 @@ kbd:[<<Back-to-Top>>]
 
 [#code]
 == Coding review:
-
+:imagesdir: IMAGES/COM_IMG/
 === Preparation for DSS-1 coding:
 There are base difference in the description of the implementation chart for DW8000 vs DSS-1:
 
@@ -379,12 +379,14 @@ kbd:[<<Back-to-Top>>]
 
 [#troubleshooting]
 == Nuances and troubleshooting
+:imagesdir: IMAGES/COM_IMG/
 on Glen Stegner's website there is a section on https://glenstegner.com/dss1/home.html[Tips and Trics], which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
 I would say - based on their preferences of each performer at Korg DSS.
   .here is one of them:
 
 - parameters `OSC 1 Level` and `OSC 2 Level`: which are marked on the operating system of the synthesizer as *[F14]* as `OSC Mix ratio` or *X-fader* with manipulation by one fade from the synth surface.
 This parameter is also described in the Program Parameter table [3] and has a *note2* below:
+
 image:IMAGES/COM_IMG/LSB_MSB_data_format.jpeg
 
 +
@@ -400,7 +402,7 @@ which is not mandatory for the performing musician. because you can manage the p
 
 or 2nd way:
 
- - `Osc Mix ratio: [F0 42 30 0B 41 00 xx 00 yy F7]`
+ - `Osc Mix ratio: [F0 42 30 0B 41 00 xx 01 yy F7]`
 
 My original code version is implemented as 2 (see Unit_3)
 
