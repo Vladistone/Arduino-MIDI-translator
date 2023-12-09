@@ -700,9 +700,13 @@ kbd:[<<Back-to-Top>>]
 
 [#MIDI Table]
 = MIDI implementation charts
-if You wish remapping CC#2SysEx use the program parameter number (but not param.Offset).
+if You wish remapping CC#2SysEx use the program parameter number
 Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf[implementation chart `6`DSS-1 Programm parameter map], column "2", at pages 7-8:
 
+[NOTE]
+----
+(but not param.Offset).
+----
 
 .Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
 [%collapsible]
