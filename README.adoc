@@ -4,7 +4,7 @@ Vladistone <vl2guitar@gmail.com>
 :toc:
 :toclevels: 3
 :doctype: book
-:sectnums: 3
+:sectnums:
 :sectnumlevels: 3
 :experimental:
 :source-highlighter: pygments
@@ -24,7 +24,7 @@ Vladistone <vl2guitar@gmail.com>
 
 kbd:[<<Back-to-Top>>]
 
-= Quick start
+== Quick start
 
 Here's a step-by-step guide to help you get started with Arduino and a MIDI controller:
 
@@ -37,7 +37,7 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 kbd:[<<Back-to-Top>>]
 
 [colophon]
-= Introduction and a bit history
+== Introduction and a bit history
 
 [TIP]
 The great idea is to organize a repository for codes of `Arduino MIDI translator` in one place, which to accumulate projects related to the rare synths from 80-90 y., by Arduino upgrading to facilitate focused share knowledge, and foster collaboration among musicians & coder enthusiasts. May be this dedicated space will serve as a hub for users to exchange code mapping, ideas, troubleshoot, and showcase their projects or branching related to the any synths upgrade by Arduino,.. Time will show...
@@ -82,9 +82,10 @@ Certain `CC#` messages are replaced with `SysEx` parameter control messages, but
 kbd:[<<Back-to-Top>>]
 
 [#Synths preview art]
-= Synths review
+== Synths review
 This section is dedicated to the internal features and details when implementing Arduino on a synthesizer board (I will try to describe how it worked out for me and give links to the experience of other experimenters with their upgrage...
 Here is my small list of synthesizers that achieved results with the Arduino translator!
+
 [discrete]
 Korg <<DSS-1>> - the flagship for upgrades! The following events were held for it:
 ====
@@ -101,19 +102,18 @@ Korg <<DW8000>> with Arduino chipping;
 Korg <<EX8000>> with the same upgrade;
 
 [#EX8000]
-== Korg EX8000
+=== Korg EX8000
 The first my project point it was with Korg EX8000: For full project details and step by step instructions discribed at https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer
 
 [#DW8000]
-== Korg DW8000
+=== Korg DW8000
 
 [#DSS-1]
-== Korg DSS-1
+=== Korg DSS-1
 Mod for Korg DSS-1 was done a little differently which EX8000: by attaching an arduino board to a MIDI socket board - a KLM-788 Jack panel. See circuit diagram below...
  * Power is taken from the closest points to the CN26B connector (pin #5 and #6 ).
  * The power plug for the arduino is also placed on thermo-plastic, and the arduino is already fixed on it, at 90 degrees/"edge" to the KLM-788 board.
  * To connect RX and TX using an additional connecting plug, I made a break in the wire from pin#2 of the same CN26B socket, going to the main board KLM-781 CPU-II - HD63B03X.
-
 ====
 The nuance is that you don’t confuse where to connect the ends of Tx and Rx:
 *Rx* end - connect to the end going to the socket pin # 2 CN26B,
@@ -128,7 +128,7 @@ kbd:[<<Back-to-Top>>]
 = Controller part review
 
 [#Nucleus]
-== SSL Nucleus
+=== SSL Nucleus
 :imagesdir: IMAGES/Controllers/SSL Nucleus/
 .example: MCU & XT Projections
 |===
@@ -137,13 +137,13 @@ kbd:[<<Back-to-Top>>]
 |===
 
 [#JP800]
-== Roland JP8000
+=== Roland JP8000
 
 kbd:[<<Back-to-Top>>]
 
 [#code discribe]
-= CODE Discribtion:
-== Preparation for renovation of code for DSS-1:
+== CODE Discribtion:
+=== Preparation for renovation of code for DSS-1:
 There are base difference in the description of the implementation chart for DW8000 vs DSS-1:
 
  .the First:
@@ -173,7 +173,7 @@ image:IMAGES/COM_IMG/GlenSiegner.png[GlenStegner]
 ====
 On this basis, a new table of correspondence between DDS-1 parameters and application of parameters to CC# control messages from the controller.
 
-== Main block discribtion of coding text:
+=== Discribtion of coding text:
 Unfortunately, I’m not a professional coder and apparently you noticed my lack of professionalism even earlier. Therefore, I describe the process of creating code as a self-taught person. having experience in coding in basic and fortran when computer centers were relevant and a personal computer was like a spaceship - unattainable. And the current Windows wasn't even 3.1
 
 So, code distributed across 5 different units
@@ -189,7 +189,7 @@ SysEx byte preparation blocks:
  - setup & loop..........[Unit_5]
 ----
 
-=== unrealized ideas for processing
+==== unrealized ideas and in processing part:
 At the time of publication of the code, there were unrealized ideas for processing the remaining SysEx commands located in the section [Unit_0] as:
 
 [%collapsible]
@@ -213,7 +213,7 @@ case  0x45: // functionID 69 [id45] MSound list		Tx/Rx		in progress
 case  0x46: // functionID 70 [id46] Program nameList	Tx only		in progress
 ----
 
-=== Discribtion [Unit_0]
+==== [Unit_0]
 the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte. This was implemented at the very last moment and represents the most interesting section for further development in case of interest from both the code supporter and the performer himself . Therefore, any help and cooperation is accepted!
 Also in the interblock space there is a complete list of parameters of the DSS-1 program with hex and decimal data correspondence for ease of programming.
 
@@ -240,24 +240,24 @@ where in brackets are the values that are unattainable when using the button 0-1
 
 kbd:[<<Back-to-Top>>]
 
-=== Discribtion [Unit_1]
+==== Discribtion [Unit_1]
 
 kbd:[<<Back-to-Top>>]
 
-=== Discribtion [Unit_2]
+==== Discribtion [Unit_2]
 
 kbd:[<<Back-to-Top>>]
 
-=== Discribtion [Unit_3]
+==== Discribtion [Unit_3]
 
 kbd:[<<Back-to-Top>>]
 
-=== Discribtion [Unit_4]
+==== Discribtion [Unit_4]
 
 kbd:[<<Back-to-Top>>]
 
 [#MIDI Table]
-= MIDI implementation charts
+== MIDI implementation charts
 if You wish remapping CC#2SysEx use the program parameter number
 Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf[implementation chart `6`DSS-1 Programm parameter map], column "2", at pages 7-8:
 
@@ -367,7 +367,7 @@ Function ID [Fxx] - a convenient parameter when focusing on the built-in interfa
 kbd:[<<Back-to-Top>>]
 
 [#troubleshooting]
-= Nuances and troubleshooting
+== Nuances and troubleshooting
 on Glen Stegner's website there is a section on https://glenstegner.com/dss1/home.html[Tips and Trics], which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
 I would say - based on their preferences of each performer at Korg DSS.
   .here is one of them:
