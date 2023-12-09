@@ -156,13 +156,17 @@ There are base difference in the description of the implementation chart for DW8
  .the First:
 ====
 - DW8000 parameters range from 0 to 64 (or upto 6b of SysEx length) in 7 categories:
-- DSS-1 parameters vary from 0 to 127 and even upto 500 points; it increase the range categoties up to 12 (it mean SysEx length to 7b and upto 10b and more if you wish manupulating mod request parameter of synth)
+- DSS-1 parameters vary from 0 to 127 and even upto 500 points; it increase the range categoties up to 12
+(it mean SysEx length to 7b and upto 10b and more if you wish manupulating mod request parameter of synth)
 Therefore, it was necessary to analyze and remake the CC Value transformation system to the additional parameters of the DSS1 regulation range that appeared.
 ====
 
  .the Second:
 ====
-The parameter correspondence table in code for DW8000 isn't suitable for DSS-1 mapping, so I had to compeared and refer to the https://glenstegner.com/dss1/home.html[service manual Korg DSS-1] and the https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html#:~:text=DSS%2D1_SysEx%20analytical%20table[DSS-1_SysEx excel table], which is available on the https://glenstegner.com/dss1/home.html[Glen Stegner]and this site author very deeply described all the possibilities in the work of DSS-1. Therefore, I also pay tribute and respect to Glen Stegner in his preparation of the site.
+The parameter correspondence table in code for DW8000 isn't suitable for DSS-1 mapping, so I had to compeared and refer to the https://glenstegner.com/dss1/home.html[service manual Korg DSS-1]
+and the https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html#:~:text=DSS%2D1_SysEx%20analytical%20table[DSS-1_SysEx excel table],
+which is available on the https://glenstegner.com/dss1/home.html[Glen Stegner]and this site author very deeply described all the possibilities in the work of DSS-1.
+Therefore, I also pay tribute and respect to Glen Stegner in his preparation of the site.
 Including there are certain nuances when implementing Sisex commands, which I left for later and placed them in the last section nuances and <<troubleshooting>>:
 ====
 image:IMAGES/COM_IMG/GlenSiegner.png[Glen Stegner,,]
@@ -170,22 +174,22 @@ image:IMAGES/COM_IMG/GlenSiegner.png[Glen Stegner,,]
 
  .The Third:
 ====
-the parameters `DDL 1&2 Time` have control range from *0~500*, and it was necessary to create additional processing to transform the CC# range (0-127) into the expected one, implement 9-byte SysEx distribution over MSB LSB nibbles.
+the parameters `DDL 1&2 Time` have control range from *0~500*, and it was necessary to create additional processing
+to transform the CC# range (0-127)into the expected one, implement 9-byte SysEx distribution over MSB LSB nibbles.
 ====
 
  .The Four:
 
-|===
-|text about|image::IMAGES/COM_IMG/LSB_MSB_data_format.jpeg[,400.500]
-||
-||
-||
-|===
+====
+image::IMAGES/COM_IMG/LSB_MSB_data_format.jpeg[,400.500]
+
+====
 On this basis, a new table of correspondence between DDS-1 parameters and application of parameters to CC# control messages from the controller.
 
 [#Unit]
 === Discribtion coding unit:
-Unfortunately, I’m not a professional coder and apparently you noticed my lack of professionalism even earlier. Therefore, I describe the process of creating code as a self-taught person. having experience in coding in basic and fortran when computer centers were relevant and a personal computer was like a spaceship - unattainable. And the current Windows wasn't even 3.1
+Unfortunately, I’m not a professional coder and apparently you noticed my lack of professionalism even earlier. Therefore,
+I describe the process of creating code as a self-taught person. having experience in coding in basic and fortran when computer centers were relevant and a personal computer was like a spaceship - unattainable. And the current Windows wasn't even 3.1
 
 So, code distributed across 5 different units
 for preparing and processing MIDI data arriving at the Rx Arduino input
