@@ -292,7 +292,7 @@ if You wish remapping CC#2SysEx use the program parameter number
 Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf[implementation chart `6`DSS-1 Programm parameter map], column "2", at pages 7-8:
 Also in the interblock space there is a complete list of parameters of the DSS-1 program with hex and decimal data correspondence for ease of programming:
 
-[Warring]
+[WARRING]
 ----
 pay attantion: not use the param.Offset parameter. it wrong this misconception is passed down!
 ----
