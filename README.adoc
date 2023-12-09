@@ -55,7 +55,7 @@ The Korg <<DW-8000>>; <<EX8000>> and <<DSS-1>> (and other early hybrid synthesis
 
 The project start from 5th July 2016 and based on a hack https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] publication by Steve Baines https://github.com/sjbaines/Korg_DW-8000_Midi_Enhancer[and his code repo]. As His discribed His code was tested and may have been stable, but by the time November 2023, when I discovered this project on the network - I could not immediately run it on the EX8000.
 It turned out to be non-working and required debugging. The pull request were added after fixing, but I did not find any activity from the project's master.
-So therefore, I independently continued the path of adapting the project for Korg DSS-1, thanks to mentoring from experienced Arduino C++ coder. I achieved the first results literally a week after the analysis differences between DW8000 vs DSS-1 of MIDI <<implementation>> charts and <<troubleshooting>>.
+So therefore, I independently continued the path of adapting the project for Korg DSS-1, thanks to mentoring from experienced Arduino C++ coder. I achieved the first results literally a week after the analysis differences between DW8000 vs DSS-1 of MIDI <<implementation>> charts  with <<troubleshooting>>.
 
 kbd:[<<Back-to-Top>>]
 
