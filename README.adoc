@@ -241,6 +241,7 @@ https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual
 .Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
 [example%collapsible]
 [,cpp,%linenums]
+----
 №	FunID ParamNumb hex[5]	# (range)	name			NOTE:  SysEx[5] hex eqiualent to paramNumber[#] inDec.
 1	[F01] paramNumb			--   (-) Inicalize params
 2	[F02] paramNumb			--   (-) Write/Rename
@@ -330,8 +331,7 @@ https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual
   case 0x4B: // paramNumber 75 Veloc Osc X-Switch (32)
   case 0x4C: // paramNumber 76 Key Assign mode (3)
   case 0x4D: // paramNumber 77 Unison Voices (4)
-#endif
-
+----
 === Discribtion [Unit_1]
 
 kbd:[<<Back-to-Top>>]
