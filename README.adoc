@@ -89,16 +89,20 @@ Here is my small list of synthesizers that achieved results with the Arduino tra
 [discrete]
 ====
 Korg <<DSS-1>> - the flagship for upgrades! The following events were held for it:
+
+====
  * Cleared, Adjusted, silent and soft touched keys board;
  * new micro buttons on the front panel;
  * a modern 3-pin AC-Plug with line-filter;
  * a Gotek 1,4M & flashflopy emulato;r
  * a new blue LCD;
  * a built-in arduino nano for MIDI translator CC2SysEx;
+====
 
 Korg <<DW8000>> with Arduino chipping;
 Korg <<EX8000>> with the same upgrade;
 ====
+
 [#EX8000]
 == Korg EX8000
 The first my project point it was with Korg EX8000: For full project details and step by step instructions discribed at https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer
