@@ -42,8 +42,8 @@ The great idea is to organize a repository for Arduino MIDI translator codes in 
 
 :MIDI_code_preset_content: There are many Arduino chipping controllers projects for synth manipulation.
 And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
-Arduino map layouts are very custom, so I'm no sure yet if it would make much sense to create map presets of code... but the base approach of the system for developing code for Arduino MIDI translator and consistency in adapting MIDI implementation has already been launched and this requires publicity
-*show must go on*...
+Arduino map layouts are very custom, so I'm no sure yet if it would make much sense to create map presets of code... but the base approach of the system for developing code for Arduino MIDI translator and consistency in adapting MIDI implementation has already been launched and this requires publicity...
+*show must go on*!
 
 The project start from 5th July 2016 and based on a hack https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] publication by Steve Baines https://github.com/sjbaines/Korg_DW-8000_Midi_Enhancer[and his code repo]. As His discribed His code was tested and may have been stable, but by the time November 2023, when I discovered this project on the network - I could not immediately run it on the EX8000.
 It turned out to be non-working and required debugging. The pull request were added after fixing, but I did not find any activity from the project's master.
