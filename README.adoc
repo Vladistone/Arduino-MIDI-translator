@@ -280,7 +280,7 @@ but not param.Offset
 ----
 hex[4]	FunID  ParamNumber # range Parameter name
 ------//----------------------------------------------
---    // [F01] paramNumber--  (-) Inicalize parameters
+--    // [F01] paramNumber--  (-) Initialize parameters
 --    // [F02] paramNumber--  (-) Write/Rename
 0x12: //[id12] FunctionID 18  (1) Request Mode condition
 0x13: //[id13] FunctionID 19  (1) Request Play Mod
