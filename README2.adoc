@@ -154,7 +154,7 @@ kbd:[<<Back-to-Top>>]
 
 [#nuances and troubleshooting]
 = Nuances and troubleshooting
-on Glen Stegner's website there is a section on nuances, which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
+on Glen Stegner's website there is a section on https://glenstegner.com/dss1/home.html[Tips and Trics], which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
 I would say - based on their preferences of each performer at Korg DSS.
   .here is one of them:
 ====
