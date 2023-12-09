@@ -82,8 +82,8 @@ MIDI THRU is unaffected by the changes, as the Nano is be spliced in just before
 Certain `CC#` messages are replaced with `SysEx` parameter control messages, but all other MIDI messages are passed unchanged. This means that the `SysEx` messages can still be used.
 kbd:[<<Back-to-Top>>]
 
-[#Synth part]
-= Synth review
+[#Synths preview art]
+= Synths review
 This section is dedicated to the internal features and details when implementing Arduino on a synthesizer board (I will try to describe how it worked out for me and give links to the experience of other experimenters with their upgrage...
 Here is my small list of synthesizers that achieved results with the Arduino translator!
 Korg DSS-1 - the flagship for upgrades! The following events were held for it:
