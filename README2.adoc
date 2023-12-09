@@ -81,12 +81,39 @@ The practical upshot of this is that the Synth Program parameters can be control
 MIDI THRU is unaffected by the changes, as the Nano is be spliced in just before the MIDI IN reaches the CPU, AFTER the IN has been echoed back out of the THRU port.
 Certain `CC#` messages are replaced with `SysEx` parameter control messages, but all other MIDI messages are passed unchanged. This means that the `SysEx` messages can still be used.
 
-[#EW8000]
+
+[#Synth part]
+= Korg EX8000
+[#EX8000]
 == Korg EX8000
 The first my project point it was with Korg EX8000: For full project details and step by step instructions discribed at https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer
 
 [#DW8000]
-== Korg DX8000
+== Korg DW8000
 
 [#DSS-1]
 == Korg DSS-1
+
+[#Controller part]
+= Korg EX8000
+
+[#Nucleus]
+== SSL Nucleus
+.example: MCU & XT Projections
+|===
+|image:projection_MCU.svg[Projection MCU,470,380] |image:projection_XT.svg[Projection XT,260,380]
+2+|image:SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
+|===
+
+[#JP800]
+== Roland JP8000
+
+[#code discribe]
+= CODE Discribtion
+
+[#MIDI Table]
+== MIDI implementation charts
+
+[#Nuances]
+== nuances and troubleshooting
+
