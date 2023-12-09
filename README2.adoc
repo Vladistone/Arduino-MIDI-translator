@@ -162,7 +162,7 @@ I would say - based on their preferences of each performer at Korg DSS.
 
 - parameters `OSC 1 Level` and `OSC 2 Level`: which are marked on the operating system of the synthesizer as *[F14]* as `OSC Mix ratio` or *X-fader* with manipulation by one fade from the synth surface.
 This parameter is also described in the Program Parameter table [3] and has a *note2* below:
-image::IMAGES/"LSB_MSB_data_format".jpeg
+image:IMAGES/COM_IMG/LSB_MSB_data_format.jpeg
 
 +
 [NOTE]
