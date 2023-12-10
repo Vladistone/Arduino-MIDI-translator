@@ -514,10 +514,12 @@ and combine the data to the 10 byte lenght for SysEx.
 
 [NOTE]
 If yoy wish separate control for:
+====
  - `Osc 1 level: [F0 42 30 0B 41 00 xx F7]`
  - `Osc 2 level: [F0 42 30 0B 41 01 xx F7]`
+====
 then have to thick how to change map unit for input that parameNumber 2 into.
-.may be for exsample change second string 371&372 like this:
+.may be for exsample change second string of code: `371` & `372` like this:
 ----
     //		SSL Nucleus Fader group L (Mappings to my own CCs desigion)
     case 0: sendParam_8(channel, 32, value); break;  // [F44] VCA EG Intens
