@@ -504,12 +504,12 @@ kbd:[<<Back-to-Top>>]
 ==== [Unit_3]
 
 The Unit_3 preparation make 10 lenght SysEx with 2 parameter changes for OSC mix ratio only.
-----
+====
 `paramNumber 0 OSC1 level` - as a master parameter
 `paramNumber 1 OSC2 level` - as a slave
-----
+====
 
-And reducing the transformation range by calculating the parameter value as 203/256 from 127 to 100 max point.
+Also reduce the transformation range by calculating the parameter value as 203/256 from 127 to 100 max point.
 and combine the data to the 10 byte lenght for SysEx.
 
 [NOTE]
