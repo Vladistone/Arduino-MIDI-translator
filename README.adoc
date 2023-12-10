@@ -61,7 +61,7 @@ but the base approach to the system of developing code for `Arduino MIDI transla
 . Check the functionality of this sketch in working condition or by simulating MIDI monitoring by PC. To do this, you need:
   * to have a separate MIDI interface and a shield for Arduino to connect to PC with make a MIDI loop through Arduino Rx/Tx , or...
   * take a soldering iron and wire cutters in your hands to carry out a "surgical operation" to chip into the circuit board of synth!
-. For this purpose, there is no need for me to describe all the details of the analysis of the code’s performance under gear working condition. I creat <<troublshooting>> part,
+. For this purpose, there is no need for me to describe all the details of the analysis of the code’s performance under gear working condition. I creat <<troubleshooting>> part,
 Or you can ask a question in a discussion on the forum https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html[gearspace.com]
 
 kbd:[<<Back-to-Top>>]
