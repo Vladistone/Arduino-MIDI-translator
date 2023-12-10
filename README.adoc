@@ -51,10 +51,10 @@ begun to analyze the mapping template of <<inplementation>> for convenience and 
 :MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
 And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
 Ctlr_2_Synth map layouts are very custom, so I'm no sure yet if it would make much sense to create map presets of code...
-but the base approach of the system for developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
-*show must go on*!
+but the base approach to the system of developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
+*Show must go on...*
 
-So, after downloading the sketch to the Arduino:
+...So, after downloading the sketch to the Arduino:
 --
 +
 . That time has come to adapt the Arduino to staff of MIDI devices! and
