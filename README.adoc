@@ -183,6 +183,22 @@ image:IMAGES/Arduino.jpg[,600,500]
 
 [#Nucleus]
 === SSL Nucleus
+My Arduino project had limitations when designing the lookup table/template: <<Nucleus>> controller (see the <<table2>>)
+I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements
+- as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only.
+In a situation where more targes level of change are required (at least 4 or 16 levels)...
+The SSL engineers decision was somehow strange to software exclude the central group of CC# (from 32 to 63) from the control list and continue further from 64 to 95 of CC#?!
+Due to this limitation,I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values.
+Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
+
+|===
+|Program parameter name|Function and range[ notes
+|`Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both|[NOTE]
+|||within parentheses wouldn't work if use off/on Switchs.
+|===
+
+I’ll immediately voice some notes present in the code as an addition:
+where in brackets are the values that are unattainable when using the button 0-127
 
 .example: MCU & XT Projections
 [%collapsible]
@@ -309,22 +325,6 @@ But taking into account how SysEx and CC# will be presented when debugging with 
 
 Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD
 of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
-
-[NOTE]
-I’ll immediately voice some notes present in the code as an addition: within parentheses wouldn't work if use off/on Switchs.
-
-My Arduino project had limitations when designing the lookup table/template: <<Nucleus>> controller (see the <<table2>>)
-I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements
-- as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only.
-In a situation where more targes level of change are required (at least 4 or 16 levels)...
-The SSL engineers decision was somehow strange to software exclude the central group of CC# (from 32 to 63) from the control list and continue further from 64 to 95 of CC#?!
-
-and because of this limitation, I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values.
-Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
-
-`Osc MG ModSel	Off (Osc1, Osc2) Both`
-
-where in brackets are the values that are unattainable when using the button 0-127
 
 kbd:[<<Back-to-Top>>]
 
