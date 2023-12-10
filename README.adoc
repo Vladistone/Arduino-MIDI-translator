@@ -550,12 +550,14 @@ Plus, there are a number of limitations from both the controller and the synthes
 list and its number of parameters with smooth adjustment/change of parameter. in my case:
 
 |===
-|element/param|Nucleus|DSS-1| note for DSS-1 parameters:
+|element/param|Nucleus|DW-8p|EX/DW8000|DSS-1| note for DSS-1 parameters:
 
-|fader and rotary V-coder|32|45+| incl. mode, request, and CC#:
-|switch, button|32|16(+15)| CC#1, 2, 7, 122, 123, 124-125
-|Total|64|77+| but most DSS-1 params don't require permanent Cntrl.
+|fader and rotary V-coder|32|48|48|45+| incl. mode, request, and CC#:
+|switch, button|32|16(+15)|2|2(+3)| CC#1, 2, 7, 122, 123, 124-125
+|Total|64|77+|50|50| but most DSS-1 params don't require permanent Ctrl.
 |===
+
+image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,400]
 
 Therefore, everyone has a choice and a dilemma of priorities
 - what to choose and how to use such varied choices and restrictions...
