@@ -363,7 +363,7 @@ Parameter number column "2", at pages 7-8:
 ====
 
 [WARNING]
-pay attantion: not use the *param.Offset*! parameter misconception is passed down!
+not use the *param.Offset* which discribed and use for paramDUMP! Parameter misconception is passed down!
 image:IMAGES/Korg DSS-1/program param DUMP & CHANGE for DSS-1.jpeg[,500,400]
 
 Steve Baines of the first DW8000 hack didn't understand the difference.
