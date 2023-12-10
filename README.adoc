@@ -552,8 +552,8 @@ list and its number of parameters with smooth adjustment/change of parameter. in
 |===
 |element/param|Nucleus|DSS-1|note
 
-|fader and rotary V-coder|32|45(+15)|incl. mode, request, and 4 CC
-|switch, button|32|16(+15)|
+|fader and rotary V-coder|32|45|for DSS-1 parameters:
+|switch, button|32|16(+15)|incl. mode, request, and 4 CC
 |Total|64|77+|
 |===
 
