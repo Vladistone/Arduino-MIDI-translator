@@ -191,8 +191,6 @@ which is available on the https://glenstegner.com/dss1/home.html[Glen Stegner] [
 Therefore, I also pay tribute and respect to Glen Stegner in his preparation of the site.
 Including there are certain nuances when implementing Sisex commands, which I left for later and placed them in the last section nuances and <<troubleshooting>>:
 ====
-image:IMAGES/COM_IMG/GlenSiegner.png[Glen Stegner,,]
-
 
  .The Third:
 ====
