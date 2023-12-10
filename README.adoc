@@ -553,7 +553,7 @@ kbd:[<<Back-to-Top>>]
 == Nuances and troubleshooting
 image:IMAGES/under controller.jpg[,100,50]
 on Glen Stegner's website there is a section on https://glenstegner.com/dss1/home.html[Tips and Trics], which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
-I would say - based on their preferences of each performer at Korg DSS.
+I would say - based on their preferences of each performer.
   .here is one of them:
 
 - parameters `OSC 1 Level` and `OSC 2 Level`: which are marked on the operating system of the synthesizer as *[F14]* as `OSC Mix ratio` or *X-fader* with manipulation by one fade from the synth surface.
@@ -561,7 +561,6 @@ This parameter is also described in the Program Parameter table [3] and has a *n
 
 image:IMAGES/Korg DSS-1/LSB_MSB_data_format.jpeg
 
-+
 [NOTE]
 ====
 _Must be set for both oscilator so that OSC1 + OSC2 = 100_
