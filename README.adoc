@@ -41,6 +41,7 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 Relax! or wait a minute...
 
 because after downloading the sketch to the Arduino:
+
 . The time will come to adapt the Arduino to your MIDI system and decide whether this *Cntrl_2_Synth* map layouts:
   * is this convenient for your combination of controller and Korg DSS-1 or whether need to remap the code?
   * You can also check the functionality of this sketch in working conditions or by simulating MIDI monitoring.
