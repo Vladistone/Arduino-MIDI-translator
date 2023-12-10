@@ -507,7 +507,7 @@ The Unit_3 preparation make 10 lenght SysEx with 2 parameter changes for OSC mix
 
   * `paramNumber 0 OSC1 level` - as a master parameter
   * `paramNumber 1 OSC2 level` - as a slave, operating in antiphase motion to OSC 1
-to satisfy the condition (OSC 1 + OSC 2) = 100% <<NOTE>>
+to satisfy the condition (OSC 1 + OSC 2) = 100% <<100%>>
 
 Also reduce the transformation range by calculating the parameter value as 203/256 from 127 to 100 max point.
 and combine the data to the 10 byte lenght for SysEx.
@@ -825,8 +825,9 @@ This parameter is also described in the Program Parameter table [3] and has a *n
 
 image:IMAGES/Korg DSS-1/LSB_MSB_data_format.jpeg[,500,400]
 
-[#NOTE]
+[NOTE]
 ====
+[#100%]
 _Must be set for both oscilator so that OSC1 + OSC2 = 100_
 ====
 
