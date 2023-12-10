@@ -45,7 +45,7 @@ since if you have read up to this point...
 then you are probably a noob like I was at the beginning of this journey of getting to know arduino world...
 [TIP]
 But if you have experience with Arduino codes, then you have probably already
-begun to analyze the mapping template for convenience and compatibility for your *Cntrl_2_Synth* equipment...  and is whether need to remap it?
+begun to analyze the mapping template for convenience and compatibility for your *Cntrl_2_Synth* equipment...  and is whether need it to adapt by remap?
 
 Because after downloading the sketch to the Arduino: That time has come to adapt the Arduino to staff of MIDI devices!
 You can check the functionality of this sketch in working condition or by simulating MIDI monitoring by PC. To do this, you need:
