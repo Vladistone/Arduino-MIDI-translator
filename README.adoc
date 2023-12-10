@@ -149,7 +149,7 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 Mod for Korg DSS-1 was done a little differently which EX8000: by attaching an arduino board to a MIDI socket board - a KLM-788 Jack panel. See circuit diagram below...
 [%collapsible]
 ====
-image:
+image:IMAGES/Korg_IC_KLM-781.jpeg
 ====
 
 ====
