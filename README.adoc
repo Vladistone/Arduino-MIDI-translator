@@ -162,6 +162,7 @@ The nuance is that you don’t confuse where to connect the ends of Tx and Rx:
 [%collapsible]
 ====
 image:IMAGES/Korg_IC_KLM-781.jpeg[,500,700]
+image:IMAGES/DSS1_Arduino_upgrade.jpeg[,500,700]
 ====
 
 The design turned out to be more clear when opening the top cover of the synth and an easy
