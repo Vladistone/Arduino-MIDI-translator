@@ -74,6 +74,7 @@ by Arduino upgrading to facilitate focused share knowledge, and foster collabora
 May be this dedicated space will serve as a hub for users to exchange code mapping, ideas, troubleshoot,
 and showcase their projects or branching related to the any synths upgrade by Arduino,.. Time will show...
 
+[.text-justify]
 .MIDI implementaion developing
 ====
 The Korg <<DW8000>>; <<EX8000>> and <<DSS-1>> (and other early hybrid synthesisers) was created during the early days of MIDI, before things like `CC#` messages were standardised.  As a result, it uses proprietary `SysEx` commands to change parameters over MIDI. Most modern MIDI controllers use `CC#` messages instead, and very few are flexible enough to be able to send the appropriate `SysEx` messages. Those similar project uses an embedded Arduino Nano (or clone) mounted inside the synth body, which is used to intercept the MIDI IN data just before it reaches the CPU of synth. It replaces specific `CC#` messages with `SysEx` messages that the sysnthesizer understands them.
