@@ -147,10 +147,6 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 [#DSS-1]
 === Korg DSS-1
 Mod for Korg DSS-1 was done a little differently which EX8000: by attaching an arduino board to a MIDI socket board - a KLM-788 Jack panel. See circuit diagram below...
-[%collapsible]
-====
-image:IMAGES/Korg_IC_KLM-781.jpeg[,500,700]
-====
 
 ====
  - Power is taken from the closest points to the CN26B connector (pin #5 and #6 ).
@@ -160,7 +156,12 @@ image:IMAGES/Korg_IC_KLM-781.jpeg[,500,700]
 The nuance is that you don’t confuse where to connect the ends of Tx and Rx:
 ====
 - *Rx* end connect to the end going to the socket pin # 2 CN26B,
-- *Tx* end to the trim going to the main board of the KLM-781 processor HD63B03Xb designated in circuit diagram as IC11
+- *Tx* end to the trim going to the main board of the KLM-781 processor HD63B03Xb
+====
+.as IC11 in circuit diagram:
+[%collapsible]
+====
+image:IMAGES/Korg_IC_KLM-781.jpeg[,500,700]
 ====
 
 The design turned out to be more clear when opening the top cover of the synth and an easy
