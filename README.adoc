@@ -39,7 +39,7 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 . if compilation was successful - upload the sketch to Arduino: kbd:[*Sketch*] →  kbd:[*Upload*] `⇧⌘U`.
 
 *All done*...
-image:IMAGES/under controller.jpg[,100,50] Relax and take it easy! or wait a minute... false start!
+image:IMAGES/under controller.jpg[,100,50] Relax and take it easy! or wait a minute... - false start!
 [WARNING]
 since if you have read up to this point...
 then you are probably a noob like I was at the beginning of this journey of getting to know arduino world...
@@ -53,7 +53,7 @@ Ctlr_2_Synth map layouts are very custom, so I'm no sure yet if it would make mu
 but the base approach of the system for developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
 *show must go on*!
 
-Because after downloading the sketch to the Arduino: That time has come to adapt the Arduino to staff of MIDI devices!
+So, after downloading the sketch to the Arduino: That time has come to adapt the Arduino to staff of MIDI devices!
 You can check the functionality of this sketch in working condition or by simulating MIDI monitoring by PC. To do this, you need:
 
 . to have a separate MIDI interface and a shield for Arduino to connect to PC with make a MIDI loop through Arduino Rx/Tx , or...
