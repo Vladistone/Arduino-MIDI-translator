@@ -166,6 +166,11 @@ kbd:[<<Back-to-Top>>]
 
 [#JP800]
 === Roland JP8000
+to be created nex time...
+.staff photo[%collapsible]
+====
+image:IMAGES/Korg DSS-1/Roland JP8000 + Korg DSS-1.png[,300,200]
+====
 
 kbd:[<<Back-to-Top>>]
 
@@ -191,7 +196,7 @@ which is available on the website: image:IMAGES/COM_IMG/GlenStegner.png[#img-Gle
 
 Glen Stegner is very deeply described all the possibilities in the work of DSS-1.
 Therefore, I also pay tribute and respect to Glen Stegner in his preparation of the site.
-Including there are certain nuances when implementing Sisex commands, which I left for later and placed them in the last section nuances and <<troubleshooting>>:
+Including there are certain nuances when implementing Sisex commands, which I left for later and placed them in the last section <<troubleshooting>>:
 ====
 
  .The Third:
