@@ -477,9 +477,7 @@ kbd:[<<Back-to-Top>>]
 
 === Cntrl_2_Synth parameter map table
 
-Original mappie table compiled for SSL Nucleus2 and korg DSS-1
-
-.Korg DSS-1 Cntrl_2_Synth parameter map table
+.Original *Ctlr_2_Synth* map layouts for *Nucleus_2_DSS-1*
 [%collapsible]
 ====
 ----
