@@ -45,7 +45,13 @@ since if you have read up to this point...
 then you are probably a noob like I was at the beginning of this journey of getting to know arduino world...
 [TIP]
 But if you have experience with Arduino codes, then you have probably already
-begun to analyze the mapping template for convenience and compatibility for your *Cntrl_2_Synth* equipment...  and is whether need it to adapt by remap?
+begun to analyze the mapping template for convenience and compatibility for your *Cntrl_2_Synth* equipment...  and is whether need it to adapt by custom remap?
+[NOTE]
+:MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
+And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
+Ctlr_2_Synth map layouts are very custom, so I'm no sure yet if it would make much sense to create map presets of code...
+but the base approach of the system for developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
+*show must go on*!
 
 Because after downloading the sketch to the Arduino: That time has come to adapt the Arduino to staff of MIDI devices!
 You can check the functionality of this sketch in working condition or by simulating MIDI monitoring by PC. To do this, you need:
@@ -65,13 +71,6 @@ The great idea is to organize a repository for codes of `Arduino MIDI translator
 by Arduino upgrading to facilitate focused share knowledge, and foster collaboration among musicians & coder enthusiasts.
 May be this dedicated space will serve as a hub for users to exchange code mapping, ideas, troubleshoot,
 and showcase their projects or branching related to the any synths upgrade by Arduino,.. Time will show...
-
-[WARNING]
-:MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
-And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
-Ctlr_2_Synth map layouts are very custom, so I'm no sure yet if it would make much sense to create map presets of code...
-but the base approach of the system for developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
-*show must go on*!
 
 .MIDI implementaion developing
 ====
