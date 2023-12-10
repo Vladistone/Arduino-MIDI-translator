@@ -457,6 +457,9 @@ void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
 kbd:[<<Back-to-Top>>]
 
 ==== [Unit_2]
+The Unit preparation make 9 lenght LSB&MSB bytes for DDL1 & 2 Time range only.
+increasing the transformation ratio when calculating the range as 252/64 from 127 to 500
+and shifting the data to the left 7 bytes for the MSB.
 
 [%collapsible]
 ====
@@ -499,6 +502,36 @@ void sendParam_9(byte channel, byte paramNumber, byte paramValue7Bit) // Unit_2
 kbd:[<<Back-to-Top>>]
 
 ==== [Unit_3]
+
+This Unit_3 preparation make 10 lenght SysEx with 2 parameter changes for OSC mix ratio only.
+`paramNumber 0 OSC1 level` as a master parameter
+`paramNumber 1 OSC2 level` as a slave
+reducing the transformation range by calculating the  parameter value as 203/256 from 127 to 100
+and combine the data to the 10 byte lenght for SysEx.
+
+[NOTE]
+If yoy wish separate control for:
+ - `Osc 1 level: [F0 42 30 0B 41 00 xx F7]`
+ - `Osc 2 level: [F0 42 30 0B 41 01 xx F7]`
+then have to thick how to change map unit for input that parameNumber 2 into.
+.may be for exsample change second string 371&372 like this:
+----
+    //		SSL Nucleus Fader group L (Mappings to my own CCs desigion)
+    case 0: sendParam_8(channel, 32, value); break;  // [F44] VCA EG Intens
+    //case 1: sendParam_8(channel, 69, value); break;// [F17] OSC MG intens		reserved CC#1
+    //case 2: sendParam_8(channel, 12, value); break;// [F34] VCF MG intens		reserved CC#2
++
+change to
++
+    case 0: sendParam_8(channel, 0, value); break; // [F14] 00 OSC1 Level
+    case 1: sendParam_8(channel, 1, value); break; // [F14] 01 OSC2 Level
+----
+and commented the string 395 (or replace case number and sendParam_(10 to 8) between this strings:
+[,cpp,%linenums]
+----
+    case 23: sendParam_10(channel, 0, value); break; // [F14] OSC Mix ratio		+[F14] 01 OSC2 Level
+    //case 1: sendParam_8(channel, 69, value); break;// [F17] OSC MG intens		reserved CC#1
+----
 
 [%collapsible]
 ====
