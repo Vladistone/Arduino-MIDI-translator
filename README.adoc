@@ -129,6 +129,14 @@ Korg <<EX8000>> with the same upgrade;
 [#EX8000]
 === Korg EX8000
 The first my project point it was with Korg EX8000: For full project details and step by step instructions discribed at https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer
+I followed the author’s step-by-step instructions and the only deviations were that I did not “bury” the Arduino in black shrink film (I didn’t have transparent film at that time),
+but insulated the contacts with tape and firmly placed them on thermoplastic on top of the processor...
+[%collapsible]
+====
+|===
+|before|after chipped|
+|image:IMAGES/4D872EF6-56A1-4838-B1AC-B3D5AD35DA11.jpeg|image:IMAGES/28D0DD20-4CE9-42D8-8D66-97C0424D3E2D.jpeg[,300,400]
+====
 
 [#DW8000]
 === Korg DW8000
