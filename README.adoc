@@ -31,9 +31,9 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 . Download & Start Arduino IDE.
 . If you haven't already done it, https://www.arduino.cc/en/software[install Arduino IDE].
 . Connect your Arduino board to your computer and check the board is recognized for IDE.
-. Make sure your `MIDI_library.h` is enabled in kbd:[*Sketch*] → kbd:[*Include Library*] → kbd:[*Manage Librarys*] `⇧⌘i`. if you need kbd:[*download*] or kbd:[*upgrade*] the `MIDI_library.h` - do it!
-  * For the Arduino board device, tick for your `device name` in kbd:[*tool*] → kbd:[*device*] → from avalable devices list
-  * and tick your *Port* for connection in kbd:[*tool*] → kbd:[*Port*] → from avalable port list
+. Make sure your `MIDI_library.h` is enabled in IDE menu: kbd:[*Sketch*] → kbd:[*Include Library*] → kbd:[*Manage Librarys*] `⇧⌘i`. if you need kbd:[*download*] or kbd:[*upgrade*] the `MIDI_library.h` - do it!
+  * For the Arduino board device, tick for your `device name` in menu: kbd:[*tool*] → kbd:[*device*] → from avalable devices list
+  * and tick your `Port` for connection in menu: kbd:[*tool*] → kbd:[*Port*] → from avalable port list
 . Open the sketch file and check the compilation for no compilation errors: kbd:[*Sketch*] →  kbd:[*check/compilation*] `⇧⌘R`. 
 . if compilation was successful - upload the sketch to Arduino: kbd:[*Sketch*] →  kbd:[*Upload*] `⇧⌘U`.
 Relax! or not? wait a minute...
