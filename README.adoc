@@ -554,7 +554,7 @@ list and its number of parameters with smooth adjustment/change of parameter. in
 
 |multirange (fader & rotary V-coder)|32|48|48|60+| incl.4 mode,8 request,6 CC#:
 |2 range (switch, button)|32|2|2(+3)|16(+12)| CC#1, 2, 7, 122, 123, (124-125)
-|Total|64|50|50(+3)|78(+12)| but most DSS-1 params don't require permanent Ctrl.
+|Total|64|50|50(+3)|78(+12)| but most DSS-1 params don't require permanent controlling.
 |===
 Therefore, everyone has a decigion and a dilemma of priorities:
 - what to choose and how to use it with such varied choices...
