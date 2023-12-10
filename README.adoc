@@ -457,8 +457,8 @@ void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
 kbd:[<<Back-to-Top>>]
 
 ==== [Unit_2]
-The Unit preparation make 9 lenght LSB&MSB bytes for DDL1 & 2 Time range only.
-increasing the transformation ratio when calculating the range as 252/64 from 127 to 500
+The Unit_2 preparation make 9 lenght LSB&MSB bytes for DDL1 & 2 Time range only.
+increasing the transformation ratio when calculating the range as 252/64 from 127 to 500 max point.
 and shifting the data to the left 7 bytes for the MSB.
 
 [%collapsible]
@@ -503,10 +503,13 @@ kbd:[<<Back-to-Top>>]
 
 ==== [Unit_3]
 
-This Unit_3 preparation make 10 lenght SysEx with 2 parameter changes for OSC mix ratio only.
-`paramNumber 0 OSC1 level` as a master parameter
-`paramNumber 1 OSC2 level` as a slave
-reducing the transformation range by calculating the  parameter value as 203/256 from 127 to 100
+The Unit_3 preparation make 10 lenght SysEx with 2 parameter changes for OSC mix ratio only.
+----
+`paramNumber 0 OSC1 level` - as a master parameter
+`paramNumber 1 OSC2 level` - as a slave
+----
+
+And reducing the transformation range by calculating the parameter value as 203/256 from 127 to 100 max point.
 and combine the data to the 10 byte lenght for SysEx.
 
 [NOTE]
