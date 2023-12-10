@@ -175,7 +175,7 @@ image:IMAGES/Arduino.jpg[,600,500]
 
 [#JP800]
 === Roland JP8000
-to be created nex time...
+ I have plans to develop a translator for Korg DSS-1 using a Roland JP-8000 or 8080 sirface, but it will take time
 
 .staff photo
 [%collapsible]
