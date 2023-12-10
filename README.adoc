@@ -313,7 +313,7 @@ of the synthesizer and was ignored by the developers in previous versions of the
 [NOTE]
 I’ll immediately voice some notes present in the code as an addition: within parentheses wouldn't work if use off/on Switchs.
 
-My Arduino project had limitations when designing the lookup table/template: <<Nucleus>> controller
+My Arduino project had limitations when designing the lookup table/template: <<Nucleus>> controller (see the <<table2>>)
 I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements
 - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only.
 In a situation where more targes level of change are required (at least 4 or 16 levels)...
@@ -594,6 +594,8 @@ based on your stereotypes and convenience when manipulating the parameters of th
 Plus, there are a number of limitations from both the controller and the synthesizer. For example:
 list and its number of parameters with smooth adjustment/change of parameter. in my case:
 
+[#table2]
+.comparative table "number of control elements and number of parameters to control"
 |===
 |element type/parameter|Nucleus|JP8000|DW-8p|EX/DW8000|DSS-1| note for DSS-1 parameters:
 
@@ -655,7 +657,9 @@ hex[4]	FunID  ParamNumber # range Parameter name
 0x13: //[id13] FunctionID 19  (1) Request Play Mod
 0x16: //[id16] FunctionID 22  (1) Request MSound list
 0x23: //[id17] FunctionID 23  (1) Request Program name list
+
 hex[5]				  (sorted by paramNumber)
+--------------------------------------------------------
 0x00: // [F14] paramNumber 0 (101) Osc 1 Lev /OSC mix ratio
 0x01: // [F14] paramNumber 1 (101) Osc 2 Level
 0x02: // [F19] paramNumber 2 (128) A.Bend Intesity
