@@ -40,13 +40,13 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 
 //*All done*...
 image:IMAGES/under controller.jpg[,100,50] Relax and take it easy! or wait a minute... - false start!
-[WARNING]
+//[WARNING]
 //since if you have read up to this point...
 //then you are probably a noob like I was at the beginning of this journey of getting to know arduino world...
-[TIP]
+//[TIP]
 //But if you have experience with Arduino codes, then you have probably already
 //begun to analyze the mapping template of <<inplementation>> for convenience and compatibility for your *Cntrl_2_Synth* equipment...  and is whether need it to adapt by custom remap?
-[NOTE]
+//[NOTE]
 //:MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
 //And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
 //Ctlr_2_Synth map layouts are very custom, so I'm no sure yet if it would make much sense to create map presets of code...
