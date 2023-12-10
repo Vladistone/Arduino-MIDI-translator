@@ -331,6 +331,8 @@ kbd:[<<Back-to-Top>>]
 
 ==== [Unit_1]
 this is the main code for transforming the largest array of parameters with length SysEx = 7b (or range = 64)
+[%collapsible]
+====
 [,cpp,%linenums]
 ----
 // Main DSS-1: Scaling SysEx_8 lenght for paramNumber of [5]
@@ -543,17 +545,18 @@ It is the main processing unit for *Ctlr_2_Synth* map layouts and is shown in se
 Each user comes up with the basic principle of correspondence for this table independently!
 based on your stereotypes and convenience when manipulating the parameters of the synthesizer using the control panel...
 Plus, there are a number of limitations from both the controller and the synthesizer. For example:
-* list and its number of parameters with smooth adjustment/change of parameter. in my case:
-Nucleus has
-total 64 elements
-type fader and rotary V-coder - 32
-switch, button - 32
-and you can use 2 DAW-mode buttons for double the number of options upto 64+64
+list and its number of parameters with smooth adjustment/change of parameter. in my case:
+  * Nucleus has
+    . total 64 elements
+      - type fader and rotary V-coder - 32
+      - switch, button - 32
+    . and you can use 2 DAW-mode buttons for double the number of options upto 64+64
 vs
-DSS-1 has the ability to program 77 or more parameters (including Mode request and 4 CC)
-Of these, changes are constant in smoothness - more than 45 parameters (you can count more if you include in this list all parameters except switches)
-switch parameters - 16 plus 15+ Mode switches
-only 31+
+  * DSS-1 has the ability to program
+    . 77 or more parameters (including Mode request and 4 CC)
+Of these:
+    . changes are constant in smoothness - more than 45 parameters (you can count more if you include in this list all parameters except switches)
+    . switch parameters - 16 plus 15+ Mode switches, total - 31+
 
 Therefore, everyone has a choice and a dilemma of priorities
 - what to choose and how to use such varied choices and restrictions...
