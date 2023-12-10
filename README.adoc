@@ -292,9 +292,8 @@ case  0x46: // functionID 70 [id46] Program nameList	Tx only		---
 the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte.
 This was implemented at the very last moment and represents the most interesting section for further development in case of interest from both the code supporter and the performer himself.
 Therefore, any help and cooperation is accepted!
-
-image:IMAGES/Korg DSS-1/MODE_data.jpeg[,400.500]image:IMAGES/Korg DSS-1/request ID.jpeg
 ====
+image:IMAGES/Korg DSS-1/MODE_data.jpeg[,400,500]image:IMAGES/Korg DSS-1/request ID.jpeg[,400,500]
 
 From my little programming experience, I can say that I used Pocket MIDI software to monitor MIDI messages and because of it
 I got into trouble when compiling the CC#2SysEx correspondence table due to combining data in decimal & hex formats at IN/OUT monitor,
@@ -310,11 +309,11 @@ Function ID [Fxx] - a convenient parameter when focusing on the built-in interfa
 of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
 
 I’ll immediately voice some notes present in the code as an addition:
-
 [NOTE]
 ----
 within parentheses wouldn't work if use off/on SW
 ----
+
 My Arduino project had limitations when designing the lookup table/template: *Nucleus2 SSL controller*
 I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements
 - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only.
@@ -331,18 +330,216 @@ where in brackets are the values that are unattainable when using the button 0-1
 kbd:[<<Back-to-Top>>]
 
 ==== [Unit_1]
+this is the main code for transforming the largest array of parameters with length SysEx = 7b (or range = 64)
+[,cpp,%linenums]
+----
+// Main DSS-1: Scaling SysEx_8 lenght for paramNumber of [5]
+void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
+{
+  const int sysexLen = 8;
+  static byte sysexData[sysexLen] = {
+	0xF0, // 0 Sysex start
+	0x42, // 1 Manufacturer ID: 42, Korg
+	0x30, // 2 Channel 1
+	0x0B, // 3 Device ID: 0b, DSS-1
+	0x41, // 4 Function ID: 41, Program Parameter change
+	0x00, // 5 Parameter number (which parameter we want to change)
+	0x00, // 6 Parameter value
+	0xF7  // 7 EOX
+  };
+  // paramValue7Bit is assumed to run from 0 to 127 in all cases,
+  paramValue7Bit &= 0x7f;
+  // so here we rescale to fit to appropriate bit width for each parameter
+  byte paramValueScaled = 0;
+  switch (paramNumber) {
+  case 0x04: // paramNumber 4  (2) VCF Mode/Slope
+  case 0x05: // paramNumber 5  (2) VCF EG Polarity
+  case 0x26: // paramNumber 38 (2) ATch VCF Mode
+  case 0x29: // paramNumber 41 (2) JStck VCF Mode
+  case 0x33: // paramNumber 51 (2) DDL-2 In Sel
+  case 0x39: // paramNumber 57 (2) DDL-2 Mod Invert
+  case 0x3D: // paramNumber 61 (2) Sync Mode
+  case 0x48: // paramNumber 72 (2) A.Bend Polar.Mode
+    paramValueScaled = paramValue7Bit >> 6; break;
+  case 0x43: // paramNumber 67 (4) Osc MG Select
+  case 0x47: // paramNumber 71 (4) A.Bend Select
+  case 0x4D: // paramNumber 77 (4) Unison Voices
+    paramValueScaled = paramValue7Bit >> 5; break;
+  case 0x4A: // paramNumber 74 (8) Unison Detune
+    paramValueScaled = paramValue7Bit >> 4; break;
+  case 0x1C: // paramNumber 28 (16) Veloc VCF Cutoff
+  case 0x24: // paramNumber 36 (16) ATch OSC MG Intens
+  case 0x25: // paramNumber 37 (16) ATch VCF Level
+  case 0x27: // paramNumber 39 (16) ATch VCA Level
+  case 0x2F: // paramNumber 47 (16) DDL-1 Feedback
+  case 0x30: // paramNumber 48 (16) DDL-1 FX Level
+  case 0x35: // paramNumber 53 (16) DDL-2 Feedback
+  case 0x36: // paramNumber 54 (16) DDL-2 FX Level
+  case 0x3A: // paramNumber 58 (16) Osc 1 MSound
+  case 0x3B: // paramNumber 59 (16) Osc 2 MSound
+  case 0x46: // paramNumber 70 (16) OSC MG Delay
+    paramValueScaled = paramValue7Bit >> 3; break;
+  case 0x44: // paramNumber 68 (32) OSC MG Freq.
+  case 0x49: // paramNumber 73 (32) A.Bend /Porta.Time
+  case 0x4B: // paramNumber 75 (32) Veloc OSC X-Switch
+    paramValueScaled = paramValue7Bit >> 2; break;
+  case 0x03: // paramNumber 3  (64) Noise Level
+  case 0x07: // paramNumber 7  (64) VCF EG Intens
+  case 0x08: // paramNumber 8  (64) VCF Resonance
+  case 0x09: // paramNumber 9  (64) VCF Kbd Track
+  case 0x0A: // paramNumber 10 (64) VCF MG Freq.
+  case 0x0B: // paramNumber 11 (64) VCF MG Delay
+  case 0x0C: // paramNumber 12 (64) VCF MG Intens
+  case 0x0D: // paramNumber 13 (64) VCF EG Attack
+  case 0x0E: // paramNumber 14 (64) VCF EG Decay
+  case 0x0F: // paramNumber 15 (64) VCF EG BrPoint
+  case 0x10: // paramNumber 16 (64) VCF EG Slope
+  case 0x11: // paramNumber 17 (64) VCF EG Sustain
+  case 0x12: // paramNumber 18 (64) VCF EG Release
+  case 0x14: // paramNumber 20 (64) VCA Level
+  case 0x15: // paramNumber 21 (64) VCA EG Attack
+  case 0x16: // paramNumber 22 (64) VCA EG Decay
+  case 0x17: // paramNumber 23 (64) VCA EG BrPoint
+  case 0x18: // paramNumber 24 (64) VCA EG Slope
+  case 0x19: // paramNumber 25 (64) VCA EG Sustain
+  case 0x1A: // paramNumber 26 (64) VCA EG Release
+  case 0x1B: // paramNumber 27 (64) VelSns ABend Intens
+  case 0x1D: // paramNumber 29 (64) VelSns VCF EG Attack
+  case 0x1E: // paramNumber 30 (64) VelSns VCF EG Decay
+  case 0x1F: // paramNumber 31 (64) VelSns VCF EG Slope
+  case 0x20: // paramNumber 32 (64) VCA EG Intensity
+  case 0x21: // paramNumber 33 (64) VelSns VCA EG Attack
+  case 0x22: // paramNumber 34 (64) VelSns VCA EG Decay
+  case 0x23: // paramNumber 35 (64) VelSns VCA EG Slope
+  case 0x2C: // paramNumber 44 (64) DDL MG-A Freq
+  case 0x2D: // paramNumber 45 (64) DDL MG-B Freq
+  case 0x31: // paramNumber 49 (64) DDL-1 MG-A Intens
+  case 0x32: // paramNumber 50 (64) DDL-1 MG-B Intens
+  case 0x37: // paramNumber 55 (64) DDL-2 MG-A Intens
+  case 0x38: // paramNumber 56 (64) DDL-2 MG-B Intens
+  case 0x41: // paramNumber 65 (64) Osc 2 Detune
+  case 0x45: // paramNumber 69 (64) OSC MG Intensity
+    paramValueScaled = paramValue7Bit >> 1; break;
+  case 0x02: // paramNumber 2 (128) A.Bend Intes/PortaMix
+  case 0x06: // paramNumber 6 (128) VCF Cutoff
+  case 0x13: // paramNumber 19(128) VCA Kbd Decay
+    paramValueScaled = paramValue7Bit; break;
+  // for this param below we are use ariphmetic ops:
+  case 0x3F: // paramNumber 63  (3) Osc 1 Octave
+  case 0x40: // paramNumber 64  (3) Osc 2 Octave
+  case 0x4C: // paramNumber 76  (3) Key Assign mode
+    paramValueScaled = paramValue7Bit/43; break;
+  case 0x3E: // paramNumber 62  (5) Bit DA Resolution
+    paramValueScaled = paramValue7Bit/26; break;
+  case 0x42: // paramNumber 66 (12) Osc 2 Interval
+    paramValueScaled = paramValue7Bit*24/256; break;
+  case 0x28: // paramNumber 40 (13) JStck PBend Range
+  case 0x2A: // paramNumber 42 (13) EQ Bass
+  case 0x2B: // paramNumber 43 (13) EQ Treble
+  case 0x3C: // paramNumber 60 (13) Max OSC Band Range
+    paramValueScaled = paramValue7Bit*26/256; break;
+  case 0x00: // paramNumber 0 (101) Osc 1 Level
+  case 0x01: // paramNumber 1 (101) Osc 2 Level
+    paramValueScaled = paramValue7Bit*203/256; break;
+  default:
+  return;	// unknown parameter - ignore
+  }
+  sysexData[2] = 0x30 | ((channel - 1) & 0x0f);
+  sysexData[5] = paramNumber;
+  sysexData[6] = paramValueScaled;
+  MIDI.sendSysEx(sysexLen, sysexData, true);
+}
+----
 
 kbd:[<<Back-to-Top>>]
 
 ==== [Unit_2]
 
+[%collapsible]
+====
+[,cpp,%linenums]
+----
+// Scaling SyxEx_9 lenght of DDL1&2 Time, LSB&MSB bytes only:
+void sendParam_9(byte channel, byte paramNumber, byte paramValue7Bit) // Unit_2
+{
+  const int sysexLen = 9;
+  static byte sysexData[sysexLen] =
+  {
+    0xF0, // 0 SOX
+    0x42, // 1 Manufacturer ID: 42, Korg
+    0x30, // 2 Channel 1
+    0x0B, // 3 Device ID: 0b, DSS-1
+    0x41, // 4 Function ID: 41, Program Parameter change
+    0x00, // 5 Parameter number (which parameter we want to change)
+    0x00, // 6 Parameter low byte
+    0x00, // 7 Parameter high byte
+    0xF7  // 8 EOX
+  };
+  paramValue7Bit &= 0x7f;
+  int paramValueScaled = 0;
+  switch (paramNumber) // So here we rescale to fit to range:
+  {
+	  case 0x2E: // [F81] paramNumb 46 DDL-1 Time (500)
+	  case 0x34: // [F92] paramNumb 52 DDL-2 Time (500)
+	  paramValueScaled = paramValue7Bit*252/64; break;
+	  default: return;	// unknown parameter - ignore
+  }
+  sysexData[2] = 0x30 | ((channel - 1) & 0x0f);	// Set channel number
+  sysexData[5] = paramNumber;
+  sysexData[6] = paramValueScaled & 0x7f;		// LSB of 14-bit value
+  sysexData[7] = (paramValueScaled >> 7) & 0x03;// MSB
+  MIDI.sendSysEx(sysexLen, sysexData, true);
+}
+----
+====
+
 kbd:[<<Back-to-Top>>]
 
 ==== [Unit_3]
 
+[%collapsible]
+====
+[,cpp,%linenums]
+----
+// Scaling SyxEx_10 lenght of OSC mix ratio using by one CC# source:
+void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit_3
+  const int sysexLen = 10;
+  static byte sysexData[sysexLen] = {
+    0xF0, // 0 SOX
+    0x42, // 1 Manufacturer ID: 42, Korg
+    0x30, // 2 Channel 1
+    0x0B, // 3 Device ID: 0b, DSS-1
+    0x41, // 4 Message: 41, Parameter change
+    0x00, // 5 Parameter number (1-st param witch we going to change)
+    0x00, // 6 Parameter master value
+    0x00, // 7 Parameter number (be as slave)
+    0x00, // 8 Parameter slave value
+    0xF7  // 9 EOX
+    };
+
+    paramValue7Bit &= 0x7f;
+    int paramValueScaled;
+    switch (paramNumber) { // so here we rescale to fit to range:
+    case 0x00: // [F14] paramNumber 0 OSC1 level Mix ratio (master)
+	case 0x01: // [F14] paramNumber 1 OSC2 level Mix ratio (slave)
+	paramValueScaled = paramValue7Bit*203/256; break;
+    default:
+    return;	// unknown parameter - ignore
+   }
+    sysexData[2] = 0x30 | ((channel - 1) & 0x0f);// Set channel number
+    sysexData[5] = paramNumber; // master must be (master+slave) == 100%:
+    sysexData[6] = paramValueScaled & 0x7f; // master value
+    sysexData[7] = (paramNumber +1); // slave
+    sysexData[8] = (100 - paramValueScaled) & 0x7f; // slave value
+    MIDI.sendSysEx(sysexLen, sysexData, true);
+}
+----
+====
+
 kbd:[<<Back-to-Top>>]
 
 ==== [Unit_4]
+It is the main processing unit for *Ctlr_2_Synth* map layouts and is shown in section <<map>>
 
 kbd:[<<Back-to-Top>>]
 
@@ -477,6 +674,7 @@ hex[5]				  (sorted by paramNumber)
 
 kbd:[<<Back-to-Top>>]
 
+[#map]
 === Cntrl_2_Synth parameter map table
 
 .Original *Ctlr_2_Synth* map layouts for *Nucleus_2_DSS-1*
