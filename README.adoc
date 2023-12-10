@@ -37,10 +37,11 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 . if you need, step the next: → kbd:[*Manage Librarys*] `⇧⌘i` kbd:[*download*] or kbd:[*upgrade*] the `MIDI_library.h`
 . Open the sketch file and check the compilation for no compilation errors: kbd:[*Sketch*] →  kbd:[*check/compilation*] `⇧⌘R`. 
 . if compilation was successful - upload the sketch to Arduino: kbd:[*Sketch*] →  kbd:[*Upload*] `⇧⌘U`.
-Relax! or not? wait a minute...
 
-because after downloading the sketch to the Arduino,
-. The time will come to adapt the Arduino to your MIDI system and decide whether this Cntrl_2_Synth map layouts
+Relax! or wait a minute...
+
+because after downloading the sketch to the Arduino:
+. The time will come to adapt the Arduino to your MIDI system and decide whether this *Cntrl_2_Synth* map layouts:
    * is this convenient for your combination of controller and Korg DSS-1 or whether need to remap the code?
    * You can also check the functionality of this sketch in working conditions or by simulating MIDI monitoring.
 . To do this, you need to have a separate MIDI interface and a shield to connect to the Arduino MIDI interface.
