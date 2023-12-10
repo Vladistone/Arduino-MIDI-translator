@@ -550,11 +550,11 @@ Plus, there are a number of limitations from both the controller and the synthes
 list and its number of parameters with smooth adjustment/change of parameter. in my case:
 
 |===
-|element/param|Nucleus|DSS-1|note
+|element/param|Nucleus|DSS-1| note for DSS-1 parameters:
 
-|fader and rotary V-coder|32|45+|for DSS-1 parameters:
-|switch, button|32|16(+15)|incl. mode, request, and CC#:
-|Total|64|77+|CC#1, 2, 7, 122, 123, 124-125
+|fader and rotary V-coder|32|45+| incl. mode, request, and CC#:
+|switch, button|32|16(+15)| CC#1, 2, 7, 122, 123, 124-125
+|Total|64|77+| but most DSS-1 params don't require permanent Cntrl.
 |===
 
 Therefore, everyone has a choice and a dilemma of priorities
