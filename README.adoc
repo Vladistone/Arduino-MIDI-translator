@@ -195,12 +195,12 @@ Because of this nuance, only the minimum and maximum values assigned to the para
 |===
 |Program parameter name|Function or state| note
 |`[F11] Osc 1 Octave`|16 (8) 4 .7+|within parentheses are unattainability Synth state of 4-step parameter if applicate by 2-state switch controller (meaning on/off operation)
-|`[F17] Osc 2 Octave`|16 (8) 4|
-|`[F11] Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both|
-|`[F16] Bit Resolutn`|6 (7, 8, 10) 12|
-|`[F63] Key Assign Mod`|Poly2 (Poly1) Unison|
-|`[F18] A.Bend Select`|Off (Osc1, Osc2) Both|
-|`[F64] Unison Voices`|2 (4, 6) 8|
+|`[F17] Osc 2 Octave`|16 (8) 4
+|`[F11] Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both
+|`[F16] Bit Resolutn`|6 (7, 8, 10) 12
+|`[F63] Key Assign Mod`|Poly2 (Poly1) Unison
+|`[F18] A.Bend Select`|Off (Osc1, Osc2) Both
+|`[F64] Unison Voices`|2 (4, 6) 8
 |`[F16] Sync Mode Sw.`|Off/On|
 |===
 
