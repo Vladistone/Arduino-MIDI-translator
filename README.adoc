@@ -122,6 +122,7 @@ Korg <<DSS-1>> - the flagship for upgrades! The following events were held for i
 | a Gotek 1,4M & flashflopy emulato;r
 | a new blue LCD;
 | a built-in arduino nano for MIDI translator CC2SysEx;
+|===
 
 Korg <<DW8000>> with Arduino chipping;
 
