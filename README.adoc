@@ -553,8 +553,9 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
 [NOTE]
 ====
 If yoy wish separate control for OSC 1 and OSC 2 levels by separate SysEx messages like:
- - `Osc 1 level: [F0 42 30 0B 41 00 xx F7]`
- - `Osc 2 level: [F0 42 30 0B 41 01 xx F7]`
+
+  *[F14] paramNumber 0: `[F0 42 30 0B 41 00 xx F7]`
+  *[F14] paramNumber 1: `[F0 42 30 0B 41 01 xx F7]`
 then have to thick how to remap unit_4 only:
 
 for exsample: Change 2 strings of code: `371` & `372` like this:
@@ -565,8 +566,8 @@ for exsample: Change 2 strings of code: `371` & `372` like this:
 ----
 change to:
 ----
- 371   case 1: sendParam_8(channel, 0, value); break; // [F14] 00 OSC1 Level		separatly!
- 372   case 2: sendParam_8(channel, 1, value); break; // [F14] 01 OSC2 Level		separatly!
+ 371   case 1: sendParam_8(channel, 0, value); break; // [F14] 00 OSC1 Level		use by separately!
+ 372   case 2: sendParam_8(channel, 1, value); break; // [F14] 01 OSC2 Level		use by separately!
 ----
 and have to comment out on string 395:
 ----
