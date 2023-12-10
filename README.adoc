@@ -156,9 +156,9 @@ Mod for Korg DSS-1 was done a little differently which EX8000: by attaching an a
 The nuance is that you don’t confuse where to connect the ends of Tx and Rx:
 ====
 - *Rx* end connect to the end going to the socket pin # 2 CN26B,
-- *Tx* end to the trim going to the main board of the KLM-781 processor HD63B03Xb
+- *Tx* end to the trim going to the main board of the KLM-781 processor HD63B03Xb as IC11
 ====
-.as IC11 in circuit diagram:
+.pin frame connection of HD63B03Xb processor:
 [%collapsible]
 ====
 image:IMAGES/Korg_IC_KLM-781.jpeg[,500,700]
