@@ -557,7 +557,7 @@ If yoy wish separate control for OSC 1 and OSC 2 levels by separate SysEx messag
   * [F14] paramNumber 0: `[F0 42 30 0B 41 00 xx F7]`
   * [F14] paramNumber 1: `[F0 42 30 0B 41 01 xx F7]`
 
-then have to thick how to do the remap by <<*unit_4*>> only:
+then have to thick how to do the remap by <<unit_4>> only:
 
 for exsample: Change 2 strings of code: `371` & `372` like this:
 [#exsample]
