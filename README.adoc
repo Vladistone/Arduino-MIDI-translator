@@ -135,7 +135,7 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 [%collapsible]
 ====
 |===
-|before|after chiped|
+|before|after chiped
 |image:IMAGES/EX8000inner.jpeg[,300,400]|image:IMAGES/EX8000_Chiped.jpeg[,300,400]
 |===
 ====
