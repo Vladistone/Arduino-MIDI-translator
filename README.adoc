@@ -552,19 +552,10 @@ list and its number of parameters with smooth adjustment/change of parameter. in
 |===
 |element/param|Nucleus|DSS-1|note
 
-|fader and rotary V-coder|32|45|for DSS-1 parameters:
-|switch, button|32|16(+15)|incl. mode, request, and 4 CC
-|Total|64|77+|
+|fader and rotary V-coder|32|45+|for DSS-1 parameters:
+|switch, button|32|16(+15)|incl. mode, request, and CC#:
+|Total|64|77+|CC#1, 2, 7, 122, 123, 124-125
 |===
-
-* Nucleus has
-. total 64 elements
-      - type fader and rotary V-coder - 32
-      - switch, button - 32
-* DSS-1 has the ability to program
-. 77 or more parameters (including Mode request and 4 CC)
-. changes are constant in smoothness - more than 45 parameters (you can count more if you include in this list all parameters except switches)
-. switch parameters - 16 plus 15+ Mode switches, total - 31+
 
 Therefore, everyone has a choice and a dilemma of priorities
 - what to choose and how to use such varied choices and restrictions...
