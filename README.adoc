@@ -557,7 +557,7 @@ list and its number of parameters with smooth adjustment/change of parameter. in
 |Total|64|77+|50|50| but most DSS-1 params don't require permanent Ctrl.
 |===
 
-image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,400]
+image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,300]
 
 Therefore, everyone has a choice and a dilemma of priorities
 - what to choose and how to use such varied choices and restrictions...
