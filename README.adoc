@@ -566,7 +566,9 @@ kbd:[<<Back-to-Top>>]
 
 [#inplementation]
 == MIDI implementation charts
+
 === Parameter list origin
+
 .Korg DSS-1 Midi iplementation chart [3]
 [%collapsible]
 ====
