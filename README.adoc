@@ -556,11 +556,9 @@ list and its number of parameters with smooth adjustment/change of parameter. in
 |2 range (switch, button)|32|2|2(+3)|16(+12)| CC#1, 2, 7, 122, 123, (124-125)
 |Total|64|50|50(+3)|78(+12)| but most DSS-1 params don't require permanent Ctrl.
 |===
-
-image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,400]
-
 Therefore, everyone has a choice and a dilemma of priorities
 - what to choose and how to use such varied choices and restrictions...
+image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,400]
 
 kbd:[<<Back-to-Top>>]
 
