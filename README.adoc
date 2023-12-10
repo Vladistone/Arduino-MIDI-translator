@@ -27,7 +27,7 @@ kbd:[<<Back-to-Top>>]
 == Quick start
 
 Here's a step-by-step guide to help you get started with Arduino and a MIDI controller:
-====
+
 . Download & Start Arduino IDE.
 . If you haven't already done it, https://www.arduino.cc/en/software[install Arduino IDE].
 . Connect your Arduino board to your computer and check the board is recognized for IDE.
@@ -38,22 +38,22 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 . Open the sketch file and check the compilation for no compilation errors: kbd:[*Sketch*] →  kbd:[*check/compilation*] `⇧⌘R`. 
 . if compilation was successful - upload the sketch to Arduino: kbd:[*Sketch*] →  kbd:[*Upload*] `⇧⌘U`.
 
-*All done*...
+//*All done*...
 image:IMAGES/under controller.jpg[,100,50] Relax and take it easy! or wait a minute... - false start!
 [WARNING]
-since if you have read up to this point...
-then you are probably a noob like I was at the beginning of this journey of getting to know arduino world...
+//since if you have read up to this point...
+//then you are probably a noob like I was at the beginning of this journey of getting to know arduino world...
 [TIP]
-But if you have experience with Arduino codes, then you have probably already
-begun to analyze the mapping template of <<inplementation>> for convenience and compatibility for your *Cntrl_2_Synth* equipment...  and is whether need it to adapt by custom remap?
+//But if you have experience with Arduino codes, then you have probably already
+//begun to analyze the mapping template of <<inplementation>> for convenience and compatibility for your *Cntrl_2_Synth* equipment...  and is whether need it to adapt by custom remap?
 [NOTE]
-:MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
-And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
-Ctlr_2_Synth map layouts are very custom, so I'm no sure yet if it would make much sense to create map presets of code...
-but the base approach of the system for developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
-*show must go on*!
+//:MIDI_code_preset_content: There are many controllers projects for synth manipulation by Arduino chipping.
+//And although technically possible in exactly the same way as with controller presets for factory MIDI devices,
+//Ctlr_2_Synth map layouts are very custom, so I'm no sure yet if it would make much sense to create map presets of code...
+//but the base approach of the system for developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
+//*show must go on*!
 
-So, after downloading the sketch to the Arduino:
+//So, after downloading the sketch to the Arduino:
 
 . That time has come to adapt the Arduino to staff of MIDI devices! and
 . Check the functionality of this sketch in working condition or by simulating MIDI monitoring by PC. To do this, you need:
