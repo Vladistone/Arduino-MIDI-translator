@@ -44,13 +44,12 @@ image:IMAGES/under controller.jpg[,100,50] Relax and take it easy! or wait a min
 since if you have read up to this point...
 then you are probably a noob like I was at the beginning of this journey of getting to know arduino.
 And if you have experience with Arduino codes, then you have probably already
-begun to analyze the mapping template for convenience and compatibility for your *Cntrl_2_Synth*r equipment... or whether need to remap the code?
+begun to analyze the mapping template for convenience and compatibility for your *Cntrl_2_Synth* equipment...  and decide: is whether need to remap the code?
 
-because after downloading the sketch to the Arduino: That time has come to adapt the Arduino to staff of MIDI devices and decide!
+because after downloading the sketch to the Arduino: That time has come to adapt the Arduino to staff of MIDI devices
 
-. You can also check the functionality of this sketch in working conditions or by simulating MIDI monitoring.
-. To do this, you need:
-  * to have a separate MIDI interface and a shield to connect to the Arduino MIDI interface. or...
+. You can also check the functionality of this sketch in working conditions or by simulating MIDI monitoring. To do this, you need:
+  * to have a separate MIDI interface and a shield to connect to the Arduino MIDI interface, or...
   * open your synthesizer and take a soldering iron and wire cutters in your hands to carry out a surgical operation to insert a chip into the body of the synthesizer!
 
 For this purpose, there is no need for me to describe all the details of the analysis of the code’s performance under working conditions on this site.
