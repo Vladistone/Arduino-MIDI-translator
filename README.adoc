@@ -346,7 +346,8 @@ kbd:[<<Back-to-Top>>]
 
 [#inplementation]
 == MIDI implementation charts
-=== .Korg DSS-1 Parameter list origin
+=== Parameter list origin
+.Korg DSS-1 Midi iplementation chart [3]
 [%collapsible]
 ====
 [frame=none]
@@ -363,8 +364,9 @@ Parameter number column "2", at pages 7-8:
 
 [WARNING]
 pay attantion: not use the *param.Offset*! parameter misconception is passed down!
+image:IMAGES/Korg DSS-1/program param DUMP & CHANGE for DSS-1.jpeg
 
-the author of the first DW8000 hack didn't understand the difference also
+Steve Baines of the first DW8000 hack didn't understand the difference.
 https://gearspace.com/board/showpost.php?p=16795924&postcount=16[at gearspace.com have quote his comments]
 
 === Code parameter listing
@@ -376,7 +378,8 @@ with hex and decimal data correspondence for ease of programming:
 ====
 Korg DSS-1 Parameter list (sorted by paramNumber)
 Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1,
-which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from Glen Stegner.
+which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous version
+of the code by Steve Baines and Excel tables by Glen Stegner.
 [,cpp,%linenums]
 ----
 hex[4]	FunID  ParamNumber # range Parameter name
