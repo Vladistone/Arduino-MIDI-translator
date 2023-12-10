@@ -249,14 +249,15 @@ On this basis, a new table of correspondence between DDS-1 parameters and applic
 [#Unit]
 === Discribtion coding unit:
 Unfortunately, I’m not a professional coder and apparently you noticed my lack of professionalism even earlier. Therefore,
-I describe the process of creating code as a self-taught person. having experience in coding in basic and fortran when computer centers were relevant and a personal computer was like a spaceship - unattainable. And the current Windows wasn't even 3.1
+I describe the process of creating code as a self-taught person. having experience in coding in basic and fortran
+when computer centers were relevant and a personal computer was like a spaceship - unattainable. And the current Windows wasn't even 3.1
 
 So, code distributed across 5 different units
 for preparing and processing MIDI data arriving at the Rx Arduino input
 SysEx byte preparation blocks:
 [,cpp,%linenums]
 ----
- - Sysex_6 byte leight...[Unit_0]
+ - Sysex_6 byte leight...[<<Unit_0>>]
  - Sysex_8 byte leight...[Unit_1]
  - Sysex_9 byte leight...[Unit_2]
  - Sysex_10 byte leight..[Unit_3]
@@ -287,6 +288,7 @@ case  0x45: // functionID 69 [id45] MSound list		Tx/Rx		in progress
 case  0x46: // functionID 70 [id46] Program nameList	Tx only		---
 ----
 
+[#Unit_0]
 ==== [Unit_0]
 ====
 the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte.
@@ -329,6 +331,7 @@ where in brackets are the values that are unattainable when using the button 0-1
 
 kbd:[<<Back-to-Top>>]
 
+[#Unit_1]
 ==== [Unit_1]
 this is the main code for transforming the largest array of parameters with length SysEx = 7b (or range = 64)
 [%collapsible]
@@ -456,9 +459,10 @@ void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
 
 kbd:[<<Back-to-Top>>]
 
+[#Unit_2]
 ==== [Unit_2]
-The Unit_2 oparation is made for `DDL1 & 2 Time` range only. and it's make 9 bytes lenght of SysEx with LSB & MSB.
-increasing the transformation ratio when calculating the range as 252/64 from 127 to 500 max point.
+The Unit_2 oparation is made for `DDL1 & 2 Time` range only. and it's make 9 bytes lenght of SysEx
+Here the parameter value range is increase by transformation 252/64 from 127 to 500 max point,
 and shifting the data to the left 7 bytes for the MSB.
 
 [%collapsible]
@@ -501,6 +505,7 @@ void sendParam_9(byte channel, byte paramNumber, byte paramValue7Bit) // Unit_2
 
 kbd:[<<Back-to-Top>>]
 
+[#Unit_0]
 ==== [Unit_3]
 
 The Unit_3 preparation make 10 lenght SysEx with 2 parameter changes for OSC mix ratio only.
