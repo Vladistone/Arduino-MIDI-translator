@@ -898,11 +898,10 @@ And this may be a controversial decision, since according to the reasoning on th
 image::IMAGES/Korg DSS-1/Sysex_Mix_ratio.png[,700,440]
 ====
 My reason was to create authenticity to
-- the "DSS like" control method and
-- the ability to skimp the fader control on the SSL Nucleus controller. Plus,
-- the argument for *X-fader* control is that it is possible to achieve overload at the DAC output when playing particularly loud waves with distortion.
+  * the "DSS like" control method and
+  * the ability to economize the fader on the SSL Nucleus controller.
+  * the argument for *X-fader* control is that it is possible to achieve overload at the DAC output when playing particularly loud waves with distortion.
 ====
 How to avoid this and whether this is considered an artistic decision by the performer is up to everyone to decide for themselves!
 
 kbd:[<<Back-to-Top>>]
-
