@@ -509,8 +509,8 @@ The Unit_3 preparation make 10 lenght SysEx with 2 parameter changes for OSC mix
   * `paramNumber 1 OSC2 level` - as a slave, operating in antiphase motion to OSC 1
 to satisfy the condition (OSC 1 + OSC 2) = 100%  see Notes <<troubleshooting>>
 
-also here the parameter value range is reduce by transformation 203/256 from 127 to 100 max point.
-and combine the data to the 10 byte lenght for SysEx.
+also here the parameter value range is reduce by transformation 203/256 from 127 to 100 max point
+with combine the data to the 10 byte lenght for SysEx message.
 [%collapsible]
 ====
 [,cpp,%linenums]
