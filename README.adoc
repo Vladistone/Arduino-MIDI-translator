@@ -511,33 +511,6 @@ The Unit_3 preparation make 10 lenght SysEx with 2 parameter changes for OSC mix
 
 Also reduce the transformation range by calculating the parameter value as 203/256 from 127 to 100 max point.
 and combine the data to the 10 byte lenght for SysEx.
-
-[NOTE]
-====
-If yoy wish separate control for OSC 1 and OSC 2 levels by separate SysEx messages like:
- - `Osc 1 level: [F0 42 30 0B 41 00 xx F7]`
- - `Osc 2 level: [F0 42 30 0B 41 01 xx F7]`
-then have to thick how to change map unit for input that parameNumber 2 into.
-.may be for exsample change second string of code: `371` & `372` like this:
-----
-369    //		SSL Nucleus Fader group L (Mappings to my own CCs desigion)
-370    case 0: sendParam_8(channel, 32, value); break;  // [F44] VCA EG Intens
-371    //case 1: sendParam_8(channel, 69, value); break;// [F17] OSC MG intens		reserved CC#1
-232    //case 2: sendParam_8(channel, 12, value); break;// [F34] VCF MG intens		reserved CC#2
-+
-change to
-+
- 369   case 0: sendParam_8(channel, 0, value); break; // [F14] 00 OSC1 Level
- 370   case 1: sendParam_8(channel, 1, value); break; // [F14] 01 OSC2 Level
-----
-and commented the string 395 (or replace case number between this strings:
-[,cpp,%linenums]
-----
-395    //case 23: sendParam_10(channel, 0, value); break;// [F14] OSC Mix ratio		+[F14] 01 OSC2 Level
-371    case 23: sendParam_8(channel, 69, value); break; // [F17] OSC MG intens
-----
-====
-
 [%collapsible]
 ====
 [,cpp,%linenums]
@@ -574,6 +547,32 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
     sysexData[8] = (100 - paramValueScaled) & 0x7f; // slave value
     MIDI.sendSysEx(sysexLen, sysexData, true);
 }
+----
+====
+
+[NOTE]
+====
+If yoy wish separate control for OSC 1 and OSC 2 levels by separate SysEx messages like:
+ - `Osc 1 level: [F0 42 30 0B 41 00 xx F7]`
+ - `Osc 2 level: [F0 42 30 0B 41 01 xx F7]`
+then have to thick how to change map unit for input that parameNumber 2 into.
+.may be for exsample change second string of code: `371` & `372` like this:
+----
+369    //		SSL Nucleus Fader group L (Mappings to my own CCs desigion)
+370    case 0: sendParam_8(channel, 32, value); break;  // [F44] VCA EG Intens
+371    //case 1: sendParam_8(channel, 69, value); break;// [F17] OSC MG intens		reserved CC#1
+232    //case 2: sendParam_8(channel, 12, value); break;// [F34] VCF MG intens		reserved CC#2
++
+change to
++
+ 369   case 0: sendParam_8(channel, 0, value); break; // [F14] 00 OSC1 Level
+ 370   case 1: sendParam_8(channel, 1, value); break; // [F14] 01 OSC2 Level
+----
+and commented the string 395 (or replace case number between this strings:
+[,cpp,%linenums]
+----
+395    //case 23: sendParam_10(channel, 0, value); break;// [F14] OSC Mix ratio		+[F14] 01 OSC2 Level
+371    case 23: sendParam_8(channel, 69, value); break; // [F17] OSC MG intens
 ----
 ====
 
