@@ -192,7 +192,7 @@ Due to this limitation,I had to try to at least somehow use the SW buttons on pr
 Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
 
 |===
-|Program parameter name|Function and range[ notes
+|Program parameter name|Function and range| notes
 |`Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both|[NOTE]
 |||within parentheses wouldn't work if use off/on Switchs.
 |===
