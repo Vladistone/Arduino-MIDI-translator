@@ -554,8 +554,8 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
 ====
 If yoy wish separate control for OSC 1 and OSC 2 levels by separate SysEx messages like:
 
-  *[F14] paramNumber 0: `[F0 42 30 0B 41 00 xx F7]`
-  *[F14] paramNumber 1: `[F0 42 30 0B 41 01 xx F7]`
+  * [F14] paramNumber 0: `[F0 42 30 0B 41 00 xx F7]`
+  * [F14] paramNumber 1: `[F0 42 30 0B 41 01 xx F7]`
 
 then have to thick how to remap unit_4 only:
 
@@ -574,6 +574,10 @@ and have to comment out on string 395:
 ----
 395    //case 23: sendParam_10(channel, 0, value); break;// [F14] OSC Mix ratio		+[F14] 01 OSC2 Level
 ----
+but in this case you will lose control over
+
+  * `[F17] OSC MG intens`		whitch reserved for direct CC#1 message
+  * `[F34] VCF MG intens`		reserved for CC#2 message too
 it`s your choice...
 ====
 
