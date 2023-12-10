@@ -53,11 +53,12 @@ Ctlr_2_Synth map layouts are very custom, so I'm no sure yet if it would make mu
 but the base approach of the system for developing code for `Arduino MIDI translator` and consistency in adapting MIDI implementation has already been launched and this requires publicity...
 *show must go on*!
 
-So, after downloading the sketch to the Arduino: That time has come to adapt the Arduino to staff of MIDI devices!
-You can check the functionality of this sketch in working condition or by simulating MIDI monitoring by PC. To do this, you need:
+So, after downloading the sketch to the Arduino:
 
-. to have a separate MIDI interface and a shield for Arduino to connect to PC with make a MIDI loop through Arduino Rx/Tx , or...
-. take a soldering iron and wire cutters in your hands to carry out a "surgical operation" to chip into the circuit board of synth!
+. That time has come to adapt the Arduino to staff of MIDI devices! and
+. Check the functionality of this sketch in working condition or by simulating MIDI monitoring by PC. To do this, you need:
+  * to have a separate MIDI interface and a shield for Arduino to connect to PC with make a MIDI loop through Arduino Rx/Tx , or...
+  * take a soldering iron and wire cutters in your hands to carry out a "surgical operation" to chip into the circuit board of synth!
 
 For this purpose, there is no need for me to describe all the details of the analysis of the code’s performance under working conditions on this site.
 Or you can ask a question in a discussion on the forum https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project-2.html[gearspace.com]
