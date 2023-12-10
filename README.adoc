@@ -39,7 +39,8 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 . if compilation was successful - upload the sketch to Arduino: kbd:[*Sketch*] →  kbd:[*Upload*] `⇧⌘U`.
 
 Relax and take it easy! or wait a minute...
-{WARNING]
+
+[WARNING]
 because after downloading the sketch to the Arduino:
 
 . The time will come to adapt the Arduino to your MIDI system and decide whether this *Cntrl_2_Synth* map layouts:
