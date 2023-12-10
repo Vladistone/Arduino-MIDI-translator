@@ -457,7 +457,7 @@ void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
 kbd:[<<Back-to-Top>>]
 
 ==== [Unit_2]
-The Unit_2 preparation make 9 lenght LSB&MSB bytes for DDL1 & 2 Time range only.
+The Unit_2 oparation is made for `DDL1 & 2 Time` range only. and it's make 9 bytes lenght of SysEx with LSB & MSB.
 increasing the transformation ratio when calculating the range as 252/64 from 127 to 500 max point.
 and shifting the data to the left 7 bytes for the MSB.
 
@@ -465,7 +465,7 @@ and shifting the data to the left 7 bytes for the MSB.
 ====
 [,cpp,%linenums]
 ----
-// Scaling SyxEx_9 lenght of DDL1&2 Time, LSB&MSB bytes only:
+// Scaling SyxEx_9 lenght for DDL1&2 Time, LSB & MSB bytes only:
 void sendParam_9(byte channel, byte paramNumber, byte paramValue7Bit) // Unit_2
 {
   const int sysexLen = 9;
