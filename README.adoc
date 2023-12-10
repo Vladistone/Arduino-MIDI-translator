@@ -194,7 +194,7 @@ Because of this nuance, only the minimum and maximum values assigned to the para
 .some notes present in the code
 |===
 |Program parameter name|Function or state| note
-|`Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both|State within parentheses are unattainable if using the button on/off operation
+|`Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both|within parentheses are unattainable Synth state if applicate the 2-state switch controller with on/off operation.
 |===
 
 .example: MCU & XT Projections
