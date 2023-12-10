@@ -192,7 +192,7 @@ Due to this limitation,I had to try to at least somehow use the SW buttons on pr
 Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
 
 .some notes present in the code
-[cols="40,20,40"]
+[cols="50,20,30"]
 |===
 |Program parameter name|Function or state| note
 
