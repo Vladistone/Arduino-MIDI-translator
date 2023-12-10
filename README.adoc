@@ -310,12 +310,10 @@ But taking into account how SysEx and CC# will be presented when debugging with 
 Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD
 of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
 
-I’ll immediately voice some notes present in the code as an addition:
-
 [NOTE]
-within parentheses wouldn't work if use off/on SW
+I’ll immediately voice some notes present in the code as an addition: within parentheses wouldn't work if use off/on Switchs.
 
-My Arduino project had limitations when designing the lookup table/template: *Nucleus2 SSL controller*
+My Arduino project had limitations when designing the lookup table/template: <<Nucleus>> controller
 I was limited by the controller's capabilities due to its tight binding of CC# to such interface surface elements
 - as a result of which there a exception list upto 24 unused elements from 64 was formed, that unsuitable be mapping with the desired DSS-1 parameters due to their limitation of the on/off-state only.
 In a situation where more targes level of change are required (at least 4 or 16 levels)...
