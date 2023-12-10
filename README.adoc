@@ -162,7 +162,7 @@ The nuance is that you don’t confuse where to connect the ends of Tx and Rx:
 [%collapsible]
 ====
 image:IMAGES/Korg_IC_KLM-781.jpeg[,500,700]
-image:IMAGES/Korg EX8000/EX8000_inside.jpeg
+image:IMAGES/Korg EX8000/EX8000_inside.jpeg[,500,700]
 image:IMAGES/Korg DSS-1/DSS1_power_connect.jpeg[,500,700]
 image:IMAGES/DSS1_Arduino_upgrade.jpeg[,500,700]
 ====
