@@ -291,7 +291,9 @@ case  0x46: // functionID 70 [id46] Program nameList	Tx only		---
 ====
 the first block provides preparation of the length Sysex_6 bytes for executing only request commands for modifying the Korg DSS-1 synthesizer without providing transformation of the value byte.
 This was implemented at the very last moment and represents the most interesting section for further development in case of interest from both the code supporter and the performer himself.
-Therefore, any help and cooperation is accepted! image:IMAGES/Korg DSS-1/MODE_data.jpeg[,400.500]
+Therefore, any help and cooperation is accepted!
+
+image:IMAGES/Korg DSS-1/MODE_data.jpeg[,400.500]image:IMAGES/Korg DSS-1/request ID.jpeg
 ====
 
 From my little programming experience, I can say that I used Pocket MIDI software to monitor MIDI messages and because of it
