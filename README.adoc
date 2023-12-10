@@ -367,13 +367,16 @@ pay attantion: not use the *param.Offset*! parameter misconception is passed dow
 the author of the first DW8000 hack didn't understand the difference also
 https://gearspace.com/board/showpost.php?p=16795924&postcount=16[at gearspace.com have quote his comments]
 
-=== 
+=== Code parameter listing
 Also in the interblock space of code there is a complete list of program parameters
 with hex and decimal data correspondence for ease of programming:
 
 .Korg DSS-1 Parameter list
 [%collapsible]
 ====
+Korg DSS-1 Parameter list (sorted by paramNumber)
+Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1,
+which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from Glen Stegner.
 [,cpp,%linenums]
 ----
 hex[4]	FunID  ParamNumber # range Parameter name
@@ -467,11 +470,9 @@ hex[5]				  (sorted by paramNumber)
 ----
 ====
 
-Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
-Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1,
-which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from Glen Stegner.
-
+kbd:[<<Back-to-Top>>]
 === Cntrl_2_Synth parameter map table
+
 Original mappie table compiled for SSL Nucleus2 and korg DSS-1
 .Korg DSS-1 Cntrl_2_Synth parameter map table
 [%collapsible]
@@ -539,7 +540,7 @@ case 79:[F16] 61 (0x3D) paramNumber: Sync Mode
 	SSL Nucleus V-Coder Select group L
 case 80:[id12]18 (0x12) Function ID: Mode condition		Request
 case 81:[id16]22 (0x16) Function ID: MSound list		Request
-case 82:[id17]23 (0x23) Function ID: Program name list	Request
+case 82:[id17]23 (0x23) Function ID: Program name list		Request
 ----
 ====
 
