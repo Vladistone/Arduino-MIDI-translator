@@ -159,9 +159,10 @@ kbd:[<<Back-to-Top>>]
 === SSL Nucleus
 
 .example: MCU & XT Projections
+[%collapsible]
 |===
-|image:projection_MCU.svg[Projection MCU,470,380] |image:projection_XT.svg[Projection XT,260,380]
-2+|image:SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
+|IMAGES/Controllers/SSL Nucleus/projection_MCU.svg[Projection MCU,470,380] |IMAGES/Controllers/SSL Nucleus/projection_XT.svg[Projection XT,260,380]
+2+|iIMAGES/Controllers/SSL Nucleus/SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
 |===
 
 [#JP800]
