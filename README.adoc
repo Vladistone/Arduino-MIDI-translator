@@ -160,10 +160,12 @@ kbd:[<<Back-to-Top>>]
 
 .example: MCU & XT Projections
 [%collapsible]
+====
 |===
-|IMAGES/Controllers/SSL Nucleus/projection_MCU.svg[Projection MCU,470,380] |IMAGES/Controllers/SSL Nucleus/projection_XT.svg[Projection XT,260,380]
-2+|iIMAGES/Controllers/SSL Nucleus/SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
+|image:IMAGES/Controllers/SSL Nucleus/projection_MCU.svg[Projection MCU,470,380] |image:IMAGES/Controllers/SSL Nucleus/projection_XT.svg[Projection XT,260,380]
+2+|image:iIMAGES/Controllers/SSL Nucleus/SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
 |===
+====
 
 [#JP800]
 === Roland JP8000
