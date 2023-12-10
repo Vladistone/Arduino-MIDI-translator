@@ -549,7 +549,13 @@ based on your stereotypes and convenience when manipulating the parameters of th
 Plus, there are a number of limitations from both the controller and the synthesizer. For example:
 list and its number of parameters with smooth adjustment/change of parameter. in my case:
 
-  * Nucleus has
+|===
+|element/param|Nucleus|DSS-1|note
+|fader and rotary V-coder|32|77(+15)|incl. mode, request, and 4 CC
+|switch, button|32|16(+15)|
+|Total|64|108+|
+
+* Nucleus has
     . total 64 elements
       - type fader and rotary V-coder - 32
       - switch, button - 32
