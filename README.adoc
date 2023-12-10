@@ -513,11 +513,10 @@ Also reduce the transformation range by calculating the parameter value as 203/2
 and combine the data to the 10 byte lenght for SysEx.
 
 [NOTE]
-If yoy wish separate control for:
 ====
+If yoy wish separate control for OSC 1 and OSC 2 levels by separate SysEx messages like:
  - `Osc 1 level: [F0 42 30 0B 41 00 xx F7]`
  - `Osc 2 level: [F0 42 30 0B 41 01 xx F7]`
-====
 then have to thick how to change map unit for input that parameNumber 2 into.
 .may be for exsample change second string of code: `371` & `372` like this:
 ----
@@ -537,6 +536,7 @@ and commented the string 395 (or replace case number and sendParam_(10 to 8) bet
     case 23: sendParam_10(channel, 0, value); break; // [F14] OSC Mix ratio		+[F14] 01 OSC2 Level
     //case 1: sendParam_8(channel, 69, value); break;// [F17] OSC MG intens		reserved CC#1
 ----
+====
 
 [%collapsible]
 ====
