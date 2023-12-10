@@ -550,7 +550,7 @@ Plus, there are a number of limitations from both the controller and the synthes
 list and its number of parameters with smooth adjustment/change of parameter. in my case:
 
 |===
-|elements/rapameters|Nucleus|DW-8p|EX/DW8000|DSS-1| note for DSS-1 parameters:
+|element type/parameter|Nucleus|DW-8p|EX/DW8000|DSS-1| note for DSS-1 parameters:
 
 |multirange fader & rotary V-coder|32|48|48|60+| incl.4 mode,8 request,6 CC#:
 |2 range switch, button|32|2|2(+3)|16(+12)| CC#1, 2, 7, 122, 123, (124-125)
