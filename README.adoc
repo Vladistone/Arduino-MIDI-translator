@@ -113,16 +113,15 @@ This section is dedicated to the internal features and details when implementing
 I will try to describe how it worked out for me and give links to the experience of other experimenters with their upgrage.
 Here is my small list of synthesizers that achieved results with the Arduino translator.
 
-.Korg <<DSS-1>> - the flagship for upgrades! The following events were held for it:
+Korg <<DSS-1>> - the flagship for upgrades! The following events were held for it:
 |===
-|maitenance intems .6+|image:IMAGES/Korg DSS-1/DSS-1.JPG[,300,200]
+|maitenance intems .6+|image:IMAGES/Korg DSS-1/DSS-1.JPG[,400,300]
 | cleared, Adjusted, silent and soft touched keys board;
 | new micro buttons on the front panel;
 | a modern 3-pin AC-Plug with line-filter;
 | a Gotek 1,4M & flashflopy emulato;r
 | a new blue LCD;
 | a built-in arduino nano for MIDI translator CC2SysEx;
-|===
 
 Korg <<DW8000>> with Arduino chipping;
 
