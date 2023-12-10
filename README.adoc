@@ -155,6 +155,11 @@ kbd:[<<Back-to-Top>>]
 [#Controller]
 == Controllers review
 
+[%collapsible]
+====
+image:IMAGES/MIDI Variations.png[,500,400]
+====
+
 [#Nucleus]
 === SSL Nucleus
 
@@ -163,7 +168,7 @@ kbd:[<<Back-to-Top>>]
 ====
 |===
 |image:IMAGES/Controllers/SSL Nucleus/projection_MCU.svg[Projection MCU,470,380] |image:IMAGES/Controllers/SSL Nucleus/projection_XT.svg[Projection XT,260,380]
-2+|image:iIMAGES/Controllers/SSL Nucleus/SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
+2+|image:IMAGES/Controllers/SSL Nucleus/SSL_Nucleus_Mk2.svg[SSL_Nucleus_Mk2,700,350]
 |===
 ====
 
