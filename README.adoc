@@ -344,9 +344,9 @@ kbd:[<<Back-to-Top>>]
 .Korg DSS-1 Parameter list origin
 [%collapsible]
 ====
-|==
-|image:IMAGES/DSS1 Program Parameter map 2.jpeg
-|==
+|===
+|image:IMAGES/DSS1 Program Parameter map 2.jpeg[,400,400]
+|===
 ====
 
 ====
