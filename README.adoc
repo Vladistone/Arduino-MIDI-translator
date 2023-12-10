@@ -116,11 +116,11 @@ Here is my small list of synthesizers that achieved results with the Arduino tra
 
 |===
 |Korg <<DSS-1>> - the flagship for upgrades .7+|image:IMAGES/Korg DSS-1/DSS-1.JPG[,400,300]
-|The following events were held for it:
+|the following events were held for it:
 | cleared, Adjusted, silent and soft touched keys board;
 | new micro buttons on the front panel;
 | a modern 3-pin AC-Plug with line-filter;
-| a Gotek 1,4M & flashflopy emulato;r
+| a Gotek 1,4M & flashflopy emulato;
 | a new blue LCD;
 | a built-in arduino nano for MIDI translator CC2SysEx;
 ||
