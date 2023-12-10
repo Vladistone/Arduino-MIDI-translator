@@ -362,7 +362,7 @@ void handleControlChange(byte channel, byte number, byte value)
 	MIDI.sendControlChange(number, value, channel);
 	return;
   }
-  // Map from received CC numbers to corresponding DSS-1 ParaNumbers. Unit_4
+  // Map from received CC numbers to corresponding Parameters numbers (Cntrl_2_Synth DSS-1 map Unit_4)
   // personal desigion for each one controllers
   switch(number) // refer http://nickfever.com/music/midi-cc-list
   {
@@ -440,7 +440,7 @@ void handleControlChange(byte channel, byte number, byte value)
     case 95: sendDSS1Param_x(channel,, value); break; // Set MIDI mode
 	*/
 #if 0
-//  CC# to corresponding DSS-1 Parameter numbers map:
+//  CC# to corresponding DSS-1 Parameter numbers map: Cntrl_2_Synth DSS-1 Unit_4
 	CC# [FID] ## hex[5] Parameter	 Name
 -------|-----|--|------|------------|---------------
 	SSL Nucleus Fader group L
