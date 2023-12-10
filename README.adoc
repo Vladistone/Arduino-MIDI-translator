@@ -578,7 +578,8 @@ but in this case you will lose control over
 
   * `[F17] OSC MG intens`		whitch reserved for direct CC#1 message
   * `[F34] VCF MG intens`		reserved for CC#2 message too
-it`s your choice...
+
+it`s will be your choice...
 ====
 
 kbd:[<<Back-to-Top>>]
