@@ -568,7 +568,7 @@ change to:
  371   case 1: sendParam_8(channel, 0, value); break; // [F14] 00 OSC1 Level		separatly!
  372   case 2: sendParam_8(channel, 1, value); break; // [F14] 01 OSC2 Level		separatly!
 ----
-and have to commented on string 395:
+and have to comment out on string 395:
 ----
 395    //case 23: sendParam_10(channel, 0, value); break;// [F14] OSC Mix ratio		+[F14] 01 OSC2 Level
 ----
