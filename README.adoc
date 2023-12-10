@@ -191,12 +191,11 @@ The SSL engineers decision was somehow strange to software exclude the central g
 Due to this limitation,I had to try to at least somehow use the SW buttons on program parameters that require more than 3-4 switching values.
 Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
 
+.some notes present in the code as an addition:
 |===
-|Program parameter name|Function and range| notes
-|`Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both|within parentheses wouldn't work if use off/on Switchs. where in brackets are the values that are unattainable when using the button 0-127
+|Program parameter name|Function and state| notes
+|`Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both|State within parentheses are unattainable when using the button on/off
 |===
-
-I’ll immediately voice some notes present in the code as an addition:
 
 .example: MCU & XT Projections
 [%collapsible]
