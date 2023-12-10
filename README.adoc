@@ -134,8 +134,8 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 [%collapsible]
 ====
 |===
-|before|after chipped|
-|image:IMAGES/4D872EF6-56A1-4838-B1AC-B3D5AD35DA11.jpeg|image:IMAGES/28D0DD20-4CE9-42D8-8D66-97C0424D3E2D.jpeg[,300,400]
+|before|after chiped|
+|image:IMAGES/4D872EF6-56A1-4838-B1AC-B3D5AD35DA11.jpeg[,300,400]|image:IMAGES/28D0DD20-4CE9-42D8-8D66-97C0424D3E2D.jpeg[,300,400]
 ====
 
 [#DW8000]
