@@ -168,7 +168,8 @@ kbd:[<<Back-to-Top>>]
 === Roland JP8000
 to be created nex time...
 
-.staff photo[%collapsible]
+.staff photo
+[%collapsible]
 ====
 image:IMAGES/Korg DSS-1/Roland JP8000 + Korg DSS-1.png[,360,240]
 ====
