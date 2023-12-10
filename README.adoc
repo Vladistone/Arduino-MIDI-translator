@@ -552,7 +552,7 @@ list and its number of parameters with smooth adjustment/change of parameter. in
 |===
 |element type/parameter|Nucleus|JP8000|DW-8p|EX/DW8000|DSS-1| note for DSS-1 parameters:
 
-|multirange (fader & rotary V-coder)|32|56|46|48|48|60+| incl.4 mode,8 request,6 CC#:
+|multirange (fader & rotary V-coder)|32|56|48|48|60+| incl.4 mode,8 request,6 CC#:
 |2 range (switch, button)|32|8(+8)|2|2(+3)|16(+12)| CC#1, 2, 7, 122, 123, (124-125)
 |Total|64|64(+8)|50|50(+3)|78(+12)| but most DSS-1 params don't require permanent controlling.
 |===
