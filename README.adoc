@@ -193,12 +193,10 @@ Because of this nuance, only the minimum and maximum values assigned to the para
 
 |===
 |Program parameter name|Function and range| notes
-|`Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both|[NOTE]
-|||within parentheses wouldn't work if use off/on Switchs.
+|`Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both|within parentheses wouldn't work if use off/on Switchs. where in brackets are the values that are unattainable when using the button 0-127
 |===
 
 I’ll immediately voice some notes present in the code as an addition:
-where in brackets are the values that are unattainable when using the button 0-127
 
 .example: MCU & XT Projections
 [%collapsible]
