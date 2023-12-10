@@ -257,12 +257,12 @@ for preparing and processing MIDI data arriving at the Rx Arduino input
 SysEx byte preparation blocks:
 
 ====
- - Sysex_6 byte leight <<Unit_0>>
- - Sysex_8 byte leight...[Unit_1]
- - Sysex_9 byte leight...[Unit_2]
- - Sysex_10 byte leight..[Unit_3]
- - Main CC# Mapping......[Unit_4]
- - setup & loop..........[Unit_5]
+ - Sysex_6 byte leight.... <<Unit_0>>
+ - Sysex_8 byte leight.... <<Unit_1>>
+ - Sysex_9 byte leight.... <<Unit_2>>
+ - Sysex_10 byte leight... <<Unit_3>>
+ - Main CC# Mapping....... <<Unit_4>>
+ - setup & loop............ [Unit_5]
 ====
 
 ==== Not realized ideas, and parts in progress:
