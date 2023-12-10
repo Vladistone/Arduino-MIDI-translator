@@ -146,6 +146,11 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 [#DSS-1]
 === Korg DSS-1
 Mod for Korg DSS-1 was done a little differently which EX8000: by attaching an arduino board to a MIDI socket board - a KLM-788 Jack panel. See circuit diagram below...
+[%collapsible]
+====
+image:
+====
+
 ====
  - Power is taken from the closest points to the CN26B connector (pin #5 and #6 ).
  - The power plug for the arduino is also placed on thermo-plastic, and the arduino is already fixed on it, at 90 degrees/"edge" to the KLM-788 board.
@@ -336,6 +341,14 @@ kbd:[<<Back-to-Top>>]
 
 [#inplementation]
 == MIDI implementation charts
+.Korg DSS-1 Parameter list origin
+[%collapsible]
+====
+|==
+|image:IMAGES/DSS1 Program Parameter map 2.jpeg
+|==
+====
+
 ====
 if You wish remapping CC#2SysEx use the Refer: https://dn790004.ca.archive.org/0/items/sm_DSS-1ServiceManual/DSS-1ServiceManual.pdf[implementation chart `6`DSS-1 Programm parameter map]
 
