@@ -541,6 +541,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
 kbd:[<<Back-to-Top>>]
 
 ==== [Unit_4]
+
 It is the main processing unit for *Ctlr_2_Synth* map layouts and is shown in section <<map>>
 Each user comes up with the basic principle of correspondence for this table independently!
 based on your stereotypes and convenience when manipulating the parameters of the synthesizer using the control panel...
