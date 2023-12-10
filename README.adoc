@@ -333,6 +333,8 @@ Also in the interblock space of code there is a complete list of program paramet
 with hex and decimal data correspondence for ease of programming:
 
 .Korg DSS-1 Parameter list
+[%collapsible]
+====
 [,cpp,%linenums]
 ----
 hex[4]	FunID  ParamNumber # range Parameter name
@@ -424,6 +426,7 @@ hex[5]				  (sorted by paramNumber)
 0x4C: // [F63] paramNumber 76  (3) Key Assign mode
 0x4D: // [F64] paramNumber 77  (4) Unison Voices
 ----
+====
 
 Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
 Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1,
