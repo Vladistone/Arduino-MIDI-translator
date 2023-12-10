@@ -548,12 +548,16 @@ Each user comes up with the basic principle of correspondence for this table ind
 based on your stereotypes and convenience when manipulating the parameters of the synthesizer using the control panel...
 Plus, there are a number of limitations from both the controller and the synthesizer. For example:
 list and its number of parameters with smooth adjustment/change of parameter. in my case:
+
   * Nucleus has
     . total 64 elements
       - type fader and rotary V-coder - 32
       - switch, button - 32
-    . and you can use 2 DAW-mode buttons for double the number of options upto 64+64
++
+---
 vs
+---
++
   * DSS-1 has the ability to program
     . 77 or more parameters (including Mode request and 4 CC)
 Of these:
