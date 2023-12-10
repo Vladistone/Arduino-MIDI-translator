@@ -192,9 +192,10 @@ Due to this limitation,I had to try to at least somehow use the SW buttons on pr
 Because of this nuance, only the minimum and maximum values assigned to the parameter are switched by CC# on / off. such as:
 
 .some notes present in the code
-[cols="~,~,30h"]
+[cols="25%,25%,50%"]
 |===
 |Program parameter name|Function or state| note
+
 |`[F11] Osc 1 Octave`|16 (8) 4 .7+|within parentheses are unattainability Synth state of 4-step parameter if applicate by 2-state switch controller (meaning on/off operation)
 |`[F17] Osc 2 Octave`|16 (8) 4
 |`[F11] Osc MG Mod Selelect`| Sw Off (Osc1, Osc2) Both
