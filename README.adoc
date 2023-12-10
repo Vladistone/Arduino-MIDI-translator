@@ -51,7 +51,7 @@ Because after downloading the sketch to the Arduino: That time has come to adapt
 You can check the functionality of this sketch in working condition or by simulating MIDI monitoring. To do this, you need:
 
   * to have a separate MIDI interface and a shield to connect to the Arduino MIDI interface, or...
-  * open your synthesizer and take a soldering iron and wire cutters in your hands to carry out a "surgical operation" to chip into the circuit board of synth!
+  * take a soldering iron and wire cutters in your hands to carry out a "surgical operation" to chip into the circuit board of synth!
 
 For this purpose, there is no need for me to describe all the details of the analysis of the code’s performance under working conditions on this site.
 Or you can ask a question in a discussion on the forum https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project-2.html[gearspace.com]
