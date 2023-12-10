@@ -47,6 +47,7 @@ And if you have experience with Arduino codes, then you have probably already
 begun to analyze the code markup template for convenience and compatibility with your equipment...
 
 because after downloading the sketch to the Arduino: That time has come to adapt the Arduino to staff of MIDI devices and decide!
+
 . is this map layout convenient for your *Cntrl_2_Synth* combination or whether need to remap the code?
 . You can also check the functionality of this sketch in working conditions or by simulating MIDI monitoring.
 . To do this, you need to have a separate MIDI interface and a shield to connect to the Arduino MIDI interface.
