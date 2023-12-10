@@ -49,6 +49,7 @@ begun to analyze the mapping template for convenience and compatibility for your
 
 Because after downloading the sketch to the Arduino: That time has come to adapt the Arduino to staff of MIDI devices!
 You can check the functionality of this sketch in working condition or by simulating MIDI monitoring. To do this, you need:
+
   * to have a separate MIDI interface and a shield to connect to the Arduino MIDI interface, or...
   * open your synthesizer and take a soldering iron and wire cutters in your hands to carry out a "surgical operation" to chip into the circuit board of synth!
 
