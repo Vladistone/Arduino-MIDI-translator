@@ -902,7 +902,7 @@ My reason was to create authenticity to
   * the "DSS like" control method and
   * the ability to economize the fader on the SSL Nucleus controller.
 
-the argument against to *separate control* is that it will get to achieve overload at the DAC output when playing particularly loud waves with distortion.
+the argument against to *separate control* is that in some case will get to achieve overload at the DAC output when playing particularly loud waves with distortion.
 How to avoid this and whether this is considered an artistic decision by the performer is up to everyone to decide for themselves!
 
 kbd:[<<Back-to-Top>>]
