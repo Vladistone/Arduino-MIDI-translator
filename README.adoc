@@ -247,7 +247,7 @@ image::IMAGES/COM_IMG/LSB_MSB_data_format.jpeg[,400.500]
 On this basis, a new table of correspondence between DDS-1 parameters and application of parameters to CC# control messages from the controller.
 
 [#Unit]
-=== Discribtion coding unit:
+=== Units code discribtion:
 Unfortunately, I’m not a professional coder and apparently you noticed my lack of professionalism even earlier. Therefore,
 I describe the process of creating code as a self-taught person. having experience in coding in basic and fortran
 when computer centers were relevant and a personal computer was like a spaceship - unattainable. And the current Windows wasn't even 3.1
@@ -255,15 +255,15 @@ when computer centers were relevant and a personal computer was like a spaceship
 So, code distributed across 5 different units
 for preparing and processing MIDI data arriving at the Rx Arduino input
 SysEx byte preparation blocks:
-[,cpp,%linenums]
-----
- - Sysex_6 byte leight...[<<Unit_0>>]
+
+====
+ - Sysex_6 byte leight <<Unit_0>>
  - Sysex_8 byte leight...[Unit_1]
  - Sysex_9 byte leight...[Unit_2]
  - Sysex_10 byte leight..[Unit_3]
  - Main CC# Mapping......[Unit_4]
  - setup & loop..........[Unit_5]
-----
+====
 
 ==== Not realized ideas, and parts in progress:
 At the time of publication of the code, there were unrealized ideas for processing the remaining SysEx commands located in the section [Unit_0] as:
