@@ -346,7 +346,7 @@ kbd:[<<Back-to-Top>>]
 
 [#inplementation]
 == MIDI implementation charts
-.Korg DSS-1 Parameter list origin
+=== .Korg DSS-1 Parameter list origin
 [%collapsible]
 ====
 [frame=none]
@@ -367,6 +367,7 @@ pay attantion: not use the *param.Offset*! parameter misconception is passed dow
 the author of the first DW8000 hack didn't understand the difference also
 https://gearspace.com/board/showpost.php?p=16795924&postcount=16[at gearspace.com have quote his comments]
 
+=== 
 Also in the interblock space of code there is a complete list of program parameters
 with hex and decimal data correspondence for ease of programming:
 
@@ -470,6 +471,78 @@ Korg DSS-1 Parameter list (sorted by Function ID, then by paramNumber
 Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1,
 which is indicated on the surface and LCD of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from Glen Stegner.
 
+=== Cntrl_2_Synth parameter map table
+Original mappie table compiled for SSL Nucleus2 and korg DSS-1
+.Korg DSS-1 Cntrl_2_Synth parameter map table
+[%collapsible]
+====
+----
+//  CC# to corresponding DSS-1 Parameter numbers map: Cntrl_2_Synth map from Unit_4
+	CC# [FID] ## hex[5] Parameter	 Name
+-------|-----|--|------|------------|---------------
+	SSL Nucleus Fader group L
+case 0:	[F44] 32 (0x20) paramNumber: VCA EG Intensity
+case 1:	[F17] 69 (0x45) paramNumber: OSC MG Mod Intens	reserved CC#1
+case 2:	[F34] 12 (0x0C) paramNumber: VCF MG Mod Intens	reserved CC#2
+case 3:	[F83] 48 (0x30) paramNumber: DDL-1 FX Level
+case 4:	[F94] 54 (0x36) paramNumber: DDL-2 FX Level
+case 5:	[F19] 2  (0x02) paramNumber: A.Bend Intesity
+case 6:	[F21] 3  (0x03) paramNumber: Noise Level
+case 7:	[F36] 20 (0x14) paramNumber: VCA Total Level	reserved CC#7
+	SSL Nucleus Fader group R
+case 8:	[F65] 42 (0x2A) paramNumber: EQ Bass
+case 9:	[F65] 43 (0x2B) paramNumber: EQ Treble
+case 10:[F38] 21 (0x15) paramNumber: VCA EG Attack
+case 11:[F38] 22 (0x16) paramNumber: VCA EG Decay
+case 12:[F38] 23 (0x17) paramNumber: VCA EG BrPoint
+case 13:[F38] 24 (0x18) paramNumber: VCA EG Slope
+case 14:[F38] 25 (0x19) paramNumber: VCA EG Sustain
+case 15:[F38] 26 (0x1A) paramNumber: VCA EG Release
+	SSL Nucleus V-Coder group L
+case 16:[F32] 7  (0x07) paramNumber: VCF EG Intensity
+case 17:[F17] 68 (0x44) paramNumber: OSC MG Mod Freq
+case 18:[F46] 75 (0x4B) paramNumber: VelSns OSC X-Sw.
+case 19:[F81] 46 (0x2E) paramNumber: DDL-1 Time
+case 20:[F92] 52 (0x34) paramNumber: DDL-2 Time
+case 21:[F19] 73 (0x49) paramNumber: A.Bend Time
+case 22:[F64] 74 (0x4A) paramNumber: Unison Detune
+case 23:[F14] 0  (0x00) paramNumber: Osc1 Lev/MixRatio	Master
+case 23:[F14] 1  (0x01) paramNumber: Osc2 Lev/MixRatio 	Slave
+	SSL Nucleus V-Coder group R
+case 24:[F32] 6  (0x06) paramNumber: VCF Cutoff
+case 25:[F33] 8  (0x08) paramNumber: VCF Resonance
+case 26:[F35] 13 (0x0D) paramNumber: VCF EG Attack
+case 27:[F35] 14 (0x0E) paramNumber: VCF EG Decay
+case 28:[F35] 15 (0x0F) paramNumber: VCF EG BrPoint
+case 29:[F35] 16 (0x10) paramNumber: VCF EG Slope
+case 30:[F35] 17 (0x11) paramNumber: VCF EG Sustain
+case 31:[F35] 18 (0x12) paramNumber: VCF EG Release
+	SSL Nucleus Select SW group L
+case 64:[F31] 5  (0x05) paramNumber: VCF EG Polarity	reserved CC#64
+case 64:[F--] 64 (0x40) paramNumber: Dumper pedal
+case 65:[F62] 41 (0x29) paramNumber: JStck VCF Mode
+case 66:[F31] 4  (0x04) paramNumber: VCF Mode/Slope
+case 67:[F91] 51 (0x33) paramNumber: DDL-2 In. Select
+case 68:[F96] 57 (0x39) paramNumber: DDL-2 Mod Invert
+case 69:[F18] 72 (0x48) paramNumber: A.Bend Polar Mode
+case 70:[F52] 38 (0x26) paramNumber: ATch VCF Mode
+case 71:[ID13]18 (0x0D) Function ID: Play mode			Request
+	SSL Nucleus Select SW group R
+case 72:[F11] 63 (0x3F) paramNumber: Osc 1 Octave
+case 73:[F11] 64 (0x40) paramNumber: Osc 2 Octave
+case 74:[F17] 67 (0x43) paramNumber: Osc MG Mod Sel
+case 75:[F16] 62 (0x3E) paramNumber: Bit Resolution
+case 76:[F63] 76 (0x4C) paramNumber: Key Assign Mode
+case 77:[F18] 71 (0x47) paramNumber: A.Bend Select
+case 78:[F64] 77 (0x4D) paramNumber: Unison Voices
+case 79:[F16] 61 (0x3D) paramNumber: Sync Mode
+	SSL Nucleus V-Coder Select group L
+case 80:[id12]18 (0x12) Function ID: Mode condition		Request
+case 81:[id16]22 (0x16) Function ID: MSound list		Request
+case 82:[id17]23 (0x23) Function ID: Program name list	Request
+----
+====
+
 kbd:[<<Back-to-Top>>]
 
 [#troubleshooting]
@@ -502,7 +575,6 @@ or 2nd way:
 .My original code version is implemented as 2
 [%collapsible]
 ====
-[example%collapsible]
 [,cpp,%linenums]
 ----
 // Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
