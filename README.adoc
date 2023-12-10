@@ -559,20 +559,17 @@ then have to thick how to change map unit for input that parameNumber 2 into.
 may be for exsample change second string of code: `371` & `372` like this:
 [exsample]
 ----
-369    //		SSL Nucleus Fader group L (Mappings to my own CCs desigion)
-370    case 0: sendParam_8(channel, 32, value); break;  // [F44] VCA EG Intens
 371    //case 1: sendParam_8(channel, 69, value); break;// [F17] OSC MG intens		reserved CC#1
-232    //case 2: sendParam_8(channel, 12, value); break;// [F34] VCF MG intens		reserved CC#2
+272    //case 2: sendParam_8(channel, 12, value); break;// [F34] VCF MG intens		reserved CC#2
 ----
 change to:
 ----
- 371   case 0: sendParam_8(channel, 0, value); break; // [F14] 00 OSC1 Level
- 372   case 1: sendParam_8(channel, 1, value); break; // [F14] 01 OSC2 Level
+ 371   case 1: sendParam_8(channel, 0, value); break; // [F14] 00 OSC1 Level		separatly!
+ 372   case 2: sendParam_8(channel, 1, value); break; // [F14] 01 OSC2 Level		separatly!
 ----
-and commented the string 395 (or replace case number between this strings:
+and have to commented on string 395:
 ----
 395    //case 23: sendParam_10(channel, 0, value); break;// [F14] OSC Mix ratio		+[F14] 01 OSC2 Level
-395    case 23: sendParam_8(channel, 69, value); break; // [F17] OSC MG intens
 ----
 ====
 
