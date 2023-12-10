@@ -81,7 +81,7 @@ The Korg <<DW8000>>; <<EX8000>> and <<DSS-1>> (and other early hybrid synthesise
 
 The project start from 5th July 2016 and based on a hack https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] publication by Steve Baines https://github.com/sjbaines/Korg_DW-8000_Midi_Enhancer[and his code repo]. As His discribed His code was tested and may have been stable, but by the time November 2023, when I discovered this project on the network - I could not immediately run it on the EX8000.
 It turned out to be non-working and required debugging. The pull request were added after fixing, but I did not find any activity from the project's master.
-So therefore, I independently continued the path of adapting the project for Korg DSS-1, thanks to mentoring from experienced Arduino C++ coder. I achieved the first results literally a week after the analysis differences between DW8000 vs DSS-1 of MIDI <<implementation>> charts  with <<troubleshooting>>.
+So therefore, I independently continued the path of adapting the project for Korg DSS-1, thanks to mentoring from experienced Arduino C++ coder. I achieved the first results literally a week after for EX8000 and the analysis differences between DW8000 vs DSS-1 of MIDI <<implementation>> charts  with <<troubleshooting>>.
 
 kbd:[<<Back-to-Top>>]
 
@@ -89,7 +89,6 @@ kbd:[<<Back-to-Top>>]
 
 Probably you know already that Arduino is a sort ofimprovement or upgrade over Synth's built-in MIDI interface circuit diagram. But what is it exactly? Let me put it this way:
 
-imag::under_controller.jpg
 ____
 Arduino is an IC board which will allow you to take whatever MIDI controller you have, be it a keyboard or some fader box, plug it in and  tune changing of the parameter of synth…
 regardless of whether your oldschool synthesizer can read `CC#` commands or not.
@@ -427,7 +426,7 @@ kbd:[<<Back-to-Top>>]
 
 [#troubleshooting]
 == Nuances and troubleshooting
-
+image:IMAGES/under controller.jpg[,100,50]
 on Glen Stegner's website there is a section on https://glenstegner.com/dss1/home.html[Tips and Trics], which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
 I would say - based on their preferences of each performer at Korg DSS.
   .here is one of them:
