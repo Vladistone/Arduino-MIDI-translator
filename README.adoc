@@ -30,10 +30,23 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 
 . Download & Start Arduino IDE.
 . If you haven't already done it, https://www.arduino.cc/en/software[install Arduino IDE].
-. Make sure your `MIDI_library.h` is enabled in kbd:[*Sketch*] → kbd:[*Include Library*] → kbd:[*Manage Librarys ⇧⌘i*] →  kbd:[*download*] or kbd:[*upgrade:] the `MIDI_library.h` if you need...
-  * For the Arduino board device, tick for your name kbd:[*device*]
-  * and tick your kbd:[*Port*] for connection.
+. Connect your Arduino board to your computer and check the board is recognized for IDE.
+. Make sure your `MIDI_library.h` is enabled in kbd:[*Sketch*] → kbd:[*Include Library*] → kbd:[*Manage Librarys*] `⇧⌘i`. if you need... kbd:[*download*] or kbd:[*upgrade:] the `MIDI_library.h`
+  * For the Arduino board device, tick for your `device name` in kbd:[*tool*] → kbd:[*device*] → from avalable devices list
+  * and tick your *Port* for connection in kbd:[*tool*] → kbd:[*Port*] → from avalable port list
+. Open the sketch file and check the compilation for no compilation errors: kbd:[*Sketch*] →  kbd:[*check/compilation*] `⇧⌘R`. 
+. if compilation was successful - upload the sketch to Arduino: kbd:[*Sketch*] →  kbd:[*Upload*] `⇧⌘U`.
+Relax! or not? wait a minute...
 
+because after downloading the sketch to the Arduino,
+. The time will come to adapt the Arduino to your MIDI system and decide whether this Cntrl_2_Synth map layouts
+   * is this convenient for your combination of controller and Korg DSS-1 or whether need to remap the code?
+   * You can also check the functionality of this sketch in working conditions or by simulating MIDI monitoring.
+. To do this, you need to have a separate MIDI interface and a shield to connect to the Arduino MIDI interface.
+. or
+open your synthesizer and take a soldering iron and wire cutters in your hands to carry out a surgical operation to insert a chip into the body of the synthesizer!
+For this purpose, there is no need for me to describe all the details of the analysis of the code’s performance under working conditions on this site.
+Or you can ask a question in a discussion on the forum https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project-2.html[gearspace.com]
 
 kbd:[<<Back-to-Top>>]
 
