@@ -461,8 +461,9 @@ or 2nd way:
 
  - `Osc Mix ratio: [F0 42 30 0B 41 00 xx 01 yy F7]`
 
-My original code version is implemented as 2 (see Unit_3)
-
+.My original code version is implemented as 2
+[%collapsible]
+====
 [example%collapsible]
 [,cpp,%linenums]
 ----
@@ -498,6 +499,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
     MIDI.sendSysEx(sysexLen, sysexData, true);
 }
 ----
+====
 
 ====
 And this may be a controversial decision, since according to the reasoning on the https://glenstegner.com/dss1/home.html[Glen website]:
