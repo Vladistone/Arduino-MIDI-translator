@@ -158,7 +158,7 @@ kbd:[<<Back-to-Top>>]
 [%collapsible]
 ====
 image:IMAGES/MIDI Variations.png[,800,500]
-image:IMAGES/Arduino.jpg[,800,500]
+image:IMAGES/Arduino.jpg[,600,500]
 ====
 
 [#Nucleus]
