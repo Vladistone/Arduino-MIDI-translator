@@ -895,7 +895,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
 And this may be a controversial decision, since according to the reasoning on the https://glenstegner.com/dss1/home.html[Glen website]:
 - he prefers an independent control option for the `OSC 1 & 2` parameters separetly with the ability to raise the level of both oscillators up to 100%, while training the powerful OUTPUT from the synthesizer.
 
-image::IMAGES/Korg DSS-1/Sysex_Mix_ratio.png[,700,440]
+image::IMAGES/Korg DSS-1/Sysex_Mix_ratio.png[,500,300]
 
 My reason was to create authenticity to
 
