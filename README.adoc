@@ -137,7 +137,7 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 ====
 |===
 |before|after chiped
-|image:IMAGES/EX8000inner.jpeg[,300,400]|image:IMAGES/EX8000_Chiped.jpeg[,300,400]
+|image:IMAGES/EX8000inner.jpeg[,300,400]|[,300,400]
 |===
 ====
 
@@ -197,7 +197,7 @@ image:IMAGES/Arduino.jpg[,600,500]
 .staff photo
 [%collapsible]
 ====
-image:IMAGES/Korg DSS-1/Roland JP8000 + Korg DSS-1.png[,360,240]
+image:IMAGES/Korg DSS-1/Roland JP8000 + Korg DSS-1.png[,600,400]
 ====
 
 kbd:[<<Back-to-Top>>]
