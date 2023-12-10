@@ -555,7 +555,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
 If yoy wish separate control for OSC 1 and OSC 2 levels by separate SysEx messages like:
  - `Osc 1 level: [F0 42 30 0B 41 00 xx F7]`
  - `Osc 2 level: [F0 42 30 0B 41 01 xx F7]`
-then have to thick how to change map unit for input that parameNumber 2 into.
+then have to thick how to remap unit_4:
 may be for exsample change second string of code: `371` & `372` like this:
 [exsample]
 ----
