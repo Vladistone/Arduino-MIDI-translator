@@ -38,7 +38,7 @@ Here's a step-by-step guide to help you get started with Arduino and a MIDI cont
 . Open the sketch file and check the compilation for no compilation errors: kbd:[*Sketch*] →  kbd:[*check/compilation*] `⇧⌘R`. 
 . if compilation was successful - upload the sketch to Arduino: kbd:[*Sketch*] →  kbd:[*Upload*] `⇧⌘U`.
 
-
+[:All done...:]
 image:IMAGES/under controller.jpg[,150,50] Relax and take it easy! or wait a minute...
 [WARNING]
 because after downloading the sketch to the Arduino:
