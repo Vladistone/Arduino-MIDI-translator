@@ -345,7 +345,7 @@ kbd:[<<Back-to-Top>>]
 [%collapsible]
 ====
 |===
-|image:IMAGES/DSS1 Parameter map 1.jpeg[,400,1000]|image:IMAGES/DSS1 Program Parameter map 2.jpeg[,400,400]
+|image:IMAGES/DSS1 Parameter map 1.jpeg[,500,1000]|image:IMAGES/DSS1 Program Parameter map 2.jpeg[,400,400]
 |===
 ====
 
