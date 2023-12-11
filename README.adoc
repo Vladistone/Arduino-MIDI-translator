@@ -839,9 +839,9 @@ const int dssChannel = 0; // 0 here is 1 on DSS-1
 Incoming MIDI Channel number allways determinate as = 1 against DSS-1 CH 0
 Therefore, for the MIDI translator to work correctly, or to respond to incoming messages at all, an adjustment was needed that was not in Steve's base code.
 
-[,cpp,subs="verbatim,quotes"]
+[source,cpp,subs="verbatim,quotes"]
 ----
-</202/> void handleControlChange(byte channel, byte number, byte value)
+*<202>* void handleControlChange(byte channel, byte number, byte value)
 203 {
 204  if (channel != dwChannel)
 205  { // If CC not sent to DW-8000 channel, then just pass them on
