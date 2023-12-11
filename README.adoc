@@ -915,7 +915,7 @@ And this may be a controversial decision, since according to the reasoning on th
 and keep looking for the limit of headroom of synth output... But would you wish to increase it a bit more...upto *127%*? it's Easy! By external Sysex, if you don't pay attention to the manual at all.
 __Another One Bites the Dust__
 [.right]
-image::IMAGES/COM_IMG/Anothe one.jpeg[,80,80,]
+image::IMAGES/COM_IMG/Anothe one.jpeg[,80,80]
 |===
 |image:IMAGES/Korg DSS-1/Sysex_Mix_ratio.png[,550,300]|image:IMAGES/Korg DSS-1/127_127.jpeg[,550,300]
 |===
