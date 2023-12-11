@@ -915,7 +915,7 @@ and keep looking for the limit of headroom of synth output. But would you wish t
 [WARNING]
 ====
 |===
-|if you **don't pay attention** to the manual at all - due to SysEx it's will be made Easy... [.small]_#_another one bites the dust__# |image:IMAGES/COM_IMG/Anothe one.jpeg[,80,80,right]
+|if you **don't pay attention** to the manual at all - due to SysEx it's will be made Easy... [.small]#__another one bites the dust__# |image:IMAGES/COM_IMG/Anothe one.jpeg[,80,80,right]
 |===
 ====
 
