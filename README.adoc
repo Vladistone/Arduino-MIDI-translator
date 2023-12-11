@@ -839,6 +839,8 @@ const int dssChannel = 0; // 0 here is 1 on DSS-1
 Incoming MIDI Channel number allways determinate as = 1 against DSS-1 CH 0
 Therefore, for the MIDI translator to work correctly, or to respond to incoming messages at all, an adjustment was needed that was not in Steve's base code.
 
+[Warrning]
+====
 [source,cpp,subs="verbatim,quotes"]
 ----
 202 void handleControlChange(byte channel, byte number, byte value)
@@ -849,9 +851,17 @@ Therefore, for the MIDI translator to work correctly, or to respond to incoming 
 207    return;
 208  }
 ----
+====
+look at the difference:
 [,cpp,%linenums]
 ----
-46	sysexData[2] = 0x30 | ((channel - 1) & 0x0f); // Set channel#
+360 void handleControlChange(byte channel, byte number, byte value)
+361 {
+362  if (channel != dssChannel + 1)
+363  {// If CC not sent to DSS-1 channel, then just pass them on
+364	MIDI.sendControlChange(number, value, channel);
+365	return;
+366  }
 ----
 
 === Glen Stegner's website
