@@ -843,13 +843,7 @@ Therefore, for the MIDI translator to work correctly, or to respond to incoming 
 ====
 [source,cpp,subs="verbatim,quotes"]
 ----
-202 void handleControlChange(byte channel, byte number, byte value)
-203 {
 204  if (channel != dwChannel)
-205  { // If CC not sent to DW-8000 channel, then just pass them on
-206    MIDI.sendControlChange(number, value, channel);
-207    return;
-208  }
 ----
 ====
 look at the difference:
@@ -857,13 +851,7 @@ look at the difference:
 [NOTE]
 ====
 ----
-360 void handleControlChange(byte channel, byte number, byte value)
-361 {
 362  if (channel != dssChannel + 1)
-363  {// If CC not sent to DSS-1 channel, then just pass them on
-364	MIDI.sendControlChange(number, value, channel);
-365	return;
-366  }
 ----
 ====
 
