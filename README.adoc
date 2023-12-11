@@ -842,6 +842,8 @@ Therefore, for the MIDI translator to work correctly, or to respond to incoming 
 ====
 .look at the difference:
 |===
+|Steve version| Vladistone version
+
 |`204  if (channel != dwChannel)`|`362  if (channel != dssChannel + 1)`
 |===
 ====
