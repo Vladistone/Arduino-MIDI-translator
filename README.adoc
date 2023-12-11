@@ -829,6 +829,29 @@ kbd:[<<Back-to-Top>>]
 [#troubleshooting]
 == Nuances and troubleshooting
 image:IMAGES/under controller.jpg[,100,50]
+=== MIDI CC channel number: Determate and adjust
+The First nuance of MIDI coding is when defining the channel number constant
+for korg DSS-1/DW8000/EX8000 is implies for inner interface conversion of synth as MIDI channel 1
+----
+const int dssChannel = 0; // 0 here is 1 on DSS-1
+----
+Incoming MIDI Channel number allways determinate as = 1 against DSS-1 CH 0
+Therefore, for the MIDI translator to work correctly, or to respond to incoming messages at all, an adjustment was needed that was not in Steve's base code.
+----
+202 void handleControlChange(byte channel, byte number, byte value)
+203 {
+204  if (channel != dwChannel)
+205  { // If CC not sent to DW-8000 channel, then just pass them on
+206    MIDI.sendControlChange(number, value, channel);
+207    return;
+208  }
+----
+[,cpp,%linenums]
+----
+46	sysexData[2] = 0x30 | ((channel - 1) & 0x0f); // Set channel#
+----
+
+=== 
 on Glen Stegner's website there is a section on https://glenstegner.com/dss1/home.html[Tips and Trics], which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
 I would say - based on their preferences of each performer.
   .here is one of them:
