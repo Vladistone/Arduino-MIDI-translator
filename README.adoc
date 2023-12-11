@@ -841,7 +841,7 @@ Therefore, for the MIDI translator to work correctly, or to respond to incoming 
 
 [source,cpp,subs="verbatim,quotes"]
 ----
-*<202>* void handleControlChange(byte channel, byte number, byte value)
+202 void handleControlChange(byte channel, byte number, byte value)
 203 {
 204  if (channel != dwChannel)
 205  { // If CC not sent to DW-8000 channel, then just pass them on
