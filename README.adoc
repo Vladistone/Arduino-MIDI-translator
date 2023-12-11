@@ -913,7 +913,7 @@ void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit
 And this may be a controversial decision, since according to the reasoning on the https://glenstegner.com/dss1/home.html[Glen website]:
 - he prefers an independent control option for the `OSC 1 & 2` parameters separetly with the ability to raise the level of both oscillators up to duble 100% of "fat",
 while going to lookinh for the limit of powerful headroom of synth output... But would you wish to increase it more... upto duble 127%? So it's Easy! By external Sysex... if you don't pay attention to the manual at all.
-Why produser didn't it itself? Or is have a reasons?:
+Bit I'm ask myself: Why the produser didn't it itself? Or is have a reasons?:
 |===
 |image:IMAGES/Korg DSS-1/Sysex_Mix_ratio.png[,550,300]|image:IMAGES/Korg DSS-1/127_127.jpeg[,550,300]
 |===
