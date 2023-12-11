@@ -838,20 +838,13 @@ const int dssChannel = 0; // 0 here is 1 on DSS-1
 ----
 Incoming MIDI Channel number allways determinate as = 1 against DSS-1 CH 0
 Therefore, for the MIDI translator to work correctly, or to respond to incoming messages at all, an adjustment was needed that was not in Steve's base code.
+[WARNING]
+====
 .look at the difference:
 |===
-+
-[WARNING]
-----
-204  if (channel != dwChannel)
-----
-+
-[NOTE]
-----
-362  if (channel != dssChannel + 1)
-+
-----
+|`204  if (channel != dwChannel)`|`362  if (channel != dssChannel + 1)`
 |===
+====
 
 === Glen Stegner's website
 there is a section on https://glenstegner.com/dss1/home.html[Tips and Trics], which describes very interesting things that are implemented by the manufacturer, but which are evaluated and interpretating by the musicians in two ways.
