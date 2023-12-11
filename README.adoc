@@ -914,6 +914,7 @@ He prefers an independent control option for the `OSC 1 & 2` parameters separetl
 and keep looking for the limit of headroom of synth output. But would you wish to increase it a bit more...upto *127%*?
 [WARNING]
 ====
+[,stripes=all]
 |===
 |if you **don't pay attention** to the manual at all - due to SysEx messages it's will be made Easy...__another one bites the dust__ |image:IMAGES/COM_IMG/Anothe one.jpeg[,80,80,right]
 |===
