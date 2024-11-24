@@ -333,7 +333,9 @@ But taking into account how SysEx and CC# will be presented when debugging with 
 Function ID [Fxx] - a convenient parameter when focusing on the built-in interface of Korg DSS-1, which is indicated on the surface and LCD
 of the synthesizer and was ignored by the developers in previous versions of the code and Excel tables from GlenStegner.
 When using the DW-8000 this means numbering the Parameter list items on the right side of the synthesizer's front panel. And in the MIDI implementation chart - Parameter numbers:
-image:IMAGES/Korg DW8000/IMG_9205.JPG[,400,500] 
+
+image:IMAGES/Korg DW8000/IMG_9205.JPG[,400,500] image:IMAGES/Korg DSS-1/Function ID at DSS-1 LCD.jpeg[,400,500]
+
 kbd:[<<Back-to-Top>>]
 
 [#Unit_1]
