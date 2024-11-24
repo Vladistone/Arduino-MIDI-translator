@@ -1,4 +1,4 @@
-// By Steve Baines 2016; renovated by Vladistone, 2023
+// By Steve Baines 2016; renovated by Vladistone, 2024
 // idea see: https://hackaday.io/
 // forum disscusion: https://gearspace.com/board/electronic-music-instruments-and-electronic-music-production/1418944-korg-dss-1-arduino-upgrade-project.html
 // Arduino chipping to Korg DW/EX-8000 MIDI translator
@@ -82,7 +82,7 @@ const int dwChannel = 0; // 0 here is 1 on DW-8000 - need to set Param 83 to 1
     case 50: // Aftertouch VCA (2b)
   #endif
 
-// Main DW/EX-8000: Scaling SysEx_8 leight for paramNumber of [5]
+// Main DW/EX8000: Scaling SysEx_8 leight for paramNumber of [5]
 void sendDw8000Param(byte channel, byte paramOffset, byte paramValue7Bit) // this is    Unit_1
 {
   const int sysexLen = 8;
@@ -265,7 +265,7 @@ void handleControlChange(byte channel, byte number, byte value)
 
 //  CC# list to matching the map of DW/EX-8000 Parameter for SSL Nucleus2 CC numbers (CC#SysEx for Nucleus2DW/EX8000)
 #if 0
-CC#    Param.#
+CC#    Param.# [Func.ID]  Parameter name (bytes)
   80 case 0   // [F11] OSC 1 Octave (2b)
   18 case 1   // [F12] OSC 1 Waveform (4b)
    2 case 2   // [F13] OSC 1 Level (5b)
@@ -309,8 +309,8 @@ CC#    Param.#
   66 case 48  // [F81] Aftertouch OSC MG (2b)
   68 case 49  // [F82] Aftertouch VCF (2b)
   70 case 50  // [F83] Aftertouch VCA (2b)
-// Unmapped controller items - due to SSL Nucleus 2 parameter list is unpossible
-// with same specs of DW 8000 parameters (switch VS fader properties):
+// Unmapped controller items - due to SSL Nucleus2 parameter list is unpossible
+// with same specs of DW/EX8000 parameters (switch VS fader properties):
   64 case     // 
   65 case     // 
   67 case     // 
@@ -365,7 +365,7 @@ void handleSystemExclusive(byte* arrayData, unsigned arrayLen)
 
 void setup()
 {
-    // additional processing module [Unit_5]
+    //  CC# to corresponding DW/EX8000 Parameter numbers map: Cntrl_2_Synth DW/EX8000   Unit_4
     pinMode(ledPinOut, OUTPUT);         // initialize digital pin with LED as an output.
     digitalWrite(ledPinOut, LOW);       // turn the LED off by making the voltage LOW
     // Connect the handleNoteOn function to the library,
