@@ -29,23 +29,29 @@ const int dssChannel = 0; // 0 here is 1 on DSS-1
   MIDI F2 After-touch Mode: ON
   MIDI F3 OMNY Mode: ON
 The first thing you should check of synth is in performance mode,
-not edit, or any other mode! Otherwise the SysEx messages will ignored.
+not EDIT, or any other mode! Otherwise the SysEx messages will ignored.
+send "PLAY mode request" [F0 42 30 0B 13 F7] by CC# message have done below:
+DDS1 Modes request by use CC#2Sysex converter:
 */
-// DDS1 Modes request by use CC#2Sysex converter:
-void sendParam_6(byte channel, byte functionID)	// Sysex_6 byte leight Unit_0
-{
-	const int sysexLen = 6;
-	static byte sysexData[sysexLen] = {
-		0xF0, // 0 Sysex start
-		0x42, // 1 Manufacturer ID: 42, Korg
-		0x30, // 2 Channel 1
-		0x0B, // 3 Device ID: 0b, DSS-1
-		0x00, // 4 Function ID
-		0xF7  // 5 EOX
-	};
-	sysexData[2] = 0x30 | ((channel - 1) & 0x0f);// Set channel#
-	sysexData[4] = functionID;// see implement chart discribtion below:
-	MIDI.sendSysEx(sysexLen, sysexData, true);
+void sendDSS1Param_6(byte channel, byte paramNumber, byte paramValue7Bit) {
+  const int sysexLen = 6;
+  static byte sysexData[sysexLen] = {
+    0xf0, // 0 SOX
+    0x42, // 1 Manufacturer ID: 42, Korg
+    0x30, // 2 Channel 1
+    0x0b, // 3 Device ID: 0b, DSS-1
+    0x13, // 4 Message: 13, Play mode request
+    0xf7  // 5 EOX
+    };
+  paramValue7Bit &= 0x7f; // paramValue7Bit is assumed to run from 0 to 127 in all cases
+  int paramValueScaled;
+  switch (paramNumber) {
+    case 0x47: paramValueScaled = paramValue7Bit; //
+  }
+  sysexData[2] = 0x30 | ((channel - 1) & 0x0f); // Set channel number
+  sysexData[4] = paramNumber;
+  //sysexData[] = paramValueScaled & 0x7f;
+  MIDI.sendSysEx(sysexLen, sysexData, true);
 }
 	
 #if 0
@@ -166,7 +172,8 @@ hex[5]
 void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
 {
   const int sysexLen = 8;
-  static byte sysexData[sysexLen] = {
+  static byte sysexData[sysexLen] =
+	{
 	0xF0, // 0 Sysex start
 	0x42, // 1 Manufacturer ID: 42, Korg
 	0x30, // 2 Channel 1
@@ -175,12 +182,13 @@ void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
 	0x00, // 5 Parameter number (which parameter we want to change)
 	0x00, // 6 Parameter value
 	0xF7  // 7 EOX
-  };
+  	};
   // paramValue7Bit is assumed to run from 0 to 127 in all cases,
   paramValue7Bit &= 0x7f;
   // so here we rescale to fit to appropriate bit width for each parameter
   byte paramValueScaled = 0;
-  switch (paramNumber) {
+  switch (paramNumber)
+  {
   case 0x04: // paramNumber 4  (2) VCF Mode/Slope
   case 0x05: // paramNumber 5  (2) VCF EG Polarity
   case 0x26: // paramNumber 38 (2) ATch VCF Mode
@@ -270,8 +278,7 @@ void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
   case 0x00: // paramNumber 0 (101) Osc 1 Level
   case 0x01: // paramNumber 1 (101) Osc 2 Level
     paramValueScaled = paramValue7Bit*203/256; break;
-  default:
-  return;	// unknown parameter - ignore
+  default: return;	// unknown parameter - ignore
   }
   sysexData[2] = 0x30 | ((channel - 1) & 0x0f);
   sysexData[5] = paramNumber;
@@ -285,57 +292,58 @@ void sendParam_9(byte channel, byte paramNumber, byte paramValue7Bit) // Unit_2
   const int sysexLen = 9;
   static byte sysexData[sysexLen] =
   {
-    0xF0, // 0 SOX
-    0x42, // 1 Manufacturer ID: 42, Korg
-    0x30, // 2 Channel 1
-    0x0B, // 3 Device ID: 0b, DSS-1
-    0x41, // 4 Function ID: 41, Program Parameter change
-    0x00, // 5 Parameter number (which parameter we want to change)
-    0x00, // 6 Parameter low byte
-    0x00, // 7 Parameter high byte
-    0xF7  // 8 EOX
+	0xF0, // 0 SOX
+    	0x42, // 1 Manufacturer ID: 42, Korg
+    	0x30, // 2 Channel 1
+    	0x0B, // 3 Device ID: 0b, DSS-1
+    	0x41, // 4 Function ID: 41, Program Parameter change
+    	0x00, // 5 Parameter number (which parameter we want to change)
+    	0x00, // 6 Parameter low byte
+    	0x00, // 7 Parameter high byte
+    	0xF7  // 8 EOX
   };
   paramValue7Bit &= 0x7f;
   int paramValueScaled = 0;
   switch (paramNumber) // So here we rescale to fit to range:
   {
-	  case 0x2E: // [F81] paramNumb 46 DDL-1 Time (500)
-	  case 0x34: // [F92] paramNumb 52 DDL-2 Time (500)
-	  paramValueScaled = paramValue7Bit*252/64; break;
-	  default: return;	// unknown parameter - ignore
+	case 0x2E: // [F81] paramNumb 46 DDL-1 Time (500)
+	case 0x34: // [F92] paramNumb 52 DDL-2 Time (500)
+	paramValueScaled = paramValue7Bit*252/64; break;
+	default: return;	// unknown parameter - ignore
   }
   sysexData[2] = 0x30 | ((channel - 1) & 0x0f);	// Set channel number
   sysexData[5] = paramNumber;
-  sysexData[6] = paramValueScaled & 0x7f;		// LSB of 14-bit value
+  sysexData[6] = paramValueScaled & 0x7f;	// LSB of 14-bit value
   sysexData[7] = (paramValueScaled >> 7) & 0x03;// MSB
   MIDI.sendSysEx(sysexLen, sysexData, true);
 }
 
 // Scaling SyxEx_10 leight of OSC mix ratio using by one CC# source:
-void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) { // Unit_3
+void sendParam_10(byte channel, byte paramNumber, byte paramValue7Bit) // Unit_3
+{
   const int sysexLen = 10;
-  static byte sysexData[sysexLen] = {
-    0xF0, // 0 SOX
-    0x42, // 1 Manufacturer ID: 42, Korg
-    0x30, // 2 Channel 1
-    0x0B, // 3 Device ID: 0b, DSS-1
-    0x41, // 4 Message: 41, Parameter change (it not the parameter DUMP)
-    0x00, // 5 Parameter number (1-st param witch we going to change)
-    0x00, // 6 Parameter master value
-    0x00, // 7 Parameter number (be as slave)
-    0x00, // 8 Parameter slave value
-    0xF7  // 9 EOX
+  static byte sysexData[sysexLen] =
+    {
+    	0xF0, // 0 SOX
+    	0x42, // 1 Manufacturer ID: 42, Korg
+    	0x30, // 2 Channel 1
+    	0x0B, // 3 Device ID: 0b, DSS-1
+    	0x41, // 4 Message: 41, Parameter change (it not the parameter DUMP)
+    	0x00, // 5 Parameter number (1-st param witch we going to change)
+    	0x00, // 6 Parameter master value
+    	0x00, // 7 Parameter number (be as slave)
+    	0x00, // 8 Parameter slave value
+    	0xF7  // 9 EOX
     };
-
     paramValue7Bit &= 0x7f;
     int paramValueScaled;
-    switch (paramNumber) { // so here we rescale to fit to rang:
-    case 0x00: // [F14] paramNumber 0 OSC1 level Mix ratio (master)
+    switch (paramNumber) // so here we rescale to fit to rang:
+    {
+    	case 0x00: // [F14] paramNumber 0 OSC1 level Mix ratio (master)
 	case 0x01: // [F14] paramNumber 1 OSC2 level Mix ratio (slave)
 	paramValueScaled = paramValue7Bit*203/256; break;
-    default:
-    return;	// unknown parameter - ignore
-   }
+    default: return;	// unknown parameter - ignore
+    }
     sysexData[2] = 0x30 | ((channel - 1) & 0x0f);// Set channel number
     sysexData[5] = paramNumber; // master must be (Mster+Slave) == 100%:
     sysexData[6] = paramValueScaled & 0x7f; // master value
@@ -362,19 +370,19 @@ void handleControlChange(byte channel, byte number, byte value)
 	MIDI.sendControlChange(number, value, channel);
 	return;
   }
-  // Map from received CC numbers to corresponding Parameters numbers (Cntrl_2_Synth DSS-1 map Unit_4)
-  // personal desigion for each one controllers
+  // Map from received CC numbers to corresponding Parameters numbers (Cntrl_2_Synth DSS-1 map) Unit_4
+  // NOTE: It's personal decision for each one for individual controller!
   switch(number) // refer http://nickfever.com/music/midi-cc-list
   {
     //		SSL Nucleus Fader group L (Mappings to myown CCs desigion)
     case 0: sendParam_8(channel, 32, value); break;  // [F44] VCA EG Intens
-    //case 1: sendParam_8(channel, 69, value); break;// [F17] OSC MG intens		reserved CC#1
-    //case 2: sendParam_8(channel, 12, value); break;// [F34] VCF MG intens		reserved CC#2
+    case 1: sendParam_8(channel, 69, value); break;// [F17] OSC MG intens		may be reserved CC1 OSC Modulation
+    case 2: sendParam_8(channel, 12, value); break;// [F34] VCF MG intens		may be reserved CC2 VCF Modulation
     case 3: sendParam_8(channel, 48, value); break;  // [F83] DDL-1 FX Level
     case 4: sendParam_8(channel, 54, value); break;  // [F94] DDL-2 FX Level
     case 5: sendParam_8(channel, 2, value); break;   // [F19] AB Intesity
     case 6: sendParam_8(channel, 3, value); break;   // [F21] Noise level
-    //case 7: sendParam_8(channel, 20, value); break;// [F36] VCA TotalLevel	reserved CC#7
+    //case 7: sendParam_8(channel, 20, value); break;// [F36] VCA TotalLevel	reserved CC7
     //		SSL Nucleus Fader group R
     case 8: sendParam_8(channel, 42, value); break;  // [F65] EQ Bass
     case 9: sendParam_8(channel, 43, value); break;  // [F65] EQ Treble
