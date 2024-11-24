@@ -259,7 +259,7 @@ Including there are certain nuances when implementing Sisex commands, which I le
 ====
 the parameters `DDL 1&2 Time` have control range from *0~500*, and it was necessary to create additional processing
 to transform the CC# range (0-127)into the expected one, implement 9-byte SysEx distribution over MSB LSB nibbles.
-image::IMAGES/COM_IMG/LSB_MSB_data_format.jpeg[,400.500]
+image:IMAGES/COM_IMG/LSB_MSB_data_format.jpeg[,400.500]
 
 ====
 
