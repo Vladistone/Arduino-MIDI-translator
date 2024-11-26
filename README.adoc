@@ -730,6 +730,19 @@ Therefore, everyone has a decigion and a dilemma of priorities:
 - what to choose and how to use it with such varied choices...
 image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,400]
 
+Please note that these synthesizers partially implement control of CC# parameters that I defined as "reserved" by default! such as:
+|====
+| CC01 | OSC Modulation
+|CC02 | VCF Modulation
+|CC07 | VCA Volume (total OSC1&2)
+|CC64 | Dampler pedal OFF/ON
+|CC65 | Portamento pedal OFF/ON
+|CC123 | PANIC
+|code[d1 xx] | Aftertouch volume (VCA)
+|====
+
+if you don't mind using these parameters for CC# controllers by default, then take these nuances into account when forming your own CC#2SysEx mapping table. Or you can ignore them and set your own purposes for these CC#. In either case, you can use additional connectors to connect additional pedals directly to the synthesizer to expand the possibilities of external control of the synthesizers.
+
 kbd:[<<Back-to-Top>>]
 
 [#inplementation]
