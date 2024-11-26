@@ -710,7 +710,7 @@ it`s will be your choice...
 
 [TIP]
 ====
-*__attempt to use UNIT_3 for DW/EX8000 as a control unification from a single CC# for several parameters simultaneously has not given a positive result yet, either because DW8000 is unable to understand long SysEx messages with several targets (parameters change value), or I cannot provide such an implementation due to my competence in MIDI programming, so this <<Ideas>> remains unrealized at the moment. I am open to discussion and help in implementing the code!__*
+*__attempt to use UNIT_3 for DW/EX8000 as a control unification from a single CC# for several parameters simultaneously has not given a positive result yet, either because DW8000 is unable to understand long SysEx messages with several targets (parameters change value), or I cannot provide such an implementation due to my competence in MIDI programming, so this <<idea>> remains unrealized at the moment. I am open to discussion and help in implementing the code!__*
 ====
 
 kbd:[<<Back-to-Top>>]
@@ -1092,7 +1092,8 @@ I can't say for sure whether this has any practical application in music making,
 
 kbd:[<<Back-to-Top>>]
 
-=== [Ideas] for DW/EX8000 in future decision:
+[#Idea]
+=== Ideas for DW/EX8000 in future decision:
 
 ==== ["2in1 parameter control"]
 I have an idea to combine several SysEx messages for one CC# controller, but I can't get a reliable result that would be read and processed by DW/EX8000. For example:
