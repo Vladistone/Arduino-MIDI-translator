@@ -742,7 +742,7 @@ image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,400]
 | CC123 | PANIC
 | [d1 xx] | Aftertouch volume (VCA)
 |====
-If you don't mind using these parameters for CC# controllers by default, then take these nuances into account when forming your own CC#2SysEx mapping table. Or you can ignore them and set your own targets for these CC#. In either case, you can use additional connectors to connect additional pedals directly to the synthesizer to expand the possibilities of external control of the synth. 3+
+If you don't mind using these parameters for CC# controllers by default, then take these nuances into account when forming your own CC#2SysEx mapping table. Or you can ignore them and set your own targets for these CC#. In either case, you can use additional connectors to connect additional pedals directly to the synthesizer to expand the possibilities of external control of the synth by 3+ sourses
 ====
 
 kbd:[<<Back-to-Top>>]
@@ -991,9 +991,7 @@ This parameter is also described in the Program Parameter table [3] and has a *n
 
 [NOTE]
 ====
-|====
-|*_Must be set for both oscilator so that OSC1 + OSC2 = 100%_* | image:IMAGES/COM_IMG/LSB_MSB_data_format.jpeg[,500,400]
-|====
+*_Must be set for both oscilator so that OSC1 + OSC2 = 100%_* image:IMAGES/COM_IMG/LSB_MSB_data_format.jpeg[,500,400]
 ====
 
 which is not mandatory for the performing musician. because you can manage the parameters separately via Sysex:
