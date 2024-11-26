@@ -237,7 +237,7 @@ Because of this nuance, only the minimum and maximum values assigned to the para
 |===
 ====
 
-[Breath controller]
+[#Breath]
 === Hornberg HB1
 This is the most amazing thing for the diversity of controlling by breathing, which itself has many possibilities for assigning MIDI CC#. With which there were no problems for reassigning CC#2SysEx.
 [warrning]
