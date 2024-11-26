@@ -123,9 +123,10 @@ Here is my small list of synthesizers that achieved results with the Arduino tra
 | a Gotek 1,4M & flashflopy emulato;
 | a new blue LCD;
 | a modern 3-pin AC-Plug with line-filter;
-| <<DW8000>>: .4+|image:IMAGES/Korg DW8000/Korg DW-8000 6.jpeg[,400,300]
+| <<DW8000>>: .5+|image:IMAGES/Korg DW8000/Korg DW-8000 6.jpeg[,400,300]
 | cleared, Adjusted, silent and soft touched keys board;
 | a built-in arduino nano for MIDI translator CC2SysEx;
+| Software update and wrote the EPROM ver.85.07.13 by myself
 | a modern 3-pin AC-Plug with line-filter; w/local valtage adjusted AC-transformator 
 | <<EX8000>> with the same upgrade: .2+|image:IMAGES/Korg EX8000/korg EX-8000.jpg[,400,300]
 | a built-in arduino nano for MIDI translator CC2SysEx;
