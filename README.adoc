@@ -1158,7 +1158,7 @@ void sendParam_10(byte channel, byte paramOffset, byte paramValue7Bit) // Unit_3
 the DW8000 doesn't got this SysEx:
 image:IMAGES/Korg DW8000/2in1 parameter control.png[,900,500]
 
-==== ​​"1by2 control with two buttons"
+==== ​​"1by2 control by two buttons"
 [TIPS]
 The opposite idea: Due to the shortage of free encoders on my controller and the presence of extra buttons/switches. an idea appeared to use two buttons to switch a four-level parameterOffset, for example:
 
