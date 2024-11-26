@@ -962,8 +962,8 @@ image:IMAGES/Korg DW8000/DW800 F24 Interval.png[,700,350]
 but in fact with the help of SysEx you can set more options for interval relationships, namely:
 |===
 | 1 |in Unison
-| -3 |in minor 3rd
-| 3| in magor 3rd
+| -3 |in minor (3rd)
+| 3| in magor (3rd)
 | 4 | in 4th
 | 5 | in pure quartet (5th)
 | - | not interval, but without unison (at least I can't marked...)
