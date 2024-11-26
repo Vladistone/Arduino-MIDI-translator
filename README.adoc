@@ -1152,9 +1152,10 @@ The opposite idea: Due to the shortage of free encoders on my controller and the
 | [F14] | A. Bend Select (2byte) | 1; 2; 3; 4 | off; OSC1; OSC2; BOTH
 |====
 
-of which the extreme two values ​​(off; Both) - can be easily implemented using a regular Switch off/on CC#1 value 0x00/0x7F.
-But how to describe the middle two values ​​of Switch CC#2 value?, so that at Value off=0x00 it would assign 25~50cent above zero for OSC1;
-Then - when switching to CC#2 value on=0x7F - the SysEx parameter assignment should be within 50~75cent for confident operation for OSC2
+. of which the extreme two values ​​(off; Both) - can be easily implemented using a regular Switch off/on CC#1 value 0x00/0x7F.
+
+. But how to describe the middle two values ​​of Switch CC#2 value?, so that at Value off=0x00 it would assign 25~50cent above zero for OSC1;
+. Then - when switching to CC#2 value on=0x7F - the SysEx parameter assignment should be within 50~75cent for confident operation for OSC2
 
 Any ideas for the code are welcome!
 
