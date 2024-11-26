@@ -148,10 +148,10 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 ====
 Pinoit of Arduino;
 |===
-| Red | VCC | from R73 .4+| Please note that the photos were taken with an incorrect power connection for the Arduino. which was subsequently corrected!
+| Red | VCC | +5V to pull up R73 .4+| Please note that the photos were taken with an incorrect power connection for the Arduino. which was subsequently corrected!
 | Black | GND | from C76 
 | White | RX | from R73 
-| Yellow | TX | to pin12 fo IC11 
+| Yellow | TX | to pin12 of IC11 
 |===
 
  But a more elegant and professionally correct solution would be to solder the mounting kit in photo #1 to the Arduino board, instead of the usual mounting needles that come in the kits for Arduino creativity. Which led to an error and a short circuit of the +5V network and the synthesizer did not start. And with JST sockets with a key, for unambiguous correct installation of the plug - this would not have happened! Such a kit or kit for assembling JST connectors can be found on AliExpress. Don't be lazy ... buy it, it will come in handy in the future!
