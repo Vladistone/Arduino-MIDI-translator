@@ -733,17 +733,16 @@ image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,400]
 [NOTE]
 ====
 |====
-|*_Please note that these synthesizers partially implement control of CC# parameters that I defined as "reserved" by default! such as:_* 7.| CC01 | OSC Modulation
-|CC02 | VCF Modulation
-|CC07 | VCA Volume (total OSC1&2)
-|CC64 | Dampler pedal OFF/ON
-|CC65 | Portamento pedal OFF/ON
-|CC123 | PANIC
-| [d1 xx] | Aftertouch volume (VCA)
+|*_Please note that these synthesizers partially implement control of CC# parameters that I defined as "reserved" by default! such as:_* 2+.8+
+|| CC01 | OSC Modulation
+|| CC02 | VCF Modulation
+|| CC07 | VCA Volume (total OSC1&2)
+|| CC64 | Dampler pedal OFF/ON
+|| CC65 | Portamento pedal OFF/ON
+|| CC123 | PANIC
+|| [d1 xx] | Aftertouch volume (VCA)
+| If you don't mind using these parameters for CC# controllers by default, then take these nuances into account when forming your own CC#2SysEx mapping table. Or you can ignore them and set your own targets for these CC#. In either case, you can use additional connectors to connect additional pedals directly to the synthesizer to expand the possibilities of external control of the synth. 3+
 |====
-
-| If you don't mind using these parameters for CC# controllers by default, then take these nuances into account when forming your own CC#2SysEx mapping table.
-Or you can ignore them and set your own targets for these CC#. In either case, you can use additional connectors to connect additional pedals directly to the synthesizer to expand the possibilities of external control of the synth.
 ====
 
 kbd:[<<Back-to-Top>>]
@@ -976,7 +975,7 @@ Therefore, for the MIDI translator to work correctly, or to respond to incoming 
 ====
 .look at the difference:
 |===
-|Steve version| Vladistone version
+|Steve version| my version
 
 |`204  if (channel != dwChannel)`|`362  if (channel != dssChannel + 1)`
 |===
@@ -992,7 +991,9 @@ This parameter is also described in the Program Parameter table [3] and has a *n
 
 [NOTE]
 ====
+|====
 |*_Must be set for both oscilator so that OSC1 + OSC2 = 100%_* | image:IMAGES/COM_IMG/LSB_MSB_data_format.jpeg[,500,400]
+|====
 ====
 
 which is not mandatory for the performing musician. because you can manage the parameters separately via Sysex:
