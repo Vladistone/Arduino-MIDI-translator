@@ -957,7 +957,7 @@ kbd:[<<Back-to-Top>>]
 
 === DW/EX8000 interval extension
 when testing the encoder for DW/EX8000 I found an interesting possibility with external control CC#2SysEx for the parameter of changing the tone intervals between OSC2 in relation to OSC1. according to the service manual these intervals are in the ranges:
-image:IMAGES/Korg DW8000/DW800 F24 Interval.png[,700,450]
+image:IMAGES/Korg DW8000/DW800 F24 Interval.png[,700,400]
 
 but in fact with the help of SysEx you can set more options for interval relationships, namely:
 |===
@@ -969,4 +969,6 @@ but in fact with the help of SysEx you can set more options for interval relatio
 | 8 | non interval without unison (at least I can't marked...
 | 1 & 8th | in octave
 | 1 & (20-)th or (6-)th | in small sexte 2 octave upper OSC1
+|===
 
+I can't say for sure whether this has any practical application in music making, but the fact is that sometimes SysEx takes old synthesizers out of a conservative equilibrium that many people don't realize... enjoy the new possibilities!
