@@ -18,7 +18,7 @@ Vladistone <vl2guitar@gmail.com>
 :readme_content: at this moment I’m just gathering my thoughts and the description of README2 is still in its starting state, as soon as possible I will add blocks and pictures of examples of both synthesizers and analysis of the code and its internal blocks with explanations
 
 |===
-|Last update of text: |`2024-11-25 (v0.01.0)`
+|Last update of text: |`2024-11-26 (v0.01.0)`
 |Last update of relevant screenshots: |`2023-12-10 (v0.01.0)`
 |===
 
@@ -144,9 +144,12 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 
 [#DW8000]
 === Korg DW8000
-image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9228.jpeg[,500,700] image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9229.jpeg[,500,700]
-image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9230.jpeg[,500,700] image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9228.jpeg[,500,700]
-
+[%collapsible]
+====
+image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9228.jpeg[,700,500] image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9229.jpeg[,500,700]
+image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9230.jpeg[,700,500] image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9231.jpeg[,700,500]
+====
+The only remark when installing Arduino on the KLM-781 DW/EX8000 panel - do not forget to cut the connection on the track from R73 to pin12 HD63B03Xb (IC11) according to the instructions given in the first description https://hackaday.io/project/12541-korg-dw-8000-midi-enhancer[Korg DW8000 midi enhancer] by Steve Baines . otherwise there will be a conflict of parallel inclusion of MIDI RX VS TX signals. I also doubted the need to cut the track, since I mistakenly believed that MIDI CC and SysEx messages cannot conflict with each other since they must be recognized separately by the processor. But in fact we are pushing digital signals together, and they are known to have an electrical nature of a +5V pulse, and inside the synthesizer board this already leads to a mess of short circuits in the structure of CC and SysEx pulses between themselves... which will eventually lead to the failure of one of the links participating in this conflict (Arduino Tx or Rx or HD63B03Xb IC11 input pin12). It has been proven in practice that in this case the synthesizer begins to behave very unprognosed and you will never get satisfactory results from those upgrade.
 
 [#DSS-1]
 === Korg DSS-1
