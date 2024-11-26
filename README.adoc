@@ -1052,7 +1052,7 @@ and keep looking for the limit of headroom of synth output. But would you wish t
 ====
 
 |===
-|image:IMAGES/Korg DSS-1/Sysex_Mix_ratio.png[,550,300]|image:IMAGES/Korg DSS-1/127_127.jpeg[,550,300]
+|image:IMAGES/Korg DSS-1/Sysex_Mix_ratio.png[,500,300]|image:IMAGES/Korg DSS-1/127_127.jpeg[,500,300]
 |===
 
 Bit I'm ask myself: Why the produser didn't it itself? Or is have a reasons? My reason was to create authenticity of the:
