@@ -144,6 +144,9 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 
 [#DW8000]
 === Korg DW8000
+image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9228.jpeg[,500,700] image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9229.jpeg[,500,700]
+image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9230.jpeg[,500,700] image:https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/IMAGES/Korg%20DW8000/IMG_9228.jpeg[,500,700]
+
 
 [#DSS-1]
 === Korg DSS-1
