@@ -972,3 +972,5 @@ but in fact with the help of SysEx you can set more options for interval relatio
 |===
 
 I can't say for sure whether this has any practical application in music making, but the fact is that sometimes SysEx takes old synthesizers out of a conservative equilibrium that many people don't realize... enjoy the new possibilities!
+
+kbd:[<<Back-to-Top>>]
