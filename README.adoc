@@ -585,6 +585,7 @@ The Unit_2 oparation is made for `DDL1 & 2 Time` range only. and it's make 9 byt
 Here the parameter value range is increase by transformation 252/64 from 127 to 500 max point,
 and shifting the data to the left 7 bytes for the MSB.
 
+.code for DSS-1 with the operation of scaling the СС# value 127 upto 500 by arithmetic multiplication and division CC value (*252/64). followed by a left shift of bytes between MSB and LSB
 [%collapsible]
 ====
 [,cpp,%linenums]
@@ -616,7 +617,7 @@ void sendParam_9(byte channel, byte paramNumber, byte paramValue7Bit) // Unit_2
   }
   sysexData[2] = 0x30 | ((channel - 1) & 0x0f);	// Set channel number
   sysexData[5] = paramNumber;
-  sysexData[6] = paramValueScaled & 0x7f;		// LSB of 14-bit value
+  sysexData[6] = paramValueScaled & 0x7f;	// LSB of 14-bit value
   sysexData[7] = (paramValueScaled >> 7) & 0x03;// MSB
   MIDI.sendSysEx(sysexLen, sysexData, true);
 }
