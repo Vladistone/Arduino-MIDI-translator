@@ -237,6 +237,13 @@ Because of this nuance, only the minimum and maximum values assigned to the para
 |===
 ====
 
+[Breath controller]
+=== Hornberg HB1
+This is the most amazing thing for the diversity of controlling by breathing, which itself has many possibilities for assigning MIDI CC#. With which there were no problems for reassigning CC#2SysEx.
+[warrning]
+The only problem is that old synthesizers have slow processing of MIDI events and at some specific random moment they can hang up during intensive work with such breath controllers, which generate a to much flow of MIDI messages.
+image:IMAGES/Controllers/IMG_9232.jpeg[,500,700]
+
 [#JP800]
 === Roland JP8000
 I have plans to develop a translator for Korg DSS-1 using a Roland JP-8000 or 8080 sirface,
