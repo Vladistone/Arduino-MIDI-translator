@@ -115,7 +115,7 @@ Here is my small list of synthesizers that achieved results with the Arduino tra
 
 
 |===
-| Korg <<DSS-1>> - the flagship for upgrades .7+|image:IMAGES/Korg DSS-1/DSS-1.JPG[,400,300]
+| Korg <<DSS-1>> - the flagship for upgrades .8+|image:IMAGES/Korg DSS-1/DSS-1.JPG[,400,300]
 | the following events were held for it:
 | cleared, Adjusted, silent and soft touched keys board;
 | new micro buttons on the front panel;
