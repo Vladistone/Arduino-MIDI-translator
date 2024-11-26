@@ -732,9 +732,8 @@ image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,400]
 
 [NOTE]
 ====
-*_Please note that these synthesizers partially implement control of CC# parameters that I defined as "reserved" by default! such as:_*
 |====
-| CC01 | OSC Modulation
+|*_Please note that these synthesizers partially implement control of CC# parameters that I defined as "reserved" by default! such as:_* 7.| CC01 | OSC Modulation
 |CC02 | VCF Modulation
 |CC07 | VCA Volume (total OSC1&2)
 |CC64 | Dampler pedal OFF/ON
@@ -742,10 +741,10 @@ image:IMAGES/Retroactive DW-8P controller.jpeg[,1000,400]
 |CC123 | PANIC
 | [d1 xx] | Aftertouch volume (VCA)
 |====
-====
 
-If you don't mind using these parameters for CC# controllers by default, then take these nuances into account when forming your own CC#2SysEx mapping table.
+| If you don't mind using these parameters for CC# controllers by default, then take these nuances into account when forming your own CC#2SysEx mapping table.
 Or you can ignore them and set your own targets for these CC#. In either case, you can use additional connectors to connect additional pedals directly to the synthesizer to expand the possibilities of external control of the synth.
+====
 
 kbd:[<<Back-to-Top>>]
 
@@ -1050,7 +1049,7 @@ and keep looking for the limit of headroom of synth output. But would you wish t
 [WARNING]
 ====
 |===
-|if you **don't pay attention** to the manual at all - due to SysEx it's will be made Easy...__another one bites the dust__|image:IMAGES/COM_IMG/Anothe one.jpeg[,80,80,right]
+|if you **don't pay attention** to the manual at all - due to SysEx it's will be made Easy...__another one bites__|image:IMAGES/COM_IMG/Anothe one.jpeg[,80,80,right]
 |===
 ====
 
