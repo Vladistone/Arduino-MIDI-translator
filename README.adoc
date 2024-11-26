@@ -148,7 +148,7 @@ but insulated the contacts with tape and firmly placed them on thermoplastic on 
 ====
 Pinoit of Arduino;
 |===
-| Red | VCC | from R73 | Please note that the photos were taken with an incorrect power connection for the Arduino. which was subsequently corrected!
+| Red | VCC | from R73 .4+| Please note that the photos were taken with an incorrect power connection for the Arduino. which was subsequently corrected!
 | Black | GND | from C76 
 | White | RX | from R73 
 | Yellow | TX | to pin12 fo IC11 
