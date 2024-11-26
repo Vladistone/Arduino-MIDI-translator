@@ -360,7 +360,7 @@ kbd:[<<Back-to-Top>>]
 [#Unit_1]
 ==== [Unit_1]
 this is the main code for transforming the largest array of parameters with length SysEx = 7b (or range = 64)
-[%collapsible]
+[%collapsible, DSS-1 detail]
 ====
 [,cpp,%linenums]
 ----
@@ -477,6 +477,96 @@ void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
   }
   sysexData[2] = 0x30 | ((channel - 1) & 0x0f);
   sysexData[5] = paramNumber;
+  sysexData[6] = paramValueScaled;
+  MIDI.sendSysEx(sysexLen, sysexData, true);
+}
+----
+====
+
+[%collapsible, DW/EX8000 detail]
+====
+[,cpp,%linenums]
+// Main DW/EX8000: Scaling SysEx_8 leight for paramNumber of [5]
+void sendDw8000Param(byte channel, byte paramOffset, byte paramValue7Bit) // this is    Unit_1
+{
+  const int sysexLen = 8;
+  static byte sysexData[sysexLen] = { 
+    0xf0,   // 0 Sysex start
+    0x42,   // 1 Manufacturer ID: 42, Korg
+    0x30,   // 2 Channel 1
+    0x03,   // 3 Device ID: 03, DW-8000 or EX-8000
+    0x41,   // 4 Message: 41, Parameter change
+    0x00,   // 5 Parameter number (which parameter we want to change)
+    0x00,   // 6 Parameter value
+    0xf7    // 7 EOX
+  };
+  // paramValue7Bit is assumed to run from 0 to 127 in all cases, 
+  paramValue7Bit &= 0x7f;
+  // so here we rescale to fit to appropriate bit width for each parameter
+  byte paramValueScaled = 0;
+  switch (paramOffset) {
+    case 4: // [F15] A. Bend Mode (1b)
+    case 18: // [F34] Polarity (1b)
+    case 40: // [F67] Joystk Bend VCF (1b)
+      paramValueScaled = paramValue7Bit >> 6; break;
+    case 0: // [F11] OSC 1 Octave (2b)
+    case 3: // [F14] A. Bend Select (2b)
+    case 7: // [F21] OSC 2 Octave (2b)
+    case 13: // [F -] Assign Mode (2b)
+    case 17: // [F33] Keyboard Tracking (2b)
+    case 34: // [F61] MG Waveform (2b)
+    case 48: // [F81] Aftertouch OSC MG (2b)
+    case 49: // [F82] Aftertouch VCF (2b)
+    case 50: // [F83] Aftertouch VCA (2b)
+      paramValueScaled = paramValue7Bit >> 5; break;
+    case 10: // [F24] Interval (3b)
+    case 11: // [F25] Detune (3b)
+    case 26: // [F47] VCF Velocity Sensitivity (3b)
+    case 33: // [F57] VCA Velocity Sensitivity (3b)
+    case 41: // [F71] Delay Time (3b)
+      paramValueScaled = paramValue7Bit >> 4; break;
+    case 1: // [F12] OSC 1 Waveform (4b)
+    case 8: // [F22] OSC 2 Waveform (4b)
+    case 39: // [F66] Pitch Bend OSC (4b)
+    case 42: // [F72] Delay Factor (4b)
+    case 43: // [F73] Delay Feedback (4b)
+    case 46: // [F76] Delay Effect Level (4b)
+      paramValueScaled = paramValue7Bit >> 3; break;
+    case 2: // [F13] OSC 1 Level (5b)
+    case 5: // [F16] A. Bend Time (5b)
+    case 6: // [F17] A. Bend Intensity (5b)
+    case 9: // [F23] OSC 2 Level (5b)
+    case 12: // [F26] Noise Level (5b)
+    case 16: // [F32] Resonance (5b)
+    case 19: // [F35] EG. Intensity (5b)
+    case 20: // [F41] VCF Attack (5b)
+    case 21: // [F42] VCF Decay (5b)
+    case 22: // [F43] VCF Breakpoint (5b)
+    case 23: // [F44] VCF Slope (5b)
+    case 24: // [F45] VCF Sustain (5b)
+    case 25: // [F46] VCF Release (5b)
+    case 27: // [F51] VCA Attack (5b)
+    case 28: // [F52] VCA Decay (5b)
+    case 29: // [F53] VCA Breakpoint (5b)
+    case 30: // [F54] VCA Slope (5b)
+    case 31: // [F55] VCA Sustain (5b)
+    case 32: // [F56] VCA Release (5b)
+    case 35: // [F62] MG Frequency (5b)
+    case 36: // [F63] MG Delay (5b)
+    case 37: // [F64] MG OSC (5b)
+    case 38: // [F65] MG VCF (5b)
+    case 44: // [F74] Delay Frequency (5b)
+    case 45: // [F75] Delay Intensity (5b)
+    case 47: // [F77] Portamento (5b)
+      paramValueScaled = paramValue7Bit >> 2; break;
+    case 14: // [F--] Parameter No. Memory (6b)
+    case 15: // [F31] Cutoff (6b)
+      paramValueScaled = paramValue7Bit >> 1; break;
+    default:
+    return; // Unknown parameter - ignore
+ }
+  sysexData[2] = 0x30 | (channel & 0x0f); // Set channel number
+  sysexData[5] = paramOffset;
   sysexData[6] = paramValueScaled;
   MIDI.sendSysEx(sysexLen, sysexData, true);
 }
