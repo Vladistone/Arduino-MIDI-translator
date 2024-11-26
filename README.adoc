@@ -955,7 +955,7 @@ How to avoid this and whether this is considered an artistic decision by the per
 
 kbd:[<<Back-to-Top>>]
 
-=== DW/EX8000 interval extension
+=== DW/EX8000 intervals extension
 when testing the encoder for DW/EX8000 I found an interesting possibility with external control CC#2SysEx for the parameter of changing the tone intervals between OSC2 in relation to OSC1. according to the service manual these intervals are in the ranges:
 image:IMAGES/Korg DW8000/DW800 F24 Interval.png[,700,350]
 
