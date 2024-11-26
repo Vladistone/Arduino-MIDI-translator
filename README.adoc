@@ -270,7 +270,7 @@ which is available on the website: image:IMAGES/COM_IMG/GlenStegner.png[#img-Gle
 
 Glen Stegner is very deeply described all the possibilities in the work of DSS-1.
 Therefore, I also pay tribute and respect to Glen Stegner in his preparation of the site.
-Including there are certain nuances when implementing Sisex commands, which I left for later and placed them in the last section <<troubleshooting>>:
+Including there are certain nuances when implementing SysEx commands, which I left for later and placed them in the last section <<troubleshooting>>:
 ====
 
  .The Third:
