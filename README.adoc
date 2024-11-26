@@ -1095,7 +1095,7 @@ kbd:[<<Back-to-Top>>]
 [#Idea]
 === Ideas for DW/EX8000 in future decision:
 
-==== ["2in1 parameter control"]
+==== "2in1 parameter control"
 I have an idea to combine several SysEx messages for one CC# controller, but I can't get a reliable result that would be read and processed by DW/EX8000. For example:
 .I called this encoding [UNIT_3]:  "2in1 parameter control"
 [%collapsible]
@@ -1142,7 +1142,7 @@ void sendParam_10(byte channel, byte paramOffset, byte paramValue7Bit) // Unit_3
 the DW8000 doesn't operate this SysEx below:
 image:IMAGES/Korg DW8000/2in1 parameter control.png[,900,500]
 
-==== [​​1by2 control with two buttons]
+==== ​​"1by2 control with two buttons"
 [TIPS]
 The opposite idea: Due to the shortage of free encoders on my controller and the presence of extra buttons/switches. an idea appeared to use two buttons to switch a four-level parameterOffset, for example:
 
