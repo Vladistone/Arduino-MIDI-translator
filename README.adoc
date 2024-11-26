@@ -710,7 +710,7 @@ it`s will be your choice...
 
 [TIP]
 ====
-*__attempt to use UNIT_3 for DW/EX8000 as a control unification from a single CC# for several parameters simultaneously has not given a positive result yet, either because DW8000 is unable to understand long SysEx messages with several targets (parameters change value), or I cannot provide such an implementation due to my competence in MIDI programming, so this idea remains unrealized at the moment. I am open to discussion and help in implementing the code!__*
+*__attempt to use UNIT_3 for DW/EX8000 as a control unification from a single CC# for several parameters simultaneously has not given a positive result yet, either because DW8000 is unable to understand long SysEx messages with several targets (parameters change value), or I cannot provide such an implementation due to my competence in MIDI programming, so this <<Ideas>> remains unrealized at the moment. I am open to discussion and help in implementing the code!__*
 ====
 
 kbd:[<<Back-to-Top>>]
@@ -1089,5 +1089,70 @@ but in fact with the help of SysEx you can set more options for interval relatio
 |===
 
 I can't say for sure whether this has any practical application in music making, but the fact is that sometimes SysEx takes old synthesizers out of a conservative equilibrium that many people don't realize... enjoy the new possibilities!
+
+kbd:[<<Back-to-Top>>]
+
+=== [Ideas] for DW/EX8000 in future decision:
+
+==== ["2in1 parameter control"]
+I have an idea to combine several SysEx messages for one CC# controller, but I can't get a reliable result that would be read and processed by DW/EX8000. For example:
+.I called this encoding [UNIT_3]:  "2in1 parameter control"
+[%collapsible]
+====
+[,cpp,%linenums]
+----
+//   Scaling SyxEx_10 leight of OSC mix ratio using by single CC# source:
+//   for paramNumber 0x02 & 0x09 must be (master + slave) single CC#
+void sendParam_10(byte channel, byte paramOffset, byte paramValue7Bit) // Unit_3
+{
+  const int sysexLen = 10;
+  static byte sysexData[sysexLen] =
+  {
+    0xf0, // 0 SOX
+    0x42, // 1 Manufacturer ID: 42, Korg
+    0x30, // 2 Channel 1
+    0x03, // 3 Device ID: 03, DW/EX8000
+    0x41, // 4 Message: 41, Parameter change (it not the parameter DUMP)
+    0x02, // 5 Parameter number (1st parameter witch we going to change, master)
+    0x00, // 6 Parameter master value
+    0x09, // 7 Parameter number (be as slave)
+    0x00, // 8 Parameter slave value
+    0xf7  // 9 EOX
+  };
+
+  paramValue7Bit &= 0x7f; // paramValue7Bit is assumed to run from 0 to 127 in all cases
+  int paramValueScaled;
+  switch (paramOffset)  // so here we rescale to fit to range 0...31
+    {
+    case 0x02: // for parameter [F13] OSC 1 Level convert to OSC1+OSC2 Mix level
+    paramValueScaled = paramValue7Bit >> 2; break;
+    default: return;	// unknown parameter - ignore
+    }
+    sysexData[2] = 0x30 | ((channel - 1) & 0x0f); // Set channel number
+    sysexData[5] = paramOffset;                   // = 0x02; master
+    sysexData[6] = paramValueScaled & 0x7f;       // master value
+    sysexData[7] = (paramOffset +7);                // = 0x09; slave
+    sysexData[8] = paramValueScaled & 0x7f; // slave value
+    MIDI.sendSysEx(sysexLen, sysexData, true);
+}
+----
+====
+
+the DW8000 doesn't operate this SysEx below:
+
+==== [​​1by2 control with two buttons]
+[TIPS]
+The opposite idea: Due to the shortage of free encoders on my controller and the presence of extra buttons/switches. an idea appeared to use two buttons to switch a four-level parameterOffset, for example:
+
+|====
+| Parameter Offset# | Parameter name | range | note
+| [F14] | A. Bend Select (2byte) | 1; 2; 3; 4 | off; OSC1; OSC2; BOTH
+|====
+
+of which the extreme two values ​​(off; Both) - can be easily implemented using a regular Switch off/on CC#1 value 0x00/0x7F.
+But how to describe the middle two values ​​of Switch CC#2 value?, so that at Value off=0x00 it would assign 25~50cent above zero for OSC1;
+Then - when switching to CC#2 value on=0x7F - the SysEx parameter assignment should be within 50~75cent for confident operation for OSC2
+
+Any ideas for the code are welcome!
 
 kbd:[<<Back-to-Top>>]
