@@ -756,7 +756,9 @@ Parameter number column "2", at pages 7-8:
 not use the *param.Offset* which discribed and use for paramDUMP! Parameter misconception is passed down!
 image:IMAGES/Korg DSS-1/program param DUMP & CHANGE for DSS-1.jpeg[,500,400]
 
-Steve Baines of the first DW8000 hack didn't understand the difference.
+The first DW8000 hack  by Steve Baines had no opportunity to notice the differences between DW/EX8000 and DSS-1 in the description of MIDI implementation, especially since he had a narrower task.
+Therefore the parameter Offset only applies to MIDI for DW/EX8000.
+For DSS-1 there is confusion since both these parameters are present in the MIDI correspondence table.
 https://gearspace.com/board/showpost.php?p=16795924&postcount=16[at gearspace.com have quote his comments]
 
 === Code parameter listing
