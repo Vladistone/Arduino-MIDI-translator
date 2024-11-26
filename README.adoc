@@ -960,6 +960,13 @@ when testing the encoder for DW/EX8000 I found an interesting possibility with e
 image:IMAGES/Korg DW8000/DW800 F24 Interval.png[,700,500]
 
 but in fact with the help of SysEx you can set more options for interval relationships, namely:
-
- . Unison; minor 3rd; magor 3rd; 4th; 5th; 1st; 1&8th;1&19+(5+)th;
+|===
+| 1 |Unison
+| -3 |minor 3rd
+| 3| magor 3rd
+| 4 | 4th
+| 5 | 5th
+| 8 | non interval
+| 1 & 8th | octave
+| 1 & (20-)th or (6-)th | in small sexte 2 octave upper OSC1
 
