@@ -966,7 +966,7 @@ but in fact with the help of SysEx you can set more options for interval relatio
 | 3| in magor 3rd
 | 4 | in 4th
 | 5 | in pure quartet (5th)
-| non | not interval, but without unison (at least I can't marked...)
+| - | not interval, but without unison (at least I can't marked...)
 | 1 & 8th | in octave
 | 1 & (20-)th or (6-)th | Compound interval in small sexte upper 2 octave upstare OSC1
 |===
