@@ -954,3 +954,12 @@ the argument against to *separate control* is that in some case will get to achi
 How to avoid this and whether this is considered an artistic decision by the performer is up to everyone to decide for themselves!
 
 kbd:[<<Back-to-Top>>]
+
+=== DW/EX8000 interval extension
+when testing the encoder for DW/EX8000 I found an interesting possibility with external control CC#2SysEx for the parameter of changing the tone intervals between OSC2 in relation to OSC1. according to the service manual these intervals are in the ranges:
+image:IMAGES/Korg DW8000/DW800 F24 Interval.png[,700,500]
+
+but in fact with the help of SysEx you can set more options for interval relationships, namely:
+
+ . Unison; minor 3rd; magor 3rd; 4th; 5th; 1st; 1&8th;1&19+(5+)th;
+
