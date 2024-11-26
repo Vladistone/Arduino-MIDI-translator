@@ -360,7 +360,7 @@ kbd:[<<Back-to-Top>>]
 [#Unit_1]
 ==== [Unit_1]
 this is the main code for transforming the largest array of parameters with length SysEx = 7b (or range = 64)
-[%collapsible, DSS-1 detail]
+[%collapsible] DSS-1 detail
 ====
 [,cpp,%linenums]
 ----
@@ -483,9 +483,10 @@ void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
 ----
 ====
 
-[%collapsible, DW/EX8000 detail]
+[%collapsible] DW/EX8000 detail
 ====
 [,cpp,%linenums]
+----
 // Main DW/EX8000: Scaling SysEx_8 leight for paramNumber of [5]
 void sendDw8000Param(byte channel, byte paramOffset, byte paramValue7Bit) // this is    Unit_1
 {
