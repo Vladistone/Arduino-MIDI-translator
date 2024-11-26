@@ -1140,7 +1140,7 @@ void sendParam_10(byte channel, byte paramOffset, byte paramValue7Bit) // Unit_3
 ----
 ====
 
-the DW8000 doesn't operate this SysEx below:
+the DW8000 doesn't got this SysEx:
 image:IMAGES/Korg DW8000/2in1 parameter control.png[,900,500]
 
 ==== ​​"1by2 control with two buttons"
