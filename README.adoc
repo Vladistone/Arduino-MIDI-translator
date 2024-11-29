@@ -1114,6 +1114,7 @@ kbd:[<<Back-to-Top>>]
 [#Idea]
 === Ideas for DW/EX8000 in future decision:
 
+[#DW8000_Sysex_10]
 ==== "2in1 parameter control"
 I have an idea to combine several SysEx messages for one CC# controller, but I can't get a reliable result that would be read and processed by DW/EX8000. For example:
 I called this encoding:   "2in1 parameter control"
