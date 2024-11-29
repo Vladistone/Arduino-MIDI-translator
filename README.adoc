@@ -319,11 +319,11 @@ for preparing and processing MIDI data arriving at the Rx Arduino input
 |===
 | main variable| parts | DW/EX8000| DSS-1
 
-|Sysex_6 byte leight| <<Unit_0>> | unused | used
-|Sysex_8 byte leight| <<Unit_1>> | in progress | used
-|Sysex_9 byte leight| <<Unit_2>> | unused | used
-|Sysex_10 byte leight| <<Unit_3>> |inprogress| used
-|Ctlr_2_Synth map layout| <<Unit_4>> |used | used
+|Sysex_6 byte leight| <<Unit_0>> | unuse | use
+|Sysex_8 byte leight| <<Unit_1>> | in progress | use
+|Sysex_9 byte leight| <<Unit_2>> | unuse | use
+|Sysex_10 byte leight| <<Unit_3>> |inprogress| use
+|Ctlr_2_Synth map layout| <<Unit_4>> |use | use
 |setup & loop| *[Unit_5]* | |
 |===
 
