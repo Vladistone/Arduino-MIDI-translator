@@ -269,7 +269,7 @@ kbd:[<<Back-to-Top>>]
 == Coding review:
 
 === Preparation for DSS-1 coding:
-There are base difference in the description of the implementation chart for https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/REPO/MIDI_DW8000_2024.ino="DW8000" vs DSS-1:
+There are base difference in the description of the implementation chart for https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/REPO/MIDI_DW8000_2024.ino[*DW8000*] vs DSS-1:
 
  .the First:
 ====
