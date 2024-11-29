@@ -317,12 +317,13 @@ for preparing and processing MIDI data arriving at the Rx Arduino input
 
 .SysEx byte preparation blocks:
 |===
-|Sysex_6 byte leight| <<Unit_0>>
-|Sysex_8 byte leight| <<Unit_1>>
-|Sysex_9 byte leight| <<Unit_2>>
-|Sysex_10 byte leight| <<Unit_3>>
-|Ctlr_2_Synth map layout| <<Unit_4>>
-|setup & loop| *[Unit_5]*
+| main variable, header row | parts, header row | DW/EX8000, header row | DSS-1, header row
+|Sysex_6 byte leight| <<Unit_0>> | unused | used
+|Sysex_8 byte leight| <<Unit_1>> | in progress | used
+|Sysex_9 byte leight| <<Unit_2>> | unused | used
+|Sysex_10 byte leight| <<Unit_3>> |inprogress| used
+|Ctlr_2_Synth map layout| <<Unit_4>> |used | used
+|setup & loop| *[Unit_5]* | |
 |===
 
 ==== parts in progress (Not realized ideas for CC#2SysEx)
