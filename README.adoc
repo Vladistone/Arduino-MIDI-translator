@@ -504,7 +504,7 @@ void sendParam_8(byte channel, byte paramNumber, byte paramValue7Bit)// Unit_1
 ----
 ====
 
-.DW/EX8000 code [Unit_1]
+.https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/REPO/MIDI_DW8000_2024.ino[*DW/EX8000*] code [Unit_1]
 [%collapsible]
 ====
 [,cpp,%linenums]
