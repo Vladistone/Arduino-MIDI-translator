@@ -380,7 +380,7 @@ kbd:[<<Back-to-Top>>]
 ==== [Unit_1]
 this is the main code for transforming the largest array of parameters with length SysEx = 0x7b (or range = 64 in decima)
 
-.DSS-1 code [Unit_1]
+.https://github.com/Vladistone/Arduino-MIDI-translator/blob/master/REPO/SSL_DSS_fix1.ino[*DSS-1*] code [Unit_1]
 [%collapsible]
 ====
 [,cpp,%linenums]
