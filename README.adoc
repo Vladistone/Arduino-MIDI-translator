@@ -95,10 +95,10 @@ Arduino is an IC board which will allow you to take whatever MIDI controller you
 regardless of whether your oldschool synthesizer can read `CC#` commands or not.
 
 And for such pleasures as independence from expensive specialized controllers or the not need to be chained to a computer for software MIDI translation,
-you can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DSS-1  using Arduino and with programming skills!
+you can, together with other performance equipment give a new life to old synthesizers from the 80s such as the Korg DW/EX-8000 or DSS-1 using Arduino and with programming skills!
 ____
 
-This Simple Arduino project to remap MIDI `CC#` messages into `SysEx` messages that Korg DSS-1 Synth expects.
+This Simple Arduino project to remap MIDI `CC#` messages into `SysEx` messages that Synth expects.
 
 The practical upshot of this is that the Synth Program parameters can be controlled by standard `CC#` messages, rather than obscure `SysEx` messages.
 MIDI THRU is unaffected by the changes, as the Nano is be spliced in just before the MIDI IN reaches the CPU, AFTER the IN has been echoed back out of the THRU port.
